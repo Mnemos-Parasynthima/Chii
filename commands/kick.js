@@ -7,8 +7,20 @@ module.exports = {
 			return message.reply('Nya need to tag a user in order to kick them-nya!');
 		}
 
+    // this returns the user mentioned in the message
 		const taggedUser = message.mentions.users.first();
 
-		message.channel.send(`Nya wanted to kick: ${taggedUser}`);
-	},
+    if (taggedUser) {
+      // this gets the member from the user
+      const user = message.guild.member(taggedUser);
+      if (user) {
+        user.kick()
+          .then(() => { message.reply('Successfully kicked.' )})
+          .catch(err => { 
+            console.error(err);
+			      message.channel.send(`there was an error trying to kick ${user} in this channel!`);
+          });
+      }
+    }
+  }
 };

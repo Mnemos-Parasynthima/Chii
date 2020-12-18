@@ -13,7 +13,7 @@ module.exports = {
 		if (!args.length) {
 			data.push('Here\'s a list of all my commands-nya:');
 			data.push(commands.map(command => command.name).join(', '));
-			data.push(`\nNya can send ${prefix} help [command name] to get info onya a specific command-nya!`);
+			data.push(`\nNya can send \`${prefix} help [command name]\` to get info onya a specific command-nya!`);
 
 			return message.author.send(data, { split: true })
 				.then(() => {
