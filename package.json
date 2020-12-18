@@ -1,0 +1,17 @@
+{
+  "name": "SoulWorker-Chii_bot",
+  "version": "1.0.0",
+  "description": "SoulWorker Chii Aruel at your service!",
+  "main": "chii.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "UmbreOn",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "request": "^2.88.2"
+  }
+}
