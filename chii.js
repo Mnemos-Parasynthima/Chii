@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 //const prefix = require('./config.json');
-const prefix = '-chii';
+const prefix = 'chii';
 const token = process.env.token;
 
 const client = new Discord.Client();
@@ -17,12 +17,9 @@ http.createServer(function (req, res) {
 
 client.on('ready', () => {
 
-  console.log('Your Bot is now Online.')
-  //let activities = [`Killing some Dregs`, `Sleeping`, `SoulWorking`], i = 0;
+  console.log('SoulWorker Chii is now online.')
 
-  //setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`), 5000);
-
-  client.user.setActivity( '-chii', { type: 'LISTENING' });
+  client.user.setActivity( 'chii', { type: 'LISTENING' });
 
 });
 //End code to allow 24/7 bot
@@ -50,7 +47,7 @@ client.on('message', message => {
   const command = client.commands.get(commandName)
     || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-  if (!command) return;
+  if (!command) return message.reply('Nya?');
 
   if (command.guildOnly && message.channel.type === 'dm') {
     return message.reply('I can\'t execute that command inside DMs-nya!');
@@ -109,7 +106,7 @@ client.on('guildMemberAdd', member => {
 });
 
 // Test
-client.on('guilMemberRemove', member => {
+client.on('guildMemberRemove', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
 
   if (!channel) {

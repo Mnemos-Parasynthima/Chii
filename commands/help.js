@@ -15,14 +15,13 @@ module.exports = {
 			data.push(commands.map(command => command.name).join(', '));
 			data.push(`\nNya can send \`${prefix} help [command name]\` to get info onya a specific command-nya!`);
 
-			return message.author.send(data, { split: true })
+			return message.channel.send(data, { split: true })
 				.then(() => {
 					if (message.channel.type === 'text') return;
-					message.reply('I\'ve sent nya a DM with all my commands-nya!');
 				})
 				.catch(error => {
-					console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-					message.reply('it seems like I can\'t DM nya!');
+					console.error(`Could not send help to ${message.author.tag}.\n`, error);
+					message.reply('it seems like I can\'t send!');
 				});
 		}
 
