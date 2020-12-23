@@ -2,7 +2,7 @@ module.exports = {
 	name: 'slash',
 	description: 'Slash up to 100 messages.',
 	execute(message, args) {
-		const amount = parseInt(args[0]) /*+ 1*/;
+		const amount = parseInt(args[0]) + 1;
 
 		if (isNaN(amount)) {
 			return message.reply('that doesn\'t seem to be a valid number.');
