@@ -3,7 +3,7 @@ module.exports = {
   description: 'Gives the fate',
   ownerOnly: true,
   execute(message) {
-    let fates = ['By the power of a SoulWorker, yes', 'To a SoulDreg, I say no', 'Be it true', 'place', 'holder', 'anime', 'idk'], i = 0; //Array of possible fates
+    let fates = ['By the power of a SoulWorker, yes', 'To a SoulDreg, I say no', 'Be it true', 'idk', 'You\'re life will change'], i = 0; //Array of possible fates
 
     i++;
     console.log(fates.length);
