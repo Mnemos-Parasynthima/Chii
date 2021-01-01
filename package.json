@@ -1,18 +1,26 @@
 {
-  "name": "SoulWorker-Chii_bot",
+  "name": "SoulWorker-Chii-Bot",
   "version": "1.0.0",
-  "description": "SoulWorker Chii Aruel at your service!",
+  "description": "SoulWorker Chii at your service-nya!",
   "main": "chii.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
-  },
-  "keywords": [],
-  "author": "UmbreOn",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "discord.js-commando": "^0.10.0",
+    "discord.js-commando": "github:discordjs/Commando",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot/issues"
+  },
+  "homepage": "https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot#readme"
 }
