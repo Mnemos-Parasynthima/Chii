@@ -1,6 +1,13 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-//const prefix = require('./config.json');
+/*
+*Code for outside of repl.it
+const { prefix, token } = require('./config.json');
+*/
+
+/*
+* Code for repl.it
+*/
 const prefix = 'chii';
 const token = process.env.token;
 
