@@ -1,4 +1,4 @@
-const { prefix } = require('../config.json');
+/*const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'help',
@@ -43,3 +43,4 @@ module.exports = {
 		message.channel.send(data, { split: true });
 	},
 };
+*/
