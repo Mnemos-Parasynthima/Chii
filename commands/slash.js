@@ -1,6 +1,8 @@
 module.exports = {
 	name: 'slash',
-	description: 'Slash up to 100 messages.',
+	description: 'Slash up to 99 messages.',
+  usage: '<number>',
+  aliases: ['purge', 'r', 'del', 'delete'],
 	execute(message, args) {
 		const amount = parseInt(args[0]) + 1;
 
