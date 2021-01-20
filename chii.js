@@ -8,7 +8,7 @@ const { prefix, token } = require('./config.json');
 /*
 * Code for repl.it
 */
-const prefix = 'chii';
+const prefix = process.env.prefix;
 const token = process.env.token;
 
 const client = new Discord.Client();
