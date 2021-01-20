@@ -8,7 +8,7 @@ module.exports = {
 	usage: '<command name>',
 	cooldown: 5,
 	execute(message, args) {
-		const data = [];
+		//const data = [];
     const embed = new Discord.MessageEmbed()
       .setColor('#ff0000')
       .setThumbnail(message.client.user.displayAvatarURL())
@@ -26,7 +26,11 @@ module.exports = {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`nekos\``
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\``
+          },
+          {
+            name: 'Anime',
+            value: `\`anime\`, \`nekos\`` // More to come
           },
           {
             name: 'Miscelleanous',
