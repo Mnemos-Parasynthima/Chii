@@ -22,7 +22,7 @@ module.exports = {
         .addFields(
           {
             name: 'Moderation',
-            value: `\`help\`, \`kick\`, \`server\`, \`slash\`, \`user-info\``
+            value: `\`help\`, \`kick\`, \`ban\`, \`server\`, \`slash\`, \`user-info\``
           },
           {
             name: 'Fun',
