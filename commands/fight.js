@@ -11,12 +11,12 @@ module.exports = {
     //console.log(taggedUser);
 
     if(!taggedUser) {
-      console.log('Entered if no taggedUser statement');
+      //console.log('Entered if no taggedUser statement');
       message.channel.send("Who will I fight-nya?");
     }
 
     if(taggedUser && taggedUser.id !== ownerId) {
-      console.log('Entered if taggedUser and if taggedUser is strictly not me');
+      //console.log('Entered if taggedUser and if taggedUser is strictly not me');
       const attacks = [
         'Budo 2: Claws Out', 'Kitty Kendo', 'Budo 5: Cat by Night', 'Budoka 6: Dance of Death',
         'Kasha\'s carriage', 'Bakeneko\'s Curse', 'Budo 3: Prey Sighted', 'Budo Cat'
@@ -69,7 +69,7 @@ module.exports = {
       }*/
       message.channel.send(embed);
     } else if (taggedUser && taggedUser.id === ownerId) {
-      console.log('Entered if taggedUser is strictly me');
+      //console.log('Entered if taggedUser is strictly me');
       message.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
     }
   }
