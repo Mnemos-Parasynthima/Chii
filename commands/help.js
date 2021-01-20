@@ -17,7 +17,7 @@ module.exports = {
 
 		if (!args.length) {
       embed.setTitle('SoulWorker Chii\'s Commands')
-        .setDescription('I am SoulWorker Chii Aruel, one of the best SoulWorkers from West Cloudreamnya. Nya only Master is Umbre0nya, but I suppose I\'ll accept your commands-nya. UwU')
+        .setDescription('I am SoulWorker Chii Aruel, one of the best SoulWorkers from West Cloudreamnya. Nya only Master is Umbre0n-sama, but I suppose I\'ll accept your commands-nya. UwU')
         .setFooter(`Send \`${prefix} help [command name]\` for more info onya a command-nya!`)
         .addFields(
           {
@@ -26,7 +26,7 @@ module.exports = {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\``
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`nekos\``
           },
           {
             name: 'Miscelleanous',
