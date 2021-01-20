@@ -7,8 +7,8 @@ module.exports = {
   aliases: ['duel'],
   execute(message) {
     const taggedUser = message.mentions.users.first();
-    const ownerId = '756268171496783903';
-    console.log(taggedUser);
+    const ownerId = process.env.ownerId;
+    //console.log(taggedUser);
 
     if(!taggedUser) {
       console.log('Entered if no taggedUser statement');
