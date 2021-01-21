@@ -6,12 +6,12 @@ module.exports = {
   description: 'NYA!!',
   aliases: ['awwnime', 'moe'],
   execute(message) {
-    const subreddits = ['Animewallpaper'/*, 'Re_Zero', 'Kaguya_Sama'*/]; // TODO: Add more subreddits
+    const subreddits = ['Animewallpaper', 'Re_Zero', 'Kaguya_sama', 'anime', 'OneTrueEmilia', 'Re_Zero']; // TODO: Add more subreddits
     const subreddit = Math.floor(Math.random() * subreddits.length);
     const source = subreddits[subreddit];
     randomPuppy(source) // Name of subreddits
       .then(url => {
-        //console.log(`${url}; Source: ${source}`);
+        console.log(`${url}; Source: ${source}`);
         const embed = new Discord.MessageEmbed()
           .setTitle('Anime Pictures!')
           .setColor('#ff0000')

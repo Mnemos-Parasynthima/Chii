@@ -3,6 +3,8 @@ Features to add:
 
   remind command: User inputs reminder and sets time, when time, it sends a reminder while @ing whoever set the reminder
 
+  poll, random number, ownerinfo, animegif, [music commands]
+
   embed: Make an embed template?
 
   Link to invite Chii:
