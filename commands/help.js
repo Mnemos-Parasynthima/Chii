@@ -26,7 +26,7 @@ module.exports = {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\``
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`poll\`, \`random\``
           },
           {
             name: 'Anime',
@@ -34,8 +34,8 @@ module.exports = {
           },
           {
             name: 'Miscelleanous',
-            value: `\`baka\`, \`fight\`, \`hiss\`, \`souldreg\`, \`useless\``
-          }
+            value: `\`baka\`, \`fight\`, \`hiss\`, \`souldreg\`, \`useless\`. \`master\``
+          } // Other categories???
         )
 			//data.push('Here\'s a list of all my commands-nya:');
 			//data.push(commands.map(command => command.name).join(', '));
