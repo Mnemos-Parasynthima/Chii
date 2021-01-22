@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { Commando } = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
 module.exports = class NekosCommand extends Command {
@@ -16,7 +16,7 @@ module.exports = class NekosCommand extends Command {
       }
     });
   }
-  run(msg) {
+  async run(msg) {
     // Gets image data from api and sends as json
 	  const { url } = await fetch("https://nekos.life/api/v2/img/neko").then((res) => res.json());
     const embed = new Discord.MessageEmbed()
