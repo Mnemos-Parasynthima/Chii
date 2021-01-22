@@ -1,6 +1,11 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 
+/******
+ * Code for outside of replit 
+ * const { prefix, owner, token } = require('./config.json');
+ ******/
+
 const client = new CommandoClient({
   comandPrefix: process.env.prefix, // Use config.json for outside of replit
   owner: process.env.ownerId, // Use config.json for outside of replit
