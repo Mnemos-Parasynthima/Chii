@@ -2,7 +2,7 @@ module.exports = {
 	name: 'ban',
 	description: 'Tag a member and bans them.',
   usage: '<@member>',
-  aliases: [''],
+  aliases: ['ban'],
 	execute(message) {
 		if (!message.mentions.users.size) {
 			return message.reply('Nya need to tag a user in order to ban them-nya!');

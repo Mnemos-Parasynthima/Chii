@@ -1,7 +1,7 @@
 module.exports = {
   name: 'protect',
   description: 'Protects owner of Chii',
-  aliases: [''],
+  aliases: ['prtct', 'prt'],
   execute(message) {
     const owner = process.env.ownerId;
     if (message.author.id !== owner) {

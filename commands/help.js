@@ -34,7 +34,7 @@ module.exports = {
           },
           {
             name: 'Miscelleanous',
-            value: `\`baka\`, \`fight\`, \`hiss\`, \`souldreg\`, \`useless\`. \`master\``
+            value: `\`baka\`, \`fight\`, \`hiss\`, \`souldreg\`, \`useless\`, \`master\`, \`youtube\``
           } // Other categories???
         )
 			//data.push('Here\'s a list of all my commands-nya:');

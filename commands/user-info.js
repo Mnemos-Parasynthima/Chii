@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'user-info',
 	description: 'Display info about yourself.',
-  aliases: ['ui'],
+  aliases: ['ui', 'user', 'self'],
 	execute(message) {
     const user = message.author.username;
     const id = `||${message.author.id}||`;

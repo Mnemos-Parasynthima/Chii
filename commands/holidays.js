@@ -2,7 +2,7 @@ module.exports = {
   name: 'holiday',
   description: `Use \`thxg\` for Thanksgiving, \`xmas\` for Christmas, and \`newyear\` for New Year's. No arguments give in a Happy Holidays.`,
   usage: '<holiday>',
-  aliases: [''],
+  aliases: ['hd'],
   execute(message, args) {
     switch (args[0]) {
       case 'thxg':

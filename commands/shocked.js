@@ -2,7 +2,7 @@ module.exports = {
   name: 'shocked',
   description: 'Gets shocked',
   usage: '<@member>',
-  aliases: [''],
+  aliases: ['gasp'],
   execute(message) {
     const taggedUser = message.mentions.users.first();
 

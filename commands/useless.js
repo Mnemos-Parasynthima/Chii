@@ -2,7 +2,7 @@ module.exports = {
 	name: 'useless',
 	description: 'Calls someone useless if name provided.',
   usage: '[@member]',
-  aliases: [''],
+  aliases: ['useless'],
 	execute(message) {
 		const taggedUser = message.mentions.users.first();
     const owner = process.env.ownerId;

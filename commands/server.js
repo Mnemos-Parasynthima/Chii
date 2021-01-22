@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'server',
 	description: 'Display info about this server.',
-  aliases: [''],
+  aliases: ['srv', 'server-info'],
 	execute(message) {
     const name = message.guild.name;
     const embed = new Discord.MessageEmbed()
