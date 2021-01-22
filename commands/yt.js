@@ -7,6 +7,8 @@ module.exports = {
   aliases: ['yt', 'youtube', 'searchyt'],
   usage: '<query>',
   async execute(message, args) {
+    message.reply('Command not supported yet!');
+    /*
     if (!args.length) { message.reply('What do nya want me to search for-nya?!') }
 
     const url = await fetch(`https://www.youtube.com/results?search_query=${encodeURIComponent(args.join("+"))}`)
@@ -29,5 +31,6 @@ module.exports = {
     console.log(`${url}, ${u}`);
     if(!url) { message.channel.send("No Results Found."); }
     message.channel.send(`https://youtube.com${url}`);
+    */
   }
 }
