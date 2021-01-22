@@ -11,7 +11,7 @@ module.exports = {
       message.channel.send('Everyone\'s useless! Except for my Master-nya');
     }
 
-    if (taggedUser && taggedUser.user.id !== owner) {
+    if (taggedUser && taggedUser.id !== owner) {
 	    message.channel.send(`Useless ${taggedUser}-nya!`);
     } else {
       message.reply('No u!');
