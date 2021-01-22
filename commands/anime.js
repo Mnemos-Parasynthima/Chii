@@ -1,16 +1,21 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
-
+/*
+****TODO****
+Incorporate better subreddit image get
+*/
 module.exports = {
   name: 'anime',
-  description: 'NYA!!',
+  description: 'NYA!! [Warning: repetitive images]',
   aliases: ['awwnime', 'moe'],
   execute(message) {
-    const subreddits = ['Animewallpaper', 'Re_Zero', 'Kaguya_sama', 'anime', 'OneTrueEmilia', 'Re_Zero']; // TODO: Add more subreddits
+    const subreddits = ['Animewallpaper', 'Re_Zero', 'OneTrueEmilia', 'awwnime']; // TODO: Add more subreddits
     const subreddit = Math.floor(Math.random() * subreddits.length);
     const source = subreddits[subreddit];
     randomPuppy(source) // Name of subreddits
       .then(url => {
+        //if (url === undefined) return
+        //if (url === 'https://i.imgur.com/removed.png') return
         console.log(`${url}; Source: ${source}`);
         const embed = new Discord.MessageEmbed()
           .setTitle('Anime Pictures!')
@@ -23,7 +28,7 @@ module.exports = {
       })
       .catch(error => {
         console.error(error);
-        //message.channel.send('Error! Could not find image-nya! Try again');
+        message.channel.send('Error! Could not find image-nya! Try again');
       });
   }
 };
