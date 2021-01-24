@@ -1,8 +1,16 @@
-module.exports = {
-  name: 'bday',
-  description: 'No description necessary',
-  aliases: ['bd'],
-  usage: '<@member>',
+const { Command } = require('discord.js-commando');
+
+module.exports = class BdayCommand extends Command {
+  constructor(client) {
+    super(client, {
+      name: 'bday',
+      aliases: ['bd'],
+      group:'fun',
+      memberName: 'bday',
+      description: 'No description necessary',
+      usage:'<@member>'
+    }
+  }
   execute(message) {
     const taggedTarget = message.mentions.users.first();
 
