@@ -1,14 +1,27 @@
 const Discord = require('discord.js');
+const { Command } = require('discord.js-commando');
 
-module.exports = {
-	name: 'user-info',
-	description: 'Display info about yourself.',
-  aliases: ['ui', 'user', 'self'],
-	execute(message) {
-    const user = message.author.username;
-    const id = `||${message.author.id}||`;
-    const tag = message.author.tag;
-    const pfp = message.author.avatarURL();
+module.exports = class UserCommand extends Command {
+  constructor(client) {
+    super(client, {
+	    name: 'user-info',
+      aliases: ['ui', 'user', 'self'],
+      group: 'mod',
+      memberName: 'user-info',
+	    description: 'Display info about yourself.',
+      guildOnly: true,
+      throttling: {
+        usages: 3,
+        duration: 5,
+      }
+    });
+  }
+
+  run(msg) {
+    const user = msg.author.username;
+    const id = `||${msg.author.id}||`;
+    const tag = msg.author.tag;
+    const pfp = msg.author.avatarURL();
     const embed = new Discord.MessageEmbed()
       .setTitle(`${user}'s User Info`)
       .setAuthor(user)
@@ -30,6 +43,6 @@ module.exports = {
         }
       )
     ;
-    message.channel.send(embed);
-	},
+    msg.say(embed);
+  }
 };

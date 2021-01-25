@@ -1,20 +1,38 @@
-module.exports = {
-	name: 'slash',
-	description: 'Slash up to 99 messages.',
-  usage: '<number>',
-  aliases: ['purge', 'r', 'del', 'delete'],
-	execute(message, args) {
-		const amount = parseInt(args[0]) + 1;
+const { Command } = require('discord.js-commando');
 
-		if (isNaN(amount)) {
-			return message.reply('that doesn\'t seem to be a valid number.');
-		} else if (amount < 1 || amount > 100) {
-			return message.reply('you need to input a number between 1 and 100.');
-		}
+module.exports = class SlashCommand extends Command {
+  constructor(client) {
+    super(client, {
+	    name: 'slash',
+      aliases: ['purge', 'r', 'del', 'delete', 'prune'],
+      group: 'mod',
+      memberName: 'slash',
+	    description: 'Slash up to 99 messages.',
+      format: '<number>',
+      throttling: {
+        usages: 1,
+        duration: 0.5,
+      },
+      args: [
+        {
+          key: 'num',
+          prompt: 'How many should I slash-nya?!',
+          type: 'integer'
+        }
+      ]
+    });
+  }
 
-		message.channel.bulkDelete(amount, true).catch(err => {
+  run(msg, { num }) {
+		const amount = num++;
+
+    if (amount < 1 || amount > 100) {
+			return msg.reply('Nya need to input a nyumber between 0 and 100!');
+    } else {
+      msg.channel.bulkDelete(amount, true).catch(err => {
 			console.error(err);
-			message.channel.send('there was an error trying to slash messages in this channel!');
+			msg.say('there was an error trying to slash messages in this channel!');
 		});
-	},
+    }
+  }
 };

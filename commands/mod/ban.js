@@ -1,25 +1,39 @@
-module.exports = {
-	name: 'ban',
-	description: 'Tag a member and bans them.',
-  usage: '<@member>',
-  aliases: ['ban'],
-	execute(message) {
-		if (!message.mentions.users.size) {
-			return message.reply('Nya need to tag a user in order to ban them-nya!');
+const { Command } = require('discord.js-commando');
+
+module.exports = class BanCommand extends Command {
+  constructor(client) {
+    super(client, {
+	    name: 'ban',
+      aliases: ['hammerban', 'banhammer', 'bn', 'bnhmr'],
+      group: 'mod',
+      memberName: 'ban',
+	    description: 'Tag a member and bans them.',
+      guildOnly: true,
+      userPermissions: ['BAN_MEMBERS'],
+      format: '<@member>',
+      throttling: {
+        usages: 1,
+        duration: 10,
+      }
+    });
+  }
+  run(msg) {
+		if (!msg.mentions.users.size) {
+			return msg.reply('Nya need to tag a user in order to ban them-nya!');
 		}
 
     // this returns the user mentioned in the message
-		const taggedUser = message.mentions.users.first();
+		const taggedUser = msg.mentions.users.first();
 
     if (taggedUser) {
       // this gets the member from the user
-      const user = message.guild.member(taggedUser);
+      const user = msg.guild.member(taggedUser);
       if (user) {
         user.ban()
-          .then(() => { message.reply('Successfully banned.' )})
+          .then(() => { msg.reply('Successfully banned.')})
           .catch(err => { 
             console.error(err);
-			      message.channel.send(`There was an error trying to ban ${user} in this channel!`);
+			      msg.say(`There was an error trying to ban ${user} in this channel!`);
           });
       }
     }
