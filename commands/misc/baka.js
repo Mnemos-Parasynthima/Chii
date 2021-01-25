@@ -1,4 +1,6 @@
 const { Command } = require('discord.js-commando');
+const Discord = require('discord.js');
+const fetch = require('node-fetch');
 
 module.exports = class BakaCommand extends Command {
   constructor(client) {
@@ -17,9 +19,15 @@ module.exports = class BakaCommand extends Command {
     });
   }
 
-  run(msg) {
+  async run(msg) {
+    const { url } = await fetch("https://nekos.life/api/v2/img/baka").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
+    console.log(msg.mentions.users.first());
+    const embed = new Discord.MessageEmbed()
+      .setTitle(`Baka ${taggedUser.username}-nya`)
+      .setColor('#ff0000')
+      .setImage(url)
 		
-		msg.say(`Baka ${taggedUser}-nya`);
+		msg.embed(embed);
   }
 };
