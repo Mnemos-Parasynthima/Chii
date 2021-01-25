@@ -1,21 +1,35 @@
-module.exports = {
-  name: 'holiday',
-  description: `Use \`thxg\` for Thanksgiving, \`xmas\` for Christmas, and \`newyear\` for New Year's. No arguments give in a Happy Holidays.`,
-  usage: '<holiday>',
-  aliases: ['hd'],
-  execute(message, args) {
+const { Command } = require('discord.js-commando');
+
+module.exports = class HolidayCommand extends Command {
+  constructor(client) {
+    super(client, {
+      name: 'holiday',
+      aliases: ['hd'],
+      group: 'fun',
+      memberName: 'holiday',
+      description: `Use \`thxg\` for Thanksgiving, \`xmas\` for Christmas, and \`newyear\` for New Year's. No arguments give in a Happy Holidays.`,
+      guildOnly: true,
+      format: '<holiday>',
+      throttling: {
+        usages: 3,
+        duration: 5,
+      }      
+    });
+  }
+
+  run(msg, args) {
     switch (args[0]) {
       case 'thxg':
-        message.channel.send('@everyone Happy Thanksgiving-nya!');
+        msg.say('@everyone Happy Thanksgiving-nya!');
         break;
       case 'xmas':
-        message.channel.send('@everyone Merry Christmas-nya!');
+        msg.say('@everyone Merry Christmas-nya!');
         break;
       case 'newyear':
-        message.channel.send('@everyone Happy New Year-nya!');
+        msg.say('@everyone Happy New Year-nya!');
         break;
       default:
-        message.channel.send(`@everyone Happy Holidays-nya!`);
+        msg.say(`@everyone Happy Holidays-nya!`);
         break;
     }
   }

@@ -1,21 +1,34 @@
-module.exports = {
-  name: 'praise',
-  description: 'Praises whoever is mentioned, if not, Chii.',
-  usage: '[@member]',
-  aliases: ['prs'],
-  execute (message) {
-    const taggedUser = message.mentions.users.first();
+const { Command } = require('discord.js-commando');
+
+module.exports = class PraiseCommand extends Command {
+  constructor(client) {
+    super(client, {
+      name: 'praise',
+      aliases: ['prs'],
+      group: 'fun',
+      memberName: 'praise',
+      description: 'Praises whoever is mentioned, if not, Chii.',
+      format: '[@member]',
+      throttling: {
+        usages: 5,
+        duration: 5,
+      }
+    });
+  }
+
+  run(msg) {
+    const taggedUser = msg.mentions.users.first();
 
     if (!taggedUser) {
-      message.channel.send('Yay! I love getting praised, nya!');
+      msg.say('Yay! I love getting praised, nya!');
     }
 
     if (taggedUser) {
       // this gets the member from the user
-      const user = message.guild.member(taggedUser);
+      const user = msg.guild.member(taggedUser);
       if (user) {
-        message.channel.send(`You deserved being praised, ${user}, nya!`);
+        msg.say(`You deserved being praised, ${user}, nya!`);
       }
     }
   }
-}
+};

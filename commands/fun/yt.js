@@ -1,18 +1,35 @@
+const { Command } = require('discord.js-commando');
 //const fetch = require('node-fetch');
 //const cheerio = require('cheerio');
 //const YouTube = require('discord-youtube-api');
 //const youtube = new YouTube(process.env.ytkey);
 
-module.exports = {
-  name: 'YouTube',
-  description: 'Searches on YouTube [UNUSABLE]',
-  aliases: ['yt', 'youtube', 'searchyt'],
-  usage: '<query>',
-  async execute(message, args) {
-    message.reply('Command not supported yet!');
-    /*
-    if (!args.length) { message.reply('What do nya want me to search for-nya?!') }
+module.exports = class YTCommand extends Command {
+  constructor(client) {
+    super(client, {
+      name: 'YouTube',
+      aliases: ['yt', 'youtube', 'searchyt'],
+      group: 'fun',
+      memberName: 'yt',
+      description: 'Searches on YouTube [UNAVAILABLE]',
+      format: '<query>',
+      throttling: {
+        usages: 2,
+        duration: 10,
+      },
+      args: [
+        {
+          key: 'query',
+          prompt: 'What do nya want me to search for-nya?!',
+          type: 'string'
+        }
+      ]
+    });
+  }
 
+  async run(msg, { query }) {
+    msg.reply('Command not available!');
+    /*
     const video = 
     const url = await fetch(`https://www.youtube.com/results?search_query=${encodeURIComponent(args.join("+"))}`)
       .then((res) => res.text())
@@ -34,8 +51,19 @@ module.exports = {
         console.error(error);
       });
 
-    if (!url) return message.channel.send("No Results Found.");
-    return message.channel.send(`https://youtube.com${url}`);
+    if (!url) return msg.say("No Results Found.");
+    return mesg.say`https://youtube.com${url}`);
     */
+  }
+};
+
+
+module.exports = {
+
+
+
+  usage: '<query>',
+  async execute(message, args) {
+
   }
 }
