@@ -5,7 +5,7 @@ module.exports = class AvatarCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'avatar',
-	    aliases: ['icon', 'pfp', 'mirror'],
+	    aliases: ['icon', 'pfp', 'mirror', 'av'],
       group: 'fun',
       memberName: 'avatar',
 	    description: 'Get the avatar URL of the tagged user(s), or your own avatar.',
@@ -31,7 +31,7 @@ module.exports = class AvatarCommand extends Command {
         embed.setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL());
         return embed;
 		  });
-		  msg.say(avatarList);
+		  msg.embed(embed);
     }
   }
 }

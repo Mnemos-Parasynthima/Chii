@@ -17,7 +17,7 @@ module.exports = class ProtectCommand extends Command {
   }
 
   run(msg) {
-    const owner = this.client.owner;
+    const owner = process.env.ownerId;
     if (msg.author.id !== owner) {
       msg.reply('You\'re not my love and my Master-nya!');
     } else if (msg.author.id === owner) {

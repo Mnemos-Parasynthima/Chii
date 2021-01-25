@@ -1,15 +1,15 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 
+const client = new CommandoClient({
+  commandPrefix: process.env.prefix,
+  owner: process.env.ownerId,
+});
+
 /******
  * Code for outside of replit 
  * const { prefix, owner, token } = require('./config.json');
  ******/
-
-const client = new CommandoClient({
-  comandPrefix: process.env.prefix, // Use config.json for outside of replit
-  owner: process.env.ownerId, // Use config.json for outside of replit
-})
 
 //Allowing bot to be 24/7
 var http = require('http');
@@ -31,11 +31,11 @@ client.on('ready', () => {
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-    ['anime', 'Anime'],
-    ['fun', 'Fun'],
-    ['misc', 'Miscellaneous'],
+    ['anime', 'Anime!!'],
+    ['fun', 'Fun stuff'],
+    ['misc', 'Misc!!'],
     ['mod', 'Moderation'],
-    ['nsfw', 'NSFW'],
+    ['nsfw', 'NSFW!!'],
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({
@@ -44,10 +44,9 @@ client.registry
   })
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.once('ready', () => {
-  console.log('Ready!');
-});
+  client.once('ready', () => {
+    console.log('Ready!');
+  });
+  client.on('error', console.error);
 
-client.on('error', console.error);
-
-client.login(process.env.token);
+  client.login(process.env.token);

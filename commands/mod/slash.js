@@ -10,8 +10,8 @@ module.exports = class SlashCommand extends Command {
 	    description: 'Slash up to 99 messages.',
       format: '<number>',
       throttling: {
-        usages: 1,
-        duration: 0.5,
+        usages: 5,
+        duration: 1,
       },
       args: [
         {

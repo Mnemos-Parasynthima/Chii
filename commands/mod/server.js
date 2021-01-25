@@ -18,11 +18,11 @@ module.exports = class ServerCommand extends Command {
   }
 
   run(msg) {
-    const { name, memberCount, owner, region, createdAt, iconURL } = msg.guild;
+    const { name, memberCount, owner, region, createdAt} = msg.guild;
     const embed = new Discord.MessageEmbed()
       .setTitle(`${name} Server Info`)
       .setDescription(`The following contains neccesary information about the server \`${name}\`.`)
-      .setThumbnail(iconURL())
+      .setThumbnail(msg.guild.iconURL())
       .setColor('#ff0000')
       .setTimestamp()
       .addFields(

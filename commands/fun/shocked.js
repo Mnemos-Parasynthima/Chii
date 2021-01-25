@@ -4,7 +4,7 @@ module.exports = class ShockedCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'shocked',
-      aliases: ['gasp', 'sckd'],
+      aliases: ['gasp', 'shckd'],
       group: 'fun',
       memberName: 'shocked',
       description: 'Gets shocked',

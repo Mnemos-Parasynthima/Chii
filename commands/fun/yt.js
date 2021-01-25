@@ -7,8 +7,8 @@ const { Command } = require('discord.js-commando');
 module.exports = class YTCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'YouTube',
-      aliases: ['yt', 'youtube', 'searchyt'],
+      name: 'youtube',
+      aliases: ['yt', 'searchyt'],
       group: 'fun',
       memberName: 'yt',
       description: 'Searches on YouTube [UNAVAILABLE]',
@@ -28,7 +28,7 @@ module.exports = class YTCommand extends Command {
   }
 
   async run(msg, { query }) {
-    msg.reply('Command not available!');
+    msg.reply('Command not yet available!');
     /*
     const video = 
     const url = await fetch(`https://www.youtube.com/results?search_query=${encodeURIComponent(args.join("+"))}`)
@@ -56,14 +56,3 @@ module.exports = class YTCommand extends Command {
     */
   }
 };
-
-
-module.exports = {
-
-
-
-  usage: '<query>',
-  async execute(message, args) {
-
-  }
-}

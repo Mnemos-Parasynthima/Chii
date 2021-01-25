@@ -1,3 +1,9 @@
+/*
+* TODO
+* Fix args functionality 
+* Currently only gathering first index
+*/
+
 const { Command } = require('discord.js-commando');
 
 module.exports = class HolidayCommand extends Command {
@@ -7,7 +13,7 @@ module.exports = class HolidayCommand extends Command {
       aliases: ['hd'],
       group: 'fun',
       memberName: 'holiday',
-      description: `Use \`thxg\` for Thanksgiving, \`xmas\` for Christmas, and \`newyear\` for New Year's. No arguments give in a Happy Holidays.`,
+      description: `Use \`t\` for Thanksgiving, \`x\` for Christmas, and \`n\` for New Year's. No arguments give in a Happy Holidays.`,
       guildOnly: true,
       format: '<holiday>',
       throttling: {
@@ -18,14 +24,15 @@ module.exports = class HolidayCommand extends Command {
   }
 
   run(msg, args) {
+    console.log(args[0]);
     switch (args[0]) {
-      case 'thxg':
+      case 't': //thxg
         msg.say('@everyone Happy Thanksgiving-nya!');
         break;
-      case 'xmas':
+      case 'x': //xmas
         msg.say('@everyone Merry Christmas-nya!');
         break;
-      case 'newyear':
+      case 'n': //newyear
         msg.say('@everyone Happy New Year-nya!');
         break;
       default:

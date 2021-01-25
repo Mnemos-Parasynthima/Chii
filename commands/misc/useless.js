@@ -19,15 +19,15 @@ module.exports = class UselessCommand extends Command {
 
   run(msg) {
 		const taggedUser = msg.mentions.users.first();
-    const owner = this.client.owner;
+    const owner = process.env.ownerId;
 		
-    if (!taggedUser) { 
+    if (!taggedUser) { // If no tag
       msg.say('Everyone\'s useless! Except for my Master-nya');
     }
 
-    if (taggedUser && taggedUser.id !== owner) {
+    if (taggedUser && taggedUser.id !== owner) { // If tag and tag is not owner
 	    msg.say(`Useless ${taggedUser}-nya!`);
-    } else {
+    } else if (taggedUser && taggedUser.id === owner) { // If tag and tag is owner
       msg.reply('No u!');
     }
   }

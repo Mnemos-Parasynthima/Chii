@@ -21,7 +21,7 @@ module.exports = class MasterCommand extends Command {
     const embed = new Discord.MessageEmbed()
       .setTitle('UmbreOn-sama, my Master!')
       .setColor('#ff0000')
-      .setThumbnail(msg.this.client.user.displayAvatarURL())
+      .setThumbnail(msg.client.user.displayAvatarURL())
       .setDescription('UmbreOn-sama is my Master and love. The following is information about him-nya!')
       .setFooter('Have a nice day-nya!')
       .setTimestamp()

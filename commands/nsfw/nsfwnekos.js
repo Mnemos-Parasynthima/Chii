@@ -8,7 +8,7 @@ module.exports = class LewdNekosCommand extends Command {
       name: 'nsfwn',
       aliases: ['lneko', 'lewdneko'],
       group: 'nsfw',
-      memberName: 'nsfwngif',
+      memberName: 'nsfwn',
       description: 'NYA!!',
       throttling: {
         usages: 3,

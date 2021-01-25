@@ -1,3 +1,8 @@
+/*
+* TODO
+* Add thumbnails depending on attack from online source
+*/
+
 const Discord = require('discord.js');
 const { Command } = require('discord.js-commando');
 
@@ -20,7 +25,7 @@ module.exports = class FightCommand extends Command {
 
   run(msg) {
     const taggedUser = msg.mentions.users.first();
-    const owner = this.client.owner;
+    const owner = process.env.ownerId;
     //console.log(taggedUser);
 
     if(!taggedUser) {
@@ -39,14 +44,14 @@ module.exports = class FightCommand extends Command {
       const reactions = ['UwU', '♡＾▽＾♡', '( =ω=)..nyaa', 'ต(=ω=)ต', '┐( ˘_˘ )┌', '	(*≧ω≦*)'];
       const reaction = Math.floor(Math.random() * reactions.length);
 
-      const target = taggedUser.username;
+      //const target = taggedUser.username; // Name only, no @
       const embed = new Discord.MessageEmbed()
         .setTitle(`Fight with SoulWorker Chii!`)
         .setColor('#ff0000')
         .setDescription(`SoulWorker Chii uses \`${attacks[attack]}\` on ${taggedUser}. Instant one-hit K.O.!\n
           Chii: ${reactions[reaction]}`
         )
-        .setImage(msg.this.client.user.displayAvatarURL())
+        .setImage(msg.client.user.displayAvatarURL())
       ;
       /*switch(attack) {
         case 0:
