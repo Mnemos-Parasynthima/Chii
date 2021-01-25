@@ -1,11 +1,25 @@
-module.exports =  {
-	name: 'baka',
-	description: 'Calls someone baka.',
-  usage: '<@member>',
-  aliases: ['baka'],
-	execute(message) {
-		const taggedUser = message.mentions.users.first();
+const { Command } = require('discord.js-commando');
+
+module.exports = class BakaCommand extends Command {
+  constructor(client) {
+    super(client, {
+	    name: 'baka',
+      aliases: ['bk'],
+      group: 'misc',
+      memberName: 'baka',
+	    description: 'Calls someone baka.',
+      guildOnly: true,
+      format: '<@member>',
+      throttling: {
+        usages: 3,
+        duration: 5,
+      }
+    });
+  }
+
+  run(msg) {
+		const taggedUser = msg.mentions.users.first();
 		
-		message.channel.send(`Baka ${taggedUser}-nya`);
-	}
+		msg.say(`Baka ${taggedUser}-nya`);
+  }
 };

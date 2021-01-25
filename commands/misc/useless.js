@@ -1,20 +1,34 @@
-module.exports = {
-	name: 'useless',
-	description: 'Calls someone useless if name provided.',
-  usage: '[@member]',
-  aliases: ['useless'],
-	execute(message) {
-		const taggedUser = message.mentions.users.first();
-    const owner = process.env.ownerId;
+const { Command } = require('discord.js-commando');
+
+module.exports = class UselessCommand extends Command {
+  constructor(client) {
+    super(client, {
+	    name: 'useless',
+      aliases: ['usls'],
+      group: 'misc',
+      memberName: 'useless',
+	    description: 'Calls someone useless if name provided.',
+      guildOnly: true,
+      format: '[@member]',
+      throttling: {
+        usages: 3,
+        duration: 5,
+      }
+    });
+  }
+
+  run(msg) {
+		const taggedUser = msg.mentions.users.first();
+    const owner = this.client.owner;
 		
     if (!taggedUser) { 
-      message.channel.send('Everyone\'s useless! Except for my Master-nya');
+      msg.say('Everyone\'s useless! Except for my Master-nya');
     }
 
     if (taggedUser && taggedUser.id !== owner) {
-	    message.channel.send(`Useless ${taggedUser}-nya!`);
+	    msg.say(`Useless ${taggedUser}-nya!`);
     } else {
-      message.reply('No u!');
+      msg.reply('No u!');
     }
-	}
+  }
 };
