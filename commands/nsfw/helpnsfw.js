@@ -37,12 +37,10 @@ module.exports = class NHelpCommand extends Command {
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
-        .setDescription('I am SoulWorker Chii Aruel, one of the best SoulWorkers from West Cloudreamnya. Nya only Master is Umbre0n-sama, but I suppose I\'ll accept your commands-nya. UwU')
-        .setFooter(`Send \`${prefix} help [command name]\` for more info onya a command-nya!`)
         .addFields(
           {
             name: 'NSFW',
-            value: `\`cum\`, \`hentai\`, \`hgif\`, \`nsfwngif\`, \`nsfwn\`, \`oppai\`, \`clit\``
+            value: `\`bj\`, \`bjgif\`, \`cumgif\`, \`erok\`, \`lkemo\`, \`futa\`, \`hentai\`, \`hgif\`, \`kunigif\`, \`nsfwn\`, \`nsfwngif\`, \`tits\`, \`oppaigif\`, \`pussy\`, \`clitg\`, \`nhelp\``
           }
         )
 

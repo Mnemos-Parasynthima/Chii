@@ -36,6 +36,7 @@ client.registry
     ['misc', 'Misc!!'],
     ['mod', 'Moderation'],
     ['nsfw', 'NSFW!!'],
+    ['rp', 'Roleplaying']
   ])
   .registerDefaultGroups()
   .registerDefaultCommands({

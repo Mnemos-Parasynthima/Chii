@@ -46,16 +46,20 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`poll\`, \`random\``
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`poll\`, \`random\`, \`youtube\``
           },
           {
             name: 'Anime',
-            value: `\`anime\`, \`nekos\`` // More to come
+            value: `\`anime\`, \`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
           },
           {
             name: 'Miscelleanous',
-            value: `\`baka\`, \`fight\`, \`hiss\`, \`souldreg\`, \`useless\`, \`master\`, \`youtube\``
-          } // Other categories???
+            value: `\`fight\`, \`hiss\`, \`useless\`, \`master\``
+          },
+          {
+            name: 'Roleplaying',
+            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
+          }
         )
 
       return message.embed(embed)
