@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const { Command } = require('discord.js-commando');
 
-module.exports = class PussyCommand extends Command {
+module.exports = class LewdNekosCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'pussy',
-      aliases: ['pssy', 'clt', 'cum'],
+      name: 'nsfwn',
+      aliases: ['lneko', 'lewdneko'],
       group: 'nsfw',
-      memberName: 'pussy',
-      description: 'No description necessary',
+      memberName: 'nsfwn',
+      description: 'NYA!!',
       throttling: {
         usages: 3,
         duration: 1,
@@ -19,7 +19,7 @@ module.exports = class PussyCommand extends Command {
 
   async run(msg) {
     const owner = process.env.ownerId;
-    const endpoints = ['pussy_jpg', 'cum_jpg'];
+    const endpoints = ['lewd', 'eron'];
     const endpoint = Math.floor(Math.random() * endpoints.length);
 
     if (msg.author.id === owner && msg.channel.nsfw === true) {

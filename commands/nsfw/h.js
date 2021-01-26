@@ -6,7 +6,7 @@ module.exports = class HentaiCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'hentai',
-      aliases: ['hnt'],
+      aliases: ['hnt', 'solog', 'slg'],
       group: 'nsfw',
       memberName: 'hentai',
       description: 'No description necessary',
@@ -19,8 +19,11 @@ module.exports = class HentaiCommand extends Command {
 
   async run(msg) {
     const owner = process.env.ownerId;
+    const endpoints = ['hentai', 'solo', 'solog'];
+    const endpoint = Math.floor(Math.random() * endpoints.length);
+
     if (msg.author.id === owner && msg.channel.nsfw === true) {
-    const { url } = await fetch('https://nekos.life/api/v2/img/hentai')
+    const { url } = await fetch(`https://nekos.life/api/v2/img/${endpoints[endpoint]}`)
       .then((res) => res.json());
       const embed = new Discord.MessageEmbed()
         .setTitle('Hentai')

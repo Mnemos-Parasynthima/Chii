@@ -2,13 +2,13 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const { Command } = require('discord.js-commando');
 
-module.exports = class PussyCommand extends Command {
+module.exports = class LewdKemoCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'pussy',
-      aliases: ['pssy', 'clt', 'cum'],
+      name: 'lkemo',
+      aliases: ['lewdkemo', 'erokemo'],
       group: 'nsfw',
-      memberName: 'pussy',
+      memberName: 'lkemo',
       description: 'No description necessary',
       throttling: {
         usages: 3,
@@ -19,14 +19,14 @@ module.exports = class PussyCommand extends Command {
 
   async run(msg) {
     const owner = process.env.ownerId;
-    const endpoints = ['pussy_jpg', 'cum_jpg'];
+    const endpoints = ['erokemo', 'lewdkemo'];
     const endpoint = Math.floor(Math.random() * endpoints.length);
 
     if (msg.author.id === owner && msg.channel.nsfw === true) {
     const { url } = await fetch(`https://nekos.life/api/v2/img/${endpoints[endpoint]}`)
       .then((res) => res.json());
       const embed = new Discord.MessageEmbed()
-        .setTitle('Lewd Neko(s)')
+        .setTitle('Lewd Kemonomimi')
         .setColor('#ff0000')
         .setImage(url)
         .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

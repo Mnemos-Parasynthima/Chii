@@ -5,10 +5,10 @@ const { Command } = require('discord.js-commando');
 module.exports = class OppaiCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'oppai',
-      aliases: ['boobs', 'opp'],
+      name: 'tits',
+      aliases: ['boobs', 'oppai', 'opp'],
       group: 'nsfw',
-      memberName: 'oppai',
+      memberName: 'tits',
       description: 'No description necessary',
       throttling: {
         usages: 3,
@@ -19,8 +19,9 @@ module.exports = class OppaiCommand extends Command {
 
   async run(msg) {
     const owner = process.env.ownerId;
+
     if (msg.author.id === owner && msg.channel.nsfw === true) {
-    const { url } = await fetch('https://nekos.life/api/v2/img/boobs')
+    const { url } = await fetch('https://nekos.life/api/v2/img/tits')
       .then((res) => res.json());
       const embed = new Discord.MessageEmbed()
         .setTitle('Oppai')

@@ -2,13 +2,13 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const { Command } = require('discord.js-commando');
 
-module.exports = class CumCommand extends Command {
+module.exports = class OppaiGIFCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'cum',
-      aliases: ['semen', 'smn'],
+      name: 'oppaigif',
+      aliases: ['boobsg', 'oppgif'],
       group: 'nsfw',
-      memberName: 'cum',
+      memberName: 'oppaigif',
       description: 'No description necessary',
       throttling: {
         usages: 3,
@@ -20,10 +20,10 @@ module.exports = class CumCommand extends Command {
   async run(msg) {
     const owner = process.env.ownerId;
     if (msg.author.id === owner && msg.channel.nsfw === true) {
-    const { url } = await fetch('https://nekos.life/api/v2/img/cum')
+    const { url } = await fetch('https://nekos.life/api/v2/img/boobs')
       .then((res) => res.json());
       const embed = new Discord.MessageEmbed()
-        .setTitle('Hentai cum')
+        .setTitle('Oppai GIF')
         .setColor('#ff0000')
         .setImage(url)
         .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

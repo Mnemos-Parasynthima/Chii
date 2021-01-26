@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const { Command } = require('discord.js-commando');
 
-module.exports = class LewdNekosCommand extends Command {
+module.exports = class BjGIFCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'nsfwn',
-      aliases: ['lneko', 'lewdneko'],
+      name: 'bjgif',
+      aliases: ['blowjg', 'blowjobg'],
       group: 'nsfw',
-      memberName: 'nsfwn',
-      description: 'NYA!!',
+      memberName: 'bjgif',
+      description: 'No description necessary',
       throttling: {
         usages: 3,
         duration: 1,
@@ -20,10 +20,10 @@ module.exports = class LewdNekosCommand extends Command {
   async run(msg) {
     const owner = process.env.ownerId;
     if (msg.author.id === owner && msg.channel.nsfw === true) {
-    const { url } = await fetch('https://nekos.life/api/v2/img/lewd')
+    const { url } = await fetch('https://nekos.life/api/v2/img/bj')
       .then((res) => res.json());
       const embed = new Discord.MessageEmbed()
-        .setTitle('Lewd Neko(s)')
+        .setTitle('Blowjob GIF')
         .setColor('#ff0000')
         .setImage(url)
         .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
