@@ -36,6 +36,7 @@ client.registry
     ['fun', 'Fun stuff'],
     ['misc', 'Misc!!'],
     ['mod', 'Moderation'],
+    ['music', 'Music'],
     ['nsfw', 'NSFW!!'],
     ['rp', 'Roleplaying']
   ])
