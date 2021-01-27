@@ -1,6 +1,6 @@
 const { Command } = require('discord.js-commando');
 const { MessageEmbed, Util } = require('discord.js');
-const ytdl = require('ytdl-core');
+const ytdl = require('ytdl-core-discord');
 const yts = require('yt-search');
 
 module.exports = class PlayCommand extends Command {
@@ -13,7 +13,7 @@ module.exports = class PlayCommand extends Command {
       description: 'Search and play music-nya!',
       guildOnly: true,
       clientPermissions: ['CONNECT', 'SPEAK'],
-      format: '<name | link>',
+      format: '<name>',
       throttling: {
         usages: 3,
         duration: 1,
@@ -21,7 +21,7 @@ module.exports = class PlayCommand extends Command {
       args: [
         {
           key: 'query',
-          prompt: 'What music-nya?! Give me a nyame or link!',
+          prompt: 'What music-nya?! Give me a nyame!',
           type: 'string'
         }
       ]
@@ -48,16 +48,16 @@ module.exports = class PlayCommand extends Command {
       url: musicInfo.url,
       duration: musicInfo.duration.toString(),
       img: musicInfo.image,
-      req: msg.author
+      req: msg.author.username
     };
 
     if (serverQueue) {
       serverQueue.musics.push(music);
-      let embed = new MessageEmbed()
+      let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
         .setTitle('Music has been nyadded to the queue')
-        .setImage(music.img)
         .setColor('#ff0000')
-        .setFooter(`Requested by ${msg.author}`)
+        .setImage(music.img)
+        .setFooter(`Requested by ${music.req}`)
         .addFields(
           {
             name: 'Title',
@@ -95,7 +95,7 @@ module.exports = class PlayCommand extends Command {
       }
 
       const dispatcher = queue.connection
-        .play(ytdl(music.url))
+        .play(await ytdl(music.url), { type: 'opus', highWaterMark: 50 })
         .on('finish', () => {
           queue.musics.shift();
           play(queue.musics[0])
@@ -103,11 +103,11 @@ module.exports = class PlayCommand extends Command {
         .on('error', error => console.error(error));
       
       dispatcher.setVolumeLogarithmic(queue.volume / 5);
-      let embed = new MessageEmbed()
+      let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
         .setTitle('Start Playing')
-        .setImage(music.img)
         .setColor('#ff0000')
-        .setFooter(`Request by ${msg.author}`)
+        .setImage(music.img)
+        .setFooter(`Request by ${music.req}`)
         .addFields(
           {
             name: 'Title',
