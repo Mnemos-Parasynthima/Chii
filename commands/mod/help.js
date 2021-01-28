@@ -32,8 +32,6 @@ module.exports = class HelpCommand extends Command {
       .setThumbnail(message.client.user.displayAvatarURL())
       .setTimestamp()
     const commands = message.client.registry.commands; // TODO: Destructure
-    //console.log(commands);
-    //console.log(message.client);
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
@@ -53,13 +51,17 @@ module.exports = class HelpCommand extends Command {
             value: `\`anime\`, \`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
           },
           {
+            name: 'Roleplaying',
+            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
+          },
+          {
+            name: 'Music',
+            value: `\`pause\`, \`play\`, \`queue\`, \`remove\`, \`resume\`, \`skip\`, \`stop\`, \`volume\`` // Add loop
+          },
+          {
             name: 'Miscelleanous',
             value: `\`fight\`, \`hiss\`, \`useless\`, \`master\``
           },
-          {
-            name: 'Roleplaying',
-            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
-          }
         )
 
       return message.embed(embed)
@@ -74,8 +76,6 @@ module.exports = class HelpCommand extends Command {
 
     const name = args.toLowerCase();
     const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
-    //console.log(`${name}, ${command}`);
-    //console.log(args[0]);
 
     if (!command) {
      return message.reply('Nyat\'s not a valid command-nya!');

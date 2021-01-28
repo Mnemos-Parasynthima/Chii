@@ -7,6 +7,9 @@ const client = new CommandoClient({
   owner: process.env.ownerId,
 });
 
+// Collection for music
+client.queue = new Map();
+
 /******
  * Code for outside of replit 
  * const { prefix, owner, token } = require('./config.json');
@@ -36,6 +39,7 @@ client.registry
     ['fun', 'Fun stuff'],
     ['misc', 'Misc!!'],
     ['mod', 'Moderation'],
+    ['music', 'Music'],
     ['nsfw', 'NSFW!!'],
     ['rp', 'Roleplaying']
   ])
