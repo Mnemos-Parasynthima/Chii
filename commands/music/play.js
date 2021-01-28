@@ -77,7 +77,7 @@ module.exports = class PlayCommand extends Command {
     }
 
     const queueConstruct = {
-      textChanel: msg.channel,
+      textChannel: msg.channel,
       voiceChannel: channel,
       connection: null,
       musics: [],

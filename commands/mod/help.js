@@ -57,7 +57,7 @@ module.exports = class HelpCommand extends Command {
           {
             name: 'Music',
             value: `\`pause\`, \`play\`, \`queue\`, \`remove\`, \`resume\`, \`skip\`, \`stop\`, \`volume\`` // Add loop
-          }
+          },
           {
             name: 'Miscelleanous',
             value: `\`fight\`, \`hiss\`, \`useless\`, \`master\``
