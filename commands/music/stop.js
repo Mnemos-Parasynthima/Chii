@@ -30,15 +30,10 @@ module.exports = class StopCommand extends Command {
     const serverQueue = msg.client.queue.get(msg.guild.id);
     try {
       if (serverQueue) {
-        //console.log(`If block sQ: ${serverQueue}`);
-        //console.log('Entered if items still exist in queue, will remove items and disconnect')
         serverQueue.musics = [];
-        //console.log(`If block sQ after clearing: ${serverQueue}`);
         serverQueue.connection.dispatcher.end();
         msg.guild.me.voice.channel.leave();
       } else {
-        //console.log(`Else block sQ: ${serverQueue}`);
-        //console.log('Entered if items no longer exists, disconnect auto.');
         msg.guild.me.voice.channel.leave();
       }
       msg.embed(embed);

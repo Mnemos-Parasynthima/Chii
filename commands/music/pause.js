@@ -40,7 +40,6 @@ module.exports = class PauseCommand extends Command {
         msg.embed(embed);
       } else { msg.say('Nyothing\'s playing!'); }
     } catch {
-      console.log('Entered catch');
       serverQueue.connection.dispatcher.end();
       await channel.leave();
     }

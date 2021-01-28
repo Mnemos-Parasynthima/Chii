@@ -43,7 +43,6 @@ module.exports = class VolumeCommand extends Command {
       try {
         console.log(`Entering try block: ${vol}`);
         serverQueue.volume = vol;
-        console.log(`After setting queue volume to vol: ${serverQueue.volume}`);
         serverQueue.connection.dispatcher.setVolumeLogarithmic(vol / 5);
         msg.say(`I have set nya volume to **${vol}**`);
       } catch {

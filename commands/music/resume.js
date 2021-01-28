@@ -36,7 +36,6 @@ module.exports = class ResumeCommand extends Command {
         msg.embed(embed);
       } else { msg.say('Nyothing to resume!'); }
     } catch {
-      console.log('Entered catch');
       serverQueue.connection.dispatcher.end();
       msg.say('Try again')
     }

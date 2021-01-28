@@ -104,7 +104,7 @@ module.exports = class PlayCommand extends Command {
       
       dispatcher.setVolumeLogarithmic(queue.volume / 5);
       let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
-        .setTitle('Start Playing')
+        .setTitle('Playing')
         .setColor('#ff0000')
         .setImage(music.img)
         .setFooter(`Request by ${music.req}`)
@@ -123,7 +123,7 @@ module.exports = class PlayCommand extends Command {
           }
         )
 
-      queue.textChanel.send(embed);
+      queue.textChannel.send(embed);
     };
 
     try {
