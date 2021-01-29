@@ -1,6 +1,6 @@
 const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
-const { lewd } = require('../../assets/json/rp')
+const { lewd } = require('../../assets/json/rp.json')
 
 module.exports = class LewdCommand extends Command {
   constructor(client) {
@@ -25,5 +25,6 @@ module.exports = class LewdCommand extends Command {
       .setImage(lewd[i])
 
     msg.embed(embed);
+    //console.log(lewd[i]);
   }
 };
