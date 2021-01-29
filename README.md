@@ -10,3 +10,5 @@ Features to add:
 
 Link to invite Chii:
   https://discord.com/api/oauth2/authorize?client_id=788284993759215656&permissions=1077341254&scope=bot
+  
+If forked, make sure to give some credit, nya!
