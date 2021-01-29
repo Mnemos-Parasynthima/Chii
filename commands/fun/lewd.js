@@ -19,9 +19,10 @@ module.exports = class LewdCommand extends Command {
   }
 
   run(msg) {
+    const i = Math.floor(Math.random() * lewd.length);
     const embed = new MessageEmbed()
       .setColor('#ff0000')
-      .setImage((lewd[Math.round(Math.random() * (lewd.length - 1))])
+      .setImage(lewd[i])
 
     msg.embed(embed);
   }
