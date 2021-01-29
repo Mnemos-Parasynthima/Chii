@@ -20,6 +20,7 @@ module.exports = class SayCommand extends Command {
       'I love you, nya', 'I wuv my Master	(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)', 'I\'m proud', '♡＾▽＾♡', '┐( ˘_˘ )┌'
     ];
     const reply = Math.floor(Math.random() * replies.length);
+    msg.delete();
     msg.say(replies[reply]);
   }
 };
