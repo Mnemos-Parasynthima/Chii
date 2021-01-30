@@ -40,7 +40,7 @@ module.exports = class HelpCommand extends Command {
         .addFields(
           {
             name: 'Anime',
-            value: `\`anime\`, \`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
+            value: `\`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
           },
           {
             name: 'Fun',

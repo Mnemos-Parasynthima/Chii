@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
-const randomPuppy = require('random-puppy');
+const redditImageFetcher = require('reddit-image-fetcher');
 /*
 ****TODO****
 Incorporate better subreddit image get
@@ -20,21 +20,29 @@ module.exports = class AnimeCommand extends Command {
     });
   }
 
-  run(msg) {
+  //FIIIXX
+  async run(msg) {
     // Array of subreddits to fetch data from
-    const subreddits = ['Animewallpaer', 'Re_Zero', 'OneTrueEmilia', 'awwnime']; // TODO: Add more subreddits
-    const subreddit = Math.floor(Math.random() * subreddits.length); // Random nuber
-    const source = subreddits[subreddit]; // Gets a random subreddit from array
+    const subreddit = ['OneTrueEmilia', 'awwnime']; // TODO: Add more subreddits
+    const i = Math.floor(Math.random() * subreddit.length); // Random number
 
-    randomPuppy(source) // Name of subreddit between parent.
-      .then(url => {
-        console.log(`${url}; Source: ${source}`); // For retrieval info
-        const embed = new Discord.MessageEmbed()
+    await redditImageFetcher.fetch({
+      type: 'custom', //Opt: 'meme', 'wallpaper', 'custom'
+      subreddit: subreddit[i] // Name of subreddit
+    })
+      
+  }
+};
+
+/*
+.then(image => {
+        console.log(`${image}; Source: ${subreddit[i]}`); // For retrieval info
+        const embed = new MessageEmbed()
           .setTitle('Anime Pictures!')
           .setColor('#ff0000')
-          .setDescription(`${url}`)
+          .setDescription(`${image}`)
           .setImage(url)
-          .setFooter(`Request by: ${msg.author.username} | From '${source}' subreddit`, msg.author.displayAvatarURL({ size: 32 }))
+          .setFooter(`Request by: ${msg.author.username} | From '${subreddit[i]}' subreddit`, msg.author.displayAvatarURL({ size: 32 }))
           .setTimestamp()
 
         return msg.embed(embed);
@@ -43,5 +51,4 @@ module.exports = class AnimeCommand extends Command {
         console.error(error);
         msg.say('Error!');
       });
-  }
-};
+*/

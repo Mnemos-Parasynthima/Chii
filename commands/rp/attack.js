@@ -30,7 +30,6 @@ module.exports = class AttackCommand extends Command {
 
     if (tagged) {
       const i = Math.floor(Math.random() * attack.length);
-      console.log(attack[i]);
       embed.setDescription(`**${msg.author.username}** attacks **${tagged.username}**`).setImage(attack[i]);
 	    msg.embed(embed);
     }
