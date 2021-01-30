@@ -9,7 +9,7 @@ module.exports = class HissCommand extends Command {
       memberName: 'hiss',
       description: 'Hisses',
       guildOnly: true,
-      format: '<@member>',
+      format: '@member>',
       throttling: {
         usages: 3,
         duration: 5,

@@ -11,7 +11,7 @@ module.exports = class BakaCommand extends Command {
       memberName: 'baka',
 	    description: 'Calls someone baka.',
       guildOnly: true,
-      format: '<@member>',
+      format: '<member>',
       throttling: {
         usages: 3,
         duration: 5,

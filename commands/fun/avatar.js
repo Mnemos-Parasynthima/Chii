@@ -9,7 +9,7 @@ module.exports = class AvatarCommand extends Command {
       group: 'fun',
       memberName: 'avatar',
 	    description: 'Get the avatar URL of the tagged user(s), or your own avatar.',
-      format: '[@member]',
+      format: '[member]',
       throttling: {
         usages: 3,
         duration: 5,

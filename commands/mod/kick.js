@@ -9,7 +9,7 @@ module.exports = class NameCommand extends Command {
 	    description: 'Tag a member and kick them.',
       guildOnly: true,
       userPermissions: ['KICK_MEMBERS'],
-      format: '<@member>',
+      format: '<member>',
       throttling: {
         usages: 1,
         duration: 10,

@@ -11,7 +11,7 @@ module.exports = class PatCommand extends Command {
       memberName: 'pat',
 	    description: 'Pats someone.',
       guildOnly: true,
-      format: '<@member>',
+      format: '<member>',
       throttling: {
         usages: 3,
         duration: 5,

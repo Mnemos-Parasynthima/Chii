@@ -8,7 +8,7 @@ module.exports = class ServerCommand extends Command {
       aliases: ['srv', 'server-info'],
       group: 'mod',
       memberName: 'server',
-      description: 'Displays infor about this server.',
+      description: 'Displays info about the server.',
       guildOnly: true,
       throttling: {
         usages: 1,

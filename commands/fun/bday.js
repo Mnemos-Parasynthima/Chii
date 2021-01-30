@@ -8,7 +8,7 @@ module.exports = class BdayCommand extends Command {
       group:'fun',
       memberName: 'bday',
       description: 'No description necessary',
-      format:'<@member>'
+      format:'<member>'
     });
   }
 

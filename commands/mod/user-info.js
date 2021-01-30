@@ -18,8 +18,7 @@ module.exports = class UserCommand extends Command {
   }
 
   run(msg) {
-    const user = msg.author.username;
-    const id = `||${msg.author.id}||`;
+    const user = msg.author.username; // Destructure??
     const tag = msg.author.tag;
     const pfp = msg.author.avatarURL();
     const embed = new Discord.MessageEmbed()
@@ -32,17 +31,13 @@ module.exports = class UserCommand extends Command {
         {
           name: 'Name:',
           value: user
-        },
-        {
-          name: 'ID',
-          value: id
-        },
+        }
         {
           name: 'Tag',
           value: tag
         }
       )
     ;
-    msg.say(embed);
+    msg.embed(embed);
   }
 };

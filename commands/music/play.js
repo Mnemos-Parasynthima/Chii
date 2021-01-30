@@ -28,6 +28,7 @@ module.exports = class PlayCommand extends Command {
     });
   }
 
+  // TODO: Add ability to give link
   async run(msg, { query }) {
     const channel = msg.member.voice.channel;
     if (!channel) {

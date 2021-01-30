@@ -26,7 +26,7 @@ module.exports = class AnimeCommand extends Command {
     const subreddit = Math.floor(Math.random() * subreddits.length); // Random nuber
     const source = subreddits[subreddit]; // Gets a random subreddit from array
 
-    randomPuppy(source) // Name of subreddit between parenth.
+    randomPuppy(source) // Name of subreddit between parent.
       .then(url => {
         console.log(`${url}; Source: ${source}`); // For retrieval info
         const embed = new Discord.MessageEmbed()

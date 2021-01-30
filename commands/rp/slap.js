@@ -11,7 +11,7 @@ module.exports = class SlapCommand extends Command {
       memberName: 'slap',
 	    description: 'Slaps someone.',
       guildOnly: true,
-      format: '<@member>',
+      format: '<member>',
       throttling: {
         usages: 3,
         duration: 5,

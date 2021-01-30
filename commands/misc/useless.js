@@ -11,7 +11,7 @@ module.exports = class UselessCommand extends Command {
       memberName: 'useless',
 	    description: 'Calls someone useless if name provided.',
       guildOnly: true,
-      format: '[@member]',
+      format: '[member]',
       throttling: {
         usages: 3,
         duration: 5,

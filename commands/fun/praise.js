@@ -8,7 +8,7 @@ module.exports = class PraiseCommand extends Command {
       group: 'fun',
       memberName: 'praise',
       description: 'Praises whoever is mentioned, if not, Chii.',
-      format: '[@member]',
+      format: '[member]',
       throttling: {
         usages: 5,
         duration: 5,
