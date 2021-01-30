@@ -39,29 +39,30 @@ module.exports = class HelpCommand extends Command {
         .setFooter(`Send \`${prefix} help [command name]\` for more info onya a command-nya!`)
         .addFields(
           {
-            name: 'Moderation',
-            value: `\`help\`, \`kick\`, \`ban\`, \`server\`, \`slash\`, \`user-info\``
-          },
-          {
-            name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`praise\`, \`say\`, \`shocked\`, \`poll\`, \`random\`, \`youtube\``
-          },
-          {
             name: 'Anime',
             value: `\`anime\`, \`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
           },
           {
-            name: 'Roleplaying',
-            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
+            name: 'Fun',
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`youtube\``
+          },
+          {
+            name: 'Miscelleanous',
+            value: `\`fight\`, \`hiss\`, \`master\`, \`useless\``
+          },
+          {
+            name: 'Moderation',
+            value: `\`ban\`, \`help\`, \`kick\`,  \`server\`, \`slash\`, \`user-info\``
           },
           {
             name: 'Music',
             value: `\`pause\`, \`play\`, \`queue\`, \`remove\`, \`resume\`, \`skip\`, \`stop\`, \`volume\`` // Add loop
           },
           {
-            name: 'Miscelleanous',
-            value: `\`fight\`, \`hiss\`, \`useless\`, \`master\``
+            name: 'Roleplaying',
+            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
           },
+
         )
 
       return message.embed(embed)

@@ -32,15 +32,13 @@ module.exports = class NHelpCommand extends Command {
       .setThumbnail(message.client.user.displayAvatarURL())
       .setTimestamp()
     const commands = message.client.registry.commands; // TODO: Destructure
-    //console.log(commands);
-    //console.log(message.client);
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
         .addFields(
           {
             name: 'NSFW',
-            value: `\`bj\`, \`bjgif\`, \`cumgif\`, \`erok\`, \`lkemo\`, \`futa\`, \`hentai\`, \`hgif\`, \`kunigif\`, \`nsfwn\`, \`nsfwngif\`, \`tits\`, \`oppaigif\`, \`pussy\`, \`clitg\`, \`nhelp\``
+            value: `\`bj\`, \`bjgif\`, \`booru\`, \`cumgif\`, \`erok\`, \`lkemo\`, \`futa\`, \`hentai\`, \`nhelp\`, \`hgif\`, \`kunigif\`, \`nsfwn\`, \`nsfwngif\`, \`tits\`, \`oppaigif\`, \`pussy\`, \`clitg\``
           }
         )
 
@@ -56,8 +54,6 @@ module.exports = class NHelpCommand extends Command {
 
     const name = args.toLowerCase();
     const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
-    //console.log(`${name}, ${command}`);
-    //console.log(args[0]);
 
     if (!command) {
      return message.reply('Nyat\'s not a valid command-nya!');
