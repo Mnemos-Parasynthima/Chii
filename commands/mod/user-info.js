@@ -31,7 +31,7 @@ module.exports = class UserCommand extends Command {
         {
           name: 'Name:',
           value: user
-        }
+        },
         {
           name: 'Tag',
           value: tag
