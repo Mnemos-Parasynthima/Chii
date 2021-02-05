@@ -5,6 +5,16 @@
 
 const Discord = require('discord.js');
 const { Command } = require('discord.js-commando');
+const {
+  budocat,
+  budo2,
+  budo3,
+  budo5,
+  budoka6,
+  kittykendo,
+  bakeneko,
+  kasha
+} = require('../../assets/json/imgs.json');
 
 module.exports = class FightCommand extends Command {
   constructor(client) {
@@ -36,58 +46,59 @@ module.exports = class FightCommand extends Command {
     if(taggedUser && taggedUser.id !== owner) {
       //console.log('Entered if taggedUser and if taggedUser is strictly not me');
       const attacks = [
-        'Budo 2: Claws Out', 'Kitty Kendo', 'Budo 5: Cat by Night', 'Budoka 6: Dance of Death',
-        'Kasha\'s carriage', 'Bakeneko\'s Curse', 'Budo 3: Prey Sighted', 'Budo Cat'
+        'Budo Cat', 'Budo 2: Claws Out', 'Budo 3: Prey Sighted', 'Budo 5: Cat by Night',
+        'Budoka 6: Dance of Death', 'Kitty Kendo', 'Bakeneko\'s Curse', 'Kasha\'s carriage'  
       ];
-      const attack = Math.floor(Math.random() * attacks.length);
+      const i = Math.floor(Math.random() * attacks.length);
 
       const reactions = ['UwU', '♡＾▽＾♡', '( =ω=)..nyaa', 'ต(=ω=)ต', '┐( ˘_˘ )┌', '	(*≧ω≦*)'];
-      const reaction = Math.floor(Math.random() * reactions.length);
+      const j = Math.floor(Math.random() * reactions.length);
 
       //const target = taggedUser.username; // Name only, no @
       const embed = new Discord.MessageEmbed()
         .setTitle(`Fight with SoulWorker Chii!`)
         .setColor('#ff0000')
-        .setDescription(`SoulWorker Chii uses \`${attacks[attack]}\` on ${taggedUser}. Instant one-hit K.O.!\n
-          Chii: ${reactions[reaction]}`
+        .setDescription(`SoulWorker Chii uses \`${attacks[i]}\` on ${taggedUser}. Instant one-hit K.O.!\n
+          Chii: ${reactions[j]}`
         )
         .setImage(msg.client.user.displayAvatarURL())
       ;
-      /*switch(attack) {
+      switch(i) {
         case 0:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(budocat);
           msg.embed(embed);
           break;
         case 1:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(budo2);
           msg.embed(embed);
           break;
         case 2:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(budo3);
           msg.embed(embed);
           break;
         case 3:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(budo5);
           msg.embed(embed);
           break;
         case 4:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(budoka6);
           msg.embed(embed);
           break;
         case 5:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(kittykendo);
           msg.embed(embed);
           break;
         case 6:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(bakeneko);
           msg.embed(embed);
           break;
         case 7:
-          //embed.attachFiles(['']).setThumbnail('attachment://');
+          embed.setThumbnail(kasha);
           msg.embed(embed);
           break;
-      }*/
-      msg.embed(embed);
+      }
+      //msg.embed(embed);
+      //console.log(embed);
     } else if (taggedUser && taggedUser.id === owner) {
       //console.log('Entered if taggedUser is strictly me');
       msg.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
