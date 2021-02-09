@@ -20,6 +20,8 @@ module.exports = class HissCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
 
+    if (taggedUser.id === process.env.selfId ) return msg.reply('. . .');
+
     if (!taggedUser) {
       msg.say('Huh?');
     }

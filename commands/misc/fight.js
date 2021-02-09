@@ -1,8 +1,3 @@
-/*
-* TODO
-* Add thumbnails depending on attack from online source
-*/
-
 const Discord = require('discord.js');
 const { Command } = require('discord.js-commando');
 const {
@@ -37,6 +32,8 @@ module.exports = class FightCommand extends Command {
     const taggedUser = msg.mentions.users.first();
     const owner = process.env.ownerId;
     //console.log(taggedUser);
+
+    if (taggedUser.id === process.env.selfId ) return msg.reply('Why will I fight nyaself?');
 
     if(!taggedUser) {
       //console.log('Entered if no taggedUser statement');

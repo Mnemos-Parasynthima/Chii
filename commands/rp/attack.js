@@ -23,6 +23,8 @@ module.exports = class AttackCommand extends Command {
     const embed = new MessageEmbed().setColor('#ff0000');
 		const tagged = msg.mentions.users.first();
 		
+    if (tagged.id === process.env.selfId ) return msg.reply('Why would I attack nyaself, baka-nya!');
+
     if (!tagged) {
       embed.setDescription('. . .');
       return msg.embed(embed);

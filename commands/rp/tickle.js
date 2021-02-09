@@ -22,7 +22,9 @@ module.exports = class TickleCommand extends Command {
   async run(msg) {
     const { url } = await fetch("https://nekos.life/api/v2/img/tickle").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
-    //console.log(msg.mentions.users.first());
+  
+    if (taggedUser.id === process.env.selfId ) return msg.reply('I can\'t tickle myself!');
+
     const embed = new Discord.MessageEmbed()
       .setTitle(`Tickling ${taggedUser.username}-nya!`)
       .setColor('#ff0000')
@@ -31,6 +33,5 @@ module.exports = class TickleCommand extends Command {
       .setTimestamp()
 		
 		msg.embed(embed);
-    // Add protection from Chii
   }
 };

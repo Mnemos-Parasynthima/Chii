@@ -24,7 +24,6 @@ module.exports = class PraiseCommand extends Command {
     }
 
     if (taggedUser) {
-      // this gets the member from the user
       const user = msg.guild.member(taggedUser);
       if (user) {
         msg.say(`You deserved being praised, ${user}, nya!`);

@@ -22,7 +22,9 @@ module.exports = class BakaCommand extends Command {
   async run(msg) {
     const { url } = await fetch("https://nekos.life/api/v2/img/baka").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
-    //console.log(msg.mentions.users.first());
+
+    if (taggedUser.id === process.env.selfId ) return msg.reply('I\'m nyo baka, you are!');
+
     const embed = new Discord.MessageEmbed()
       .setTitle(`Baka ${taggedUser.username}-nya!`)
       .setColor('#ff0000')
@@ -31,6 +33,5 @@ module.exports = class BakaCommand extends Command {
       .setTimestamp()
 		
 		msg.embed(embed);
-    // Add protection from Chii
   }
 };

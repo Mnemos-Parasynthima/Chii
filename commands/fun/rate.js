@@ -26,7 +26,7 @@ module.exports = class RateCommand extends Command {
 
     if (!tagged) return msg.say('Who should I rate-nya!');
 
-    if (tagged.id === '788284993759215656') {
+    if (tagged.id === process.env.selfId) {
       embed.setDescription('I\'m always 100/10!');
       return msg.embed(embed);
     } else if (tagged.id === process.env.ownerId) {

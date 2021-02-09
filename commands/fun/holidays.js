@@ -1,9 +1,3 @@
-/*
-* TODO
-* Fix args functionality 
-* Currently only gathering first index
-*/
-
 const { Command } = require('discord.js-commando');
 
 module.exports = class HolidayCommand extends Command {
