@@ -62,7 +62,7 @@ client.on('guildMemberAdd', member => {
     return;
   }
 
-  if (member === owner) {
+  if (member === client.owner) {
     channel.send(`@everyone Welcome back Master! I missed you-nya!!`);
   } else {
     channel.send(`@everyone Welcomnya to the server, ${member}-kun!`); // TODO: Add more styling
@@ -76,7 +76,7 @@ client.on('guildMemberRemove', member => {
     return;
   }
 
-  if (member === owner) {
+  if (member === client.owner) {
     channel.send(`Nyyoooooo!!!`);
   } /* else {
     const embed = new Discord.MessageEmbed() //TODO: Embed styling

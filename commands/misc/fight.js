@@ -31,9 +31,9 @@ module.exports = class FightCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
     const owner = process.env.ownerId;
-    //console.log(taggedUser);
+    //console.log(!taggedUser);
 
-    if (taggedUser.id === process.env.selfId ) return msg.reply('Why will I fight nyaself?');
+    //if (taggedUser.id === process.env.selfId ) return msg.reply('Why will I fight nyaself?');
 
     if(!taggedUser) {
       //console.log('Entered if no taggedUser statement');

@@ -44,11 +44,11 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`youtube\``
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`` // Add youtube!
           },
           {
             name: 'Miscelleanous',
-            value: `\`fight\`, \`hiss\`, \`master\`, \`useless\``
+            value: `\`fight\`, \`hiss\`, \`master\`, \`react\`, \`useless\``
           },
           {
             name: 'Moderation',
