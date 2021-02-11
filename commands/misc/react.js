@@ -9,7 +9,6 @@ module.exports = class HolidayCommand extends Command {
       memberName: 'react',
       description: `React! using \`wut\`, \`happy\`, \`chii\`, \`emilia\`, or \`puck\`.`,
       guildOnly: true,
-      clientPermissions: ['MANAGE_MESSAGES'],
       format: '<reaction>',
       throttling: {
         usages: 3,
