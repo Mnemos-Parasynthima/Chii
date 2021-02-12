@@ -21,16 +21,16 @@ module.exports = class AnimeCommand extends Command {
   }
 
   //FIIIXX
-  async run(msg) {
+  run(msg) {
     // Array of subreddits to fetch data from
-    const subreddit = ['OneTrueEmilia', 'awwnime']; // TODO: Add more subreddits
+    /*const subreddit = ['OneTrueEmilia', 'awwnime']; // TODO: Add more subreddits
     const i = Math.floor(Math.random() * subreddit.length); // Random number
 
     await redditImageFetcher.fetch({
       type: 'custom', //Opt: 'meme', 'wallpaper', 'custom'
       subreddit: subreddit[i] // Name of subreddit
-    })
-      
+    })*/
+    msg.reply('Command not supported yet!');
   }
 };
 
