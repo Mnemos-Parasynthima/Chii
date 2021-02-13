@@ -5,7 +5,7 @@ module.exports = class AvatarCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'avatar',
-	    aliases: ['icon', 'pfp', 'mirror', 'av'],
+	    aliases: ['icon', 'pfp', 'mirror', 'av', 'abata', 'aikon'],
       group: 'fun',
       memberName: 'avatar',
 	    description: 'Get the avatar URL of the tagged user(s), or your own avatar.',

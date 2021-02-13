@@ -6,7 +6,7 @@ module.exports = class AttackCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'attack',
-      aliases: ['attck'],
+      aliases: ['attck', 'ataca'],
       group: 'rp',
       memberName: 'attack',
 	    description: 'Attacks someone (some mild agressiveness).',

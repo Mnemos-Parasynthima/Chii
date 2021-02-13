@@ -6,7 +6,7 @@ module.exports = class SlapCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'slap',
-      aliases: ['slp'],
+      aliases: ['slp', 'bofetear'],
       group: 'rp',
       memberName: 'slap',
 	    description: 'Slaps someone.',

@@ -6,7 +6,7 @@ module.exports = class FoxGirlCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'foxgirl',
-      aliases: ['fxgrl'],
+      aliases: ['fxgrl', 'kitsune'],
       group: 'anime',
       memberName: 'foxgirl',
       description: 'Awooo',

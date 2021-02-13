@@ -4,7 +4,7 @@ module.exports = class HolidayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'react',
-      aliases: ['rct'],
+      aliases: ['rct', 'reaccionar', 'hanno'],
       group: 'misc',
       memberName: 'react',
       description: `React! using \`wut\`, \`happy\`, \`chii\`, \`emilia\`, or \`puck\`.`,

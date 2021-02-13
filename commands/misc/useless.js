@@ -6,7 +6,7 @@ module.exports = class UselessCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'useless',
-      aliases: ['usls'],
+      aliases: ['usls', 'muyo'],
       group: 'misc',
       memberName: 'useless',
 	    description: 'Calls someone useless if name provided.',

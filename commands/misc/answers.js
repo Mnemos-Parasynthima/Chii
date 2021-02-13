@@ -5,7 +5,7 @@ module.exports = class AnswersCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'answers',
-      aliases: ['asw'],
+      aliases: ['asw', 'respuestas', 'kotae', 'kaito'],
       group: 'misc',
       memberName: 'answers',
       description: `Nya.`,

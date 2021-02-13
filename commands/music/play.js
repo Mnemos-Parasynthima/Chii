@@ -7,7 +7,7 @@ module.exports = class PlayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'play',
-      aliases: ['p', 'ply', 'music', 'msc'],
+      aliases: ['p', 'ply', 'music', 'msc', 'musica', 'toca'],
       group: 'music',
       memberName: 'play',
       description: 'Search and play music-nya!',

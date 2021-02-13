@@ -5,7 +5,7 @@ module.exports = class RemoveCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'remove',
-      aliases: ['rmvid', 'delvid'],
+      aliases: ['rmvid', 'delvid', 'borra'],
       group: 'music',
       memberName: 'remove',
       description: 'Removes anything in the queue',

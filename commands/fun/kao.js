@@ -8,7 +8,7 @@ module.exports = class KaoCommand extends Command {
       aliases: ['kao', 'moji', 'jpemoji'],
       group: 'fun',
       memberName: 'kaomoji',
-      description: 'A japanse emoji.',
+      description: 'A japanese emoji.',
       guildOnly: true,
       throttling: {
         usages: 3,

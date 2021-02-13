@@ -5,7 +5,7 @@ module.exports = class StopCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'stop',
-      aliases: ['stp', 'exit', 'ext'],
+      aliases: ['stp', 'exit', 'ext', 'detener'],
       group: 'music',
       memberName: 'stop',
       description: 'Disconnects Chii.',

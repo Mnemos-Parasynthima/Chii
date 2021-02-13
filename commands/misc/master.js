@@ -5,7 +5,7 @@ module.exports = class MasterCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'master',
-      aliases: ['owner', 'creator'],
+      aliases: ['owner', 'creator', 'shujin'],
       group: 'misc',
       memberName: 'master',
       description: 'Returns information of the creator, Master, and love of Chii',

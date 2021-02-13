@@ -4,7 +4,7 @@ module.exports = class HolidayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'holiday',
-      aliases: ['hd'],
+      aliases: ['hd', 'festividades', 'horide', 'kyujitsu', 'kyuka'],
       group: 'fun',
       memberName: 'holiday',
       description: `Use \`t\` for Thanksgiving, \`x\` for Christmas, and \`n\` for New Year's. No arguments give in a Happy Holidays.`,
@@ -28,13 +28,13 @@ module.exports = class HolidayCommand extends Command {
   run(msg, { args }) {
     //console.log(args[0]);
     switch (args) {
-      case 'thxg': //thxg
+      case 'thxg' || 'acdg': //thxg
         msg.say('@everyone Happy Thanksgiving-nya!');
         break;
-      case 'xmas': //xmas
+      case 'xmas' || 'nvd': //xmas
         msg.say('@everyone Merry Christmas-nya!');
         break;
-      case 'newyear': //newyear
+      case 'newyear' || 'an': //newyear
         msg.say('@everyone Happy New Year-nya!');
         break;
       default:

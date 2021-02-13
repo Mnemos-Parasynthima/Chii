@@ -5,7 +5,7 @@ module.exports = class QueueCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'queue',
-      aliases: ['q', 'list', 'songs'],
+      aliases: ['q', 'list', 'songs', 'fila'],
       group: 'music',
       memberName: 'queue',
       description: 'Shows the array of requested music.',

@@ -5,7 +5,7 @@ module.exports = class RateCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'rate',
-      aliases: ['rateuseless', 'rtuseless', 'rtusls'],
+      aliases: ['rateuseless', 'rtuseless', 'rtusls', 'ritsu', 'reto'],
       group: 'fun',
       memberName: 'rate',
       description: 'Rates someone\'s usefulness or uselessness out of 10.',

@@ -6,7 +6,7 @@ module.exports = class HelpCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'help',
-      aliases: ['commands', 'hlp', 'cmd'],
+      aliases: ['commands', 'hlp', 'cmd', 'ayuda', 'yakudachi'],
       group: 'mod',
       memberName: 'help',
       description: 'Lists all of my commands or nynfo about a specific command-nya.',

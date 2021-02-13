@@ -4,7 +4,7 @@ module.exports = class PollCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'poll',
-      aliases: ['decide', 'choose'],
+      aliases: ['decide', 'choose', 'votacion', 'escoje', 'tohyo', 'poringu'],
       group: 'fun',
       memberName: 'poll',
       description: 'Makes the previous message a poll with two reactions',

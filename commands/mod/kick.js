@@ -3,7 +3,7 @@ module.exports = class NameCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'kick',
-      aliases: ['k', 'kck'],
+      aliases: ['k', 'kck', 'patear', 'kikku'],
       group: 'mod',
       memberName: 'kick',
 	    description: 'Tag a member and kick them.',

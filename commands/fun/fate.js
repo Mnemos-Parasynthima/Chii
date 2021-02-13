@@ -4,7 +4,7 @@ module.exports = class FateCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'fate',
-      aliases: ['f'],
+      aliases: ['f', 'destino', 'unmei'],
       group: 'fun',
       memberName: 'fate',
       description: 'Gives the fate',

@@ -6,7 +6,7 @@ module.exports = class LewdCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'lewd',
-      aliases: ['thatslewd'],
+      aliases: ['thatslewd', 'ero'],
       group: 'fun',
       memberName: 'lewd',
       description: 'Oh how lewd!',

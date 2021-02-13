@@ -4,7 +4,7 @@ module.exports = class VolumeCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'volume',
-      aliases: ['vl', 'vol', 'vlm'],
+      aliases: ['vl', 'vol', 'vlm', 'volumen'],
       group: 'music',
       memberName: 'volume',
       description: 'Set volume from 0 to 5.',

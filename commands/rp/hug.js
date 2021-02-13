@@ -6,7 +6,7 @@ module.exports = class HugCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'hug',
-      aliases: ['hugging', 'embrace'],
+      aliases: ['hugging', 'embrace', 'abrazo'],
       group: 'rp',
       memberName: 'hug',
 	    description: 'Hugs someone.',
