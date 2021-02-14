@@ -1,5 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
-const Discord = require('discord.js');
+//const Discord = require('discord.js');
 const path = require('path');
 
 const client = new CommandoClient({
@@ -62,7 +62,7 @@ client.on('guildMemberAdd', member => {
     return;
   }
 
-  if (member === client.owner) {
+  if (member.id === process.env.ownerId) {
     channel.send(`@everyone Welcome back Master! I missed you-nya!!`);
   } else {
     channel.send(`@everyone Welcomnya to the server, ${member}-kun!`); // TODO: Add more styling
@@ -76,12 +76,9 @@ client.on('guildMemberRemove', member => {
     return;
   }
 
-  if (member === client.owner) {
-    channel.send(`Nyyoooooo!!!`);
-  } /* else {
-    const embed = new Discord.MessageEmbed() //TODO: Embed styling
-      .s
-  } */
+  if (member.id === process.env.ownerId) {
+    channel.send(`Nyyoooooo!!! Trash you MEE6!`);
+  }
 });
 
 client.login(process.env.token);

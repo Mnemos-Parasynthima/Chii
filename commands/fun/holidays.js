@@ -7,7 +7,7 @@ module.exports = class HolidayCommand extends Command {
       aliases: ['hd', 'festividades', 'horide', 'kyujitsu', 'kyuka'],
       group: 'fun',
       memberName: 'holiday',
-      description: `Use \`t\` for Thanksgiving, \`x\` for Christmas, and \`n\` for New Year's. No arguments give in a Happy Holidays.`,
+      description: `Use \`t\` for Thanksgiving, \`valentines\` for Saint Valentine's,  \`x\` for Christmas, and \`n\` for New Year's. No arguments give in a Happy Holidays.`,
       guildOnly: true,
       format: '[holiday]',
       throttling: {
@@ -36,6 +36,9 @@ module.exports = class HolidayCommand extends Command {
         break;
       case 'newyear' || 'an': //newyear
         msg.say('@everyone Happy New Year-nya!');
+        break;
+      case 'stvltn' || 'valentin':
+        msg.say('@everyone Happy Saint Valentine\'s! Actually, happy love and friendship day-nya!');
         break;
       default:
         msg.say(`@everyone Happy Holidays-nya!`);
