@@ -18,12 +18,10 @@ module.exports = class UserCommand extends Command {
   }
 
   run(msg) {
-    const user = msg.author.username; // Destructure??
-    const tag = msg.author.tag;
+    const { username: user, tag } = msg.author;
     const pfp = msg.author.avatarURL();
     const embed = new Discord.MessageEmbed()
       .setTitle(`${user}'s User Info`)
-      .setAuthor(user)
       .setThumbnail(pfp)
       .setColor('#ff0000')
       .setTimestamp()

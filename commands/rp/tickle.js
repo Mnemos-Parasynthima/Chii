@@ -23,7 +23,7 @@ module.exports = class TickleCommand extends Command {
     const { url } = await fetch("https://nekos.life/api/v2/img/tickle").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
   
-    if (taggedUser.id === process.env.selfId ) return msg.reply('I can\'t tickle myself!');
+    if (taggedUser.id === msg.client.user.id ) return msg.reply('I can\'t tickle myself!');
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`Tickling ${taggedUser.username}-nya!`)

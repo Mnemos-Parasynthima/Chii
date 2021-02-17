@@ -40,7 +40,7 @@ module.exports = class HolidayCommand extends Command {
           const chii = this.client.emojis.cache.find(emoji => emoji.name === "chii");
           msg.react(chii);
           break;
-        case 'emilia': // add more emilias
+        case 'emilia': // TODO: add more emilias
           const emilia = this.client.emojis.cache.find(emoji => emoji.name === "drunkemilia");
           msg.react(emilia);
           break;

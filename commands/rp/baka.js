@@ -23,7 +23,7 @@ module.exports = class BakaCommand extends Command {
     const { url } = await fetch("https://nekos.life/api/v2/img/baka").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
 
-    if (taggedUser.id === process.env.selfId ) return msg.reply('I\'m nyo baka, you are!');
+    if (taggedUser.id === msg.client.user.id ) return msg.reply('I\'m nyo baka, you are!');
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`Baka ${taggedUser.username}-nya!`)

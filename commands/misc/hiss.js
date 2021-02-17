@@ -9,7 +9,7 @@ module.exports = class HissCommand extends Command {
       memberName: 'hiss',
       description: 'Hisses',
       guildOnly: true,
-      format: '@member>',
+      format: '<member>',
       throttling: {
         usages: 3,
         duration: 5,
@@ -20,14 +20,13 @@ module.exports = class HissCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
 
-    if (taggedUser.id === process.env.selfId ) return msg.reply('. . .');
+    if (taggedUser.id === msg.client.user.id ) return msg.reply('. . .');
 
     if (!taggedUser) {
       msg.say('Huh?');
     }
 
     if (taggedUser) {
-      // this gets the member from the user
       const user = msg.guild.member(taggedUser);
       if (user) {
         msg.say(`${user}, HIISSSSS!!!`);

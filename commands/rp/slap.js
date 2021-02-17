@@ -23,7 +23,7 @@ module.exports = class SlapCommand extends Command {
     const { url } = await fetch("https://nekos.life/api/v2/img/slap").then((res) => res.json());
 		const taggedUser = msg.mentions.users.first();
 
-    if (taggedUser.id === process.env.selfId ) return msg.reply('Why would I slap nyaself, baka-nya!');
+    if (taggedUser.id === msg.client.user.id ) return msg.reply('Why would I slap nyaself, baka-nya!');
 
     const embed = new Discord.MessageEmbed()
       .setTitle(`Slapping ${taggedUser.username}-nya!`)
