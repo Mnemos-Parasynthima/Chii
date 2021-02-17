@@ -16,9 +16,9 @@ client.queue = new Map();
  ******/
 
 //Allowing bot to be 24/7
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(req, res) {
+http.createServer((req, res) => {
   res.write("I'm alive");
   res.end();
 }).listen(8080);
@@ -63,9 +63,9 @@ client.on('guildMemberAdd', member => {
   }
 
   if (member.id === process.env.ownerId) {
-    channel.send(`@everyone Welcome back Master! I missed you-nya!!`);
+    channel.send(`Welcome back Master! I missed you-nya!!`);
   } else {
-    channel.send(`@everyone Welcomnya to the server, ${member}-kun!`); // TODO: Add more styling
+    channel.send(`Welcomnya to the server, ${member}-kun!`); // TODO: Add more styling
   }
 });
 
@@ -77,7 +77,7 @@ client.on('guildMemberRemove', member => {
   }
 
   if (member.id === process.env.ownerId) {
-    channel.send(`Nyyoooooo!!! Trash you MEE6!`);
+    channel.send(`Nyyoooooo!!! Trash you @MEE6!`);
   }
 });
 

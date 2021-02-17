@@ -27,19 +27,20 @@ module.exports = class AnswersCommand extends Command {
 
   run(msg, { nya }) {
     const owner = process.env.ownerId;
+    //let keys = ['nya', 'pls', 'please', 'chii', 'emiliabestgirl'];
 
     if (msg.author.id === owner) { return msg.reply('Ooh, my Nyaster. You know the answers. \nI thought you trusted me to give the answers :('); }
 
-    if (nya === 'nya' || nya === 'nekonya') {
+    if (nya === 'chii') {
       const embed = new MessageEmbed().setTitle('Answers!').setColor('ff00ff').setFooter('Answers may be different as per my myaster\'s handwriting');
 
-      embed.setDescription('What answers? My Mnyaster hasn\'t told me anything yet.');
+      embed.setDescription('6) -9x^4+3; 7) 2x-1 | 2x-3; 8) x^2-6x+16 | x^2+4; 9) 16x^2+24x+9 | 4x^2+3; 10) x^2-9');
 
-      msg.embed(embed);
-    } else if (nya === 'pls' || nya === 'please') {
-      msg.reply('Ha, "please" won\'t affect me, you weakling, nya!')
+      return msg.embed(embed);
+    } else if (nya !== 'chii') {
+      return msg.reply('Ha, that won\'t affect me, you weakling, nya!')
     } else {
-      msg.reply('Nyo!');
+      return msg.reply('Nyo!');
     }
   }
 }
