@@ -1,4 +1,6 @@
 const { Command } = require('discord.js-commando');
+const { MessageEmbed } = require('discord.js');
+const { shocked } = require('../../assets/json/rp.json')
 
 module.exports = class ShockedCommand extends Command {
   constructor(client) {
@@ -25,12 +27,12 @@ module.exports = class ShockedCommand extends Command {
     }
 
     if (taggedUser) {
-      // this gets the member from the user
+      const i = Math.floor(Math.random() * shocked.length);
+      const embed = new MessageEmbed().setDescription('*SHOCKED*').setImage(shocked[i]);
       const user = msg.guild.member(taggedUser);
       if (user) {
-        msg.say(`*SHOCKED*`);
+        msg.embed(embed);
       }
     }
-    //TODO: Return anime gif
   }
 };
