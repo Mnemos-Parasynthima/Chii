@@ -31,14 +31,13 @@ module.exports = class FightCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
     const owner = process.env.ownerId;
-    //console.log(!taggedUser);
-
-    //if (taggedUser.id === process.env.selfId ) return msg.reply('Why will I fight nyaself?');
 
     if(!taggedUser) {
       //console.log('Entered if no taggedUser statement');
-      msg.say("Who will I fight-nya?");
+      return msg.say("Who will I fight-nya?");
     }
+
+    if (taggedUser.id === msg.client.user.id) return msg.reply('Why will I fight nyaself?');
 
     if(taggedUser && taggedUser.id !== owner) {
       //console.log('Entered if taggedUser and if taggedUser is strictly not me');
@@ -98,7 +97,7 @@ module.exports = class FightCommand extends Command {
       //console.log(embed);
     } else if (taggedUser && taggedUser.id === owner) {
       //console.log('Entered if taggedUser is strictly me');
-      msg.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
+      return msg.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
     }
   }
 };
