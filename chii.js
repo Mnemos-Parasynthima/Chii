@@ -1,6 +1,10 @@
-const { CommandoClient } = require('discord.js-commando');
 //const Discord = require('discord.js');
+const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
+/**
+ * Code for outside of replit
+ * const { token, prefix, ownerId } = require('./config.json');
+ */
 
 const client = new CommandoClient({
   commandPrefix: process.env.prefix,
@@ -10,11 +14,6 @@ const client = new CommandoClient({
 // Collection for music
 client.queue = new Map();
 
-/******
- * Code for outside of replit 
- * const { prefix, owner, token } = require('./config.json');
- ******/
-
 //Allowing bot to be 24/7
 const http = require('http');
 
@@ -22,6 +21,7 @@ http.createServer((req, res) => {
   res.write("I'm alive");
   res.end();
 }).listen(8080);
+//End code to allow 24/7 bot
 
 client.on('ready', () => {
 
@@ -30,7 +30,6 @@ client.on('ready', () => {
   client.user.setActivity('chii', { type: 'LISTENING' });
 
 });
-//End code to allow 24/7 bot
 
 client.registry
   .registerDefaultTypes()
