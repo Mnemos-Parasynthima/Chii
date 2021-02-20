@@ -47,7 +47,7 @@ client.registry
   })
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.once('ready', () => console.log('Ready!') });
+client.once('ready', () => console.log('Ready!'));
 client.on('error', console.error);
 
 client.on('guildMemberAdd', member => {
