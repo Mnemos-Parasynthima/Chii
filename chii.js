@@ -1,4 +1,4 @@
-//const Discord = require('discord.js');
+//const { MessageEmbed } = require('discord.js');
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 /**
@@ -24,11 +24,9 @@ http.createServer((req, res) => {
 //End code to allow 24/7 bot
 
 client.on('ready', () => {
-
   console.log('SoulWorker Chii is now online.')
 
   client.user.setActivity('chii', { type: 'LISTENING' });
-
 });
 
 client.registry
@@ -49,17 +47,12 @@ client.registry
   })
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.once('ready', () => {
-  console.log('Ready!');
-});
+client.once('ready', () => console.log('Ready!') });
 client.on('error', console.error);
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'general' || ch.name === 'announcements');
-  if (!channel) {
-        console.log('Channel not found');
-    return;
-  }
+  if (!channel) return console.log('Channel not found');
 
   if (member.id === process.env.ownerId) {
     channel.send(`Welcome back Master! I missed you-nya!!`);
@@ -70,10 +63,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'general' || ch.name === 'announcements');
-  if (!channel) {
-        console.log('Channel not found');
-    return;
-  }
+  if (!channel) return console.log('Channel not found');
 
   if (member.id === process.env.ownerId) {
     channel.send(`Nyyoooooo!!! Trash you @MEE6!`);

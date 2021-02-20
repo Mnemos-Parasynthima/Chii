@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed, splitMessage, escapeMarkdown } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class QueueCommand extends Command {
   constructor(client) {
@@ -20,14 +20,13 @@ module.exports = class QueueCommand extends Command {
   // StYliNG
   run(msg) {
     const { channel } = msg.member.voice;
-    if (!channel) msg.say('Nya need to be in a voice channel!');
+
+    if (!channel) return msg.say('Nya need to be in a voice channel!');
     if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      msg.say('Be with me!');
+      return msg.say('Be with me!');
     }
     const serverQueue = this.client.queue.get(msg.guild.id);
-    if (!serverQueue) {
-      msg.say('Nyothing playing!');
-    }
+    if (!serverQueue) return msg.say('Nyothing playing!');
 
     let description = "";
     for (let i = 0; i < serverQueue.musics.length; i++) {
@@ -37,7 +36,7 @@ module.exports = class QueueCommand extends Command {
     const embed = new MessageEmbed()
       .setTitle('Music Queue')
       .setDescription(description)
-      .setColor('#ff0000')
+      .setColor('#ff0000');
 
     const splitDescription = splitMessage(description, {
       maxLength: 2048,

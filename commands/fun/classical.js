@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
 module.exports = class ClassicalCommand extends Command {

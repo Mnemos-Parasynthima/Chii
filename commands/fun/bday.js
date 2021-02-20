@@ -16,11 +16,11 @@ module.exports = class BdayCommand extends Command {
     const taggedTarget = msg.mentions.users.first();
 
     if(!taggedTarget) {
-      msg.channel.send("Who's birthday-nya?");
+      msg.say("Who's birthday-nya?");
     }
 
     if(taggedTarget) {
-      msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${taggedTarget}-KUN!`);
+      msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII ARUEL, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${taggedTarget}-KUN!`);
     }
   }
 }

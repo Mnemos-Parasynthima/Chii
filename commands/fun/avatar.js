@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 
 module.exports = class AvatarCommand extends Command {
@@ -18,11 +18,12 @@ module.exports = class AvatarCommand extends Command {
   }
 
   run(msg) {
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setColor('#ff0000')
       .setFooter(`Request by: ${msg.author.username}`)
       .setTimestamp()
-      .setThumbnail(msg.client.user.displayAvatarURL())
+      .setThumbnail(msg.client.user.displayAvatarURL());
+      
 		if (!msg.mentions.users.size) {
       embed.setTitle('Nyar avatar').setImage(msg.author.displayAvatarURL());
       msg.embed(embed);

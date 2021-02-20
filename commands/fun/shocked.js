@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 const { shocked } = require('../../assets/json/rp.json')
 
 module.exports = class ShockedCommand extends Command {

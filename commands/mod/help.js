@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const prefix = process.env.prefix;
 
@@ -26,12 +26,12 @@ module.exports = class HelpCommand extends Command {
     });
   }
 
-  run(message, { args }) {
-    const embed = new Discord.MessageEmbed()
+  run(msg, { args }) {
+    const embed = new MessageEmbed()
       .setColor('#ff0000')
-      .setThumbnail(message.client.user.displayAvatarURL())
+      .setThumbnail(msg.client.user.displayAvatarURL())
       .setTimestamp()
-    const commands = message.client.registry.commands; // TODO: Destructure
+    const commands = msg.client.registry.commands; // TODO: Destructure
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
@@ -65,13 +65,13 @@ module.exports = class HelpCommand extends Command {
 
         )
 
-      return message.embed(embed)
+      return msg.embed(embed)
         .then(() => {
-          if (message.channel.type === 'text') return;
+          if (msg.channel.type === 'text') return;
         })
         .catch(error => {
           console.error(`Could not send help to ${message.author.tag}.\n`, error);
-          message.reply('It seems like I can\'t send!');
+          msg.reply('It seems like I can\'t send!');
         });
     }
 
@@ -79,12 +79,12 @@ module.exports = class HelpCommand extends Command {
     const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
     if (!command) {
-     return message.reply('Nyat\'s not a valid command-nya!');
+     return msg.reply('Nyat\'s not a valid command-nya!');
     }
 
     embed.setTitle(`Chii's \`${command.name}\` command help`)
       .setDescription(`**Parameters:** \`<> - required; [] - optional\` \n\n${command.description}\n **Aliases:** ${command.aliases.join(', ')}\n **Usage:** \`${prefix} ${command.name} ${command.format || ''}\`\n`);
       /***Cooldown:** ${command.throttling || 3} second(s)`);*/ // Fix throttling
-    message.embed(embed);
+    msg.embed(embed);
   }
 };

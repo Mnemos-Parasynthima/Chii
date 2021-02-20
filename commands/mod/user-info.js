@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 
 module.exports = class UserCommand extends Command {
@@ -20,7 +20,7 @@ module.exports = class UserCommand extends Command {
   run(msg) {
     const { username: user, tag } = msg.author;
     const pfp = msg.author.avatarURL();
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setTitle(`${user}'s User Info`)
       .setThumbnail(pfp)
       .setColor('#ff0000')
@@ -34,8 +34,8 @@ module.exports = class UserCommand extends Command {
           name: 'Tag',
           value: tag
         }
-      )
-    ;
+      );
+      
     msg.embed(embed);
   }
 };

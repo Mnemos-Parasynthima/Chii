@@ -18,7 +18,7 @@ module.exports = class KaoCommand extends Command {
   }
 
   run(msg) {
-    const kaomoji = Math.floor(Math.random() * kaomojis.length);
-    msg.say(kaomojis[kaomoji]);
+    const i = Math.floor(Math.random() * kaomojis.length);
+    msg.say(kaomojis[i]);
   }
 };

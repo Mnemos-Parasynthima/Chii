@@ -30,15 +30,15 @@ module.exports = class VolumeCommand extends Command {
       return msg.reply('Enter a nyumber between 0 and 5!');
     } else {
       const channel = msg.member.voice;
-      if (!channel) return msg.say('Nyoin chnyannel!')
+      if (!channel) return msg.say('Nyoin chnyannel!');
 
       if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
         return msg.say('Be with me!');
       }
 
       const serverQueue = this.client.queue.get(msg.guild.id);
-      if (!serverQueue) return msg.say('Nyothing playing!')
-      if (!vol) return msg.say(`Nya current volume is **${serverQueue.volume}**`)
+      if (!serverQueue) return msg.say('Nyothing playing!');
+      if (!vol) return msg.say(`Nya current volume is **${serverQueue.volume}**`);
 
       try {
         //console.log(`Entering try block: ${vol}`);

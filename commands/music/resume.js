@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class ResumeCommand extends Command {
   constructor(client) {
@@ -21,23 +21,24 @@ module.exports = class ResumeCommand extends Command {
     const { channel } = msg.member.voice;
     const embed = new MessageEmbed()
       .setColor('#00ff00')
-      .setDescription('▶ **Resumed**')
+      .setDescription('▶ **Resumed**');
 
-    if (!channel) msg.say('Nyoin a voice chyannel!')
+    if (!channel) return msg.say('Nyoin a voice chyannel!')
+
     const serverQueue = this.client.queue.get(msg.guild.id);
     if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      msg.say('Be with me!');
+      return msg.say('Be with me!');
     }
 
     try {
       if (serverQueue && !serverQueue.playing) {
         serverQueue.playing = true;
         serverQueue.connection.dispatcher.resume();
-        msg.embed(embed);
-      } else { msg.say('Nyothing to resume!'); }
+        return msg.embed(embed);
+      } else { return msg.say('Nyothing to resume!'); }
     } catch {
       serverQueue.connection.dispatcher.end();
-      msg.say('Try again')
+      return msg.say('Try again');
     }
   }
 };

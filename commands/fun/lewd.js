@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 const { lewd } = require('../../assets/json/rp.json')
 
 module.exports = class LewdCommand extends Command {
@@ -22,7 +22,7 @@ module.exports = class LewdCommand extends Command {
     const i = Math.floor(Math.random() * lewd.length);
     const embed = new MessageEmbed()
       .setColor('#ff0000')
-      .setImage(lewd[i])
+      .setImage(lewd[i]);
 
     msg.embed(embed);
     //console.log(lewd[i]);

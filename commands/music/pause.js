@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class PauseCommand extends Command {
   constructor(client) {
@@ -22,23 +22,20 @@ module.exports = class PauseCommand extends Command {
     const serverQueue = this.client.queue.get(msg.guild.id);
     const embed = new MessageEmbed()
       .setColor('#ff0000')
-      .setDescription('⏸ **PAUSED**')
+      .setDescription('⏸ **PAUSED**');
 
     try {
-      if (!channel) {
-        msg.say('Nyoin a voice chyannel!')
-        return;
-      }
+      if (!channel) return msg.say('Nyoin a voice chyannel!');
+
       if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-        msg.say('Be with me!');
-        return;
+        return msg.say('Be with me!');
       }
 
       if (serverQueue && serverQueue.playing) {
         serverQueue.playing = false;
         serverQueue.connection.dispatcher.pause(true);
-        msg.embed(embed);
-      } else { msg.say('Nyothing\'s playing!'); }
+        return msg.embed(embed);
+      } else { return msg.say('Nyothing\'s playing!'); }
     } catch {
       serverQueue.connection.dispatcher.end();
       await channel.leave();

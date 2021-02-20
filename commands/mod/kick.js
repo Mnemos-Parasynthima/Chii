@@ -1,4 +1,5 @@
 const { Command } = require('discord.js-commando');
+
 module.exports = class KickCommand extends Command {
   constructor(client) {
     super(client, {
@@ -16,6 +17,7 @@ module.exports = class KickCommand extends Command {
       }
     });
   }
+
   run(msg) {
 		if (!msg.mentions.users.size) {
 			return msg.reply('Nya need to tag a user in order to kick them-nya!');
@@ -29,7 +31,7 @@ module.exports = class KickCommand extends Command {
       const user = msg.guild.member(taggedUser);
       if (user) {
         user.kick()
-          .then(() => { msg.reply('Successfully kicked.')})
+          .then(() => { msg.reply('Successfully kicked 🦵🏼!')})
           .catch(err => { 
             console.error(err);
 			      msg.say(`there was an error trying to kick ${user} in this channel!`);

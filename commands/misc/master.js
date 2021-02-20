@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 
 module.exports = class MasterCommand extends Command {
@@ -18,7 +18,7 @@ module.exports = class MasterCommand extends Command {
   }
 
   run(msg) {
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setTitle('UmbreOn-sama, my Master!')
       .setColor('#ff0000')
       .setThumbnail(msg.client.user.displayAvatarURL())
@@ -42,7 +42,7 @@ module.exports = class MasterCommand extends Command {
           name: 'Steam',
           value: 'https://steamcommunity.com/profiles/76561198872872417/'
         }
-      )
+      );
 
     msg.embed(embed);
   }

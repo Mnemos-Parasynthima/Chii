@@ -27,6 +27,7 @@ module.exports = class RandomCommand extends Command {
       ]
     });
   }
+  
   run(msg, { minNum, maxNum }) {
     const num = Math.floor(Math.random() * maxNum) + minNum;
     msg.say(num);

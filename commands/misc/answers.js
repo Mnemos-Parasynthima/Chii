@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class AnswersCommand extends Command {
   constructor(client) {
@@ -34,7 +34,7 @@ module.exports = class AnswersCommand extends Command {
     if (nya === 'chii') {
       const embed = new MessageEmbed().setTitle('Answers!').setColor('ff00ff').setFooter('Answers may be different as per my myaster\'s handwriting');
 
-      embed.setDescription('6) -9x^4+3; 7) 2x-1 | 2x-3; 8) x^2-6x+16 | x^2+4; 9) 16x^2+24x+9 | 4x^2+3; 10) x^2-9');
+      embed.setDescription('My dear never gave me any answers-nya!');
 
       return msg.embed(embed);
     } else if (nya !== 'chii') {

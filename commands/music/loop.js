@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class LoopCommand extends Command {
   constructor(client) {
@@ -30,14 +30,17 @@ module.exports = class LoopCommand extends Command {
   async run(msg, { status }) {
     const { channel } = msg.member.voice;
     const embed = new MessageEmbed();
+
     if (!channel) {
       msg.say('Nya need to be in a chyannel');
     }
+
     const serverQueue = this.client.queue.get(msg.guild.id);
     try {
-      if (!serverQueue) msg.say('Nyothing playing!');
+      if (!serverQueue) return msg.say('Nyothing playing!');
+
       if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-        msg.say('Be with me!');
+        return msg.say('Be with me!');
       }
 
       if (!serverQueue.loop && status === 'enable') {
@@ -45,20 +48,20 @@ module.exports = class LoopCommand extends Command {
         console.log(serverQueue);
         console.log(serverQueue.loop);
         embed.setColor('#00ff00').setDescription('🔁 Repeat is enyabled!');
-        msg.embed(embed);
+        return msg.embed(embed);
       } else if (serverQueue.loop && status === 'disable') {
         console.log(serverQueue);
         serveQueue.loop = false;
         console.log(serverQueue.loop);
         embed.setColor('#ff0000').setDescription('🔁 Repeat is disabled-nya!');
-        msg.embed(embed);
+        return msg.embed(embed);
       } else {
         return;
       }
     } catch {
       serverQueue.connection.dispatcher.end();
       await channel.leave();
-      msg.say('Something\'s wrong...try again-nya!');
+      return msg.say('Something\'s wrong...try again-nya!');
     }
   }
 }

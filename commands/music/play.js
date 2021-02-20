@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed, Util } = require('discord.js');
+const { Command } = require('discord.js-commando');
 const ytdl = require('ytdl-core-discord');
 const yts = require('yt-search');
 
@@ -31,16 +31,14 @@ module.exports = class PlayCommand extends Command {
   // TODO: Add ability to give link
   async run(msg, { query }) {
     const channel = msg.member.voice.channel;
-    if (!channel) {
-      msg.channel.send('Nyoin a voice chyanneel!');
-    }
+
+    if (!channel) return msg.channel.send('Nyoin a voice chyanneel!');
 
     let serverQueue = msg.client.queue.get(msg.guild.id);
 
     let searched = await yts.search(query);
-    if (searched.videos.length === 0) {
-      msg.say('I can\'t find nya music!');
-    }
+    if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
+
     let musicInfo = searched.videos[0];
 
     const music = {
@@ -72,7 +70,7 @@ module.exports = class PlayCommand extends Command {
             name: 'Duration',
             value: music.duration
           }
-        )
+        );
 
       return msg.embed(embed);
     }
@@ -91,15 +89,14 @@ module.exports = class PlayCommand extends Command {
     const play = async music => {
       const queue = msg.client.queue.get(msg.guild.id);
       if (!music) {
-        msg.client.queue.delete(msg.guild.id);
-        return;
+        return msg.client.queue.delete(msg.guild.id);
       }
 
       const dispatcher = queue.connection
         .play(await ytdl(music.url), { type: 'opus', highWaterMark: 50 })
         .on('finish', () => {
           queue.musics.shift();
-          play(queue.musics[0])
+          play(queue.musics[0]);
         })
         .on('error', error => console.error(error));
       

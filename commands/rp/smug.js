@@ -1,5 +1,5 @@
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
-const Discord = require('discord.js');
 const fetch = require('node-fetch');
 
 module.exports = class SmugCommand extends Command {
@@ -20,12 +20,13 @@ module.exports = class SmugCommand extends Command {
 
   async run(msg) {
     const { url } = await fetch("https://nekos.life/api/v2/img/smug").then((res) => res.json());
-    const embed = new Discord.MessageEmbed()
+
+    const embed = new MessageEmbed()
       .setTitle('A nice smug')
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
-      .setTimestamp()
+      .setTimestamp();
 		
 		msg.embed(embed);
   }

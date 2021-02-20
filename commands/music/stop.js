@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class StopCommand extends Command {
   constructor(client) {
@@ -19,12 +19,13 @@ module.exports = class StopCommand extends Command {
 
   async run(msg) {
     const channel = msg.member.voice;
+
     const embed = new MessageEmbed().setDescription('↪ Disconnected');
-    if (!channel) {
-      msg.channel.send('Nyoin a voice chyannel!');
-    }
+
+    if (!channel) return msg.say('Nyoin a voice chyannel!');
+
     if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      msg.say("Be with me!");
+      return msg.say("Be with me!");
     }
 
     const serverQueue = msg.client.queue.get(msg.guild.id);
@@ -36,7 +37,7 @@ module.exports = class StopCommand extends Command {
       } else {
         msg.guild.me.voice.channel.leave();
       }
-      msg.embed(embed);
+      return msg.embed(embed);
     } catch {
       /*
       * Weird stuff here, need to fix, but it at least works
@@ -45,7 +46,7 @@ module.exports = class StopCommand extends Command {
       /*serverQueue.connection.dispatcher.end();
       console.log(serverQueue);
       channel.leave();*/
-      msg.say('Try Again-nya!');
+      return msg.say('Try Again-nya!');
     }
 
   }

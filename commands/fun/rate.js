@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class RateCommand extends Command {
   constructor(client) {
@@ -34,10 +34,10 @@ module.exports = class RateCommand extends Command {
       return msg.embed(embed);
     } else {
       const types = ['Useful', 'Useless', 'Useful', 'Useless', 'Useful', 'Useless'];
-      const type = Math.floor(Math.random() * types.length);
+      const i = Math.floor(Math.random() * types.length);
       const rating = Math.floor(Math.random() * 10) + 0;
 
-      embed.setTitle(`${types[type]} Rating`).setDescription(`${tagged} is ${rating}/10 ${types[type]}`);
+      embed.setTitle(`${types[i]} Rating`).setDescription(`${tagged} is ${rating}/10 ${types[i]}`);
 
       msg.embed(embed);
     }

@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const {
   budocat,
@@ -51,14 +51,14 @@ module.exports = class FightCommand extends Command {
       const j = Math.floor(Math.random() * reactions.length);
 
       //const target = taggedUser.username; // Name only, no @
-      const embed = new Discord.MessageEmbed()
+      const embed = new MessageEmbed()
         .setTitle(`Fight with SoulWorker Chii!`)
         .setColor('#ff0000')
         .setDescription(`SoulWorker Chii uses \`${attacks[i]}\` on ${taggedUser}. Instant one-hit K.O.!\n
           Chii: ${reactions[j]}`
         )
-        .setImage(msg.client.user.displayAvatarURL())
-      ;
+        .setImage(msg.client.user.displayAvatarURL());
+        
       switch(i) {
         case 0:
           embed.setThumbnail(budocat);

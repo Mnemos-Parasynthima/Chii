@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 const { attack } = require('../../assets/json/rp.json');
 
 module.exports = class AttackCommand extends Command {

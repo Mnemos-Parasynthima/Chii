@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
-const fetch = require('node-fetch');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
+const fetch = require('node-fetch');
 
 module.exports = class HentaiCommand extends Command {
   constructor(client) {
@@ -20,17 +20,19 @@ module.exports = class HentaiCommand extends Command {
   async run(msg) {
     const owner = process.env.ownerId;
     const endpoints = ['hentai', 'solo', 'solog'];
-    const endpoint = Math.floor(Math.random() * endpoints.length);
+    const i = Math.floor(Math.random() * endpoints.length);
 
     if (msg.author.id === owner && msg.channel.nsfw === true) {
-    const { url } = await fetch(`https://nekos.life/api/v2/img/${endpoints[endpoint]}`)
-      .then((res) => res.json());
-      const embed = new Discord.MessageEmbed()
+      const { url } = await fetch(`https://nekos.life/api/v2/img/${endpoints[i]}`)
+        .then((res) => res.json());
+
+      const embed = new MessageEmbed()
         .setTitle('Hentai')
         .setColor('#ff0000')
         .setImage(url)
         .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
-        .setTimestamp()
+        .setTimestamp();
+        
       msg.embed(embed);
     } else if (msg.author.id !== owner) { msg.reply('Command not allowed');
     } else if (msg.channel.nsfw === false) { msg.reply('Illegal!');

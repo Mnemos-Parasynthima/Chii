@@ -27,7 +27,7 @@ module.exports = class PuppetCommand extends Command {
   run(msg, { args }) {
     let say = args.toUpperCase();
 
-    if (msg.author.id !== process.env.ownerId) { return msg.reply("You don't tell me what to say-nya!"); }
+    //if (msg.author.id !== process.env.ownerId) { return msg.reply("You don't tell me what to say-nya!"); }
     msg.say(`"${say}" - ${msg.author.username}`);
   }
 }

@@ -1,5 +1,5 @@
-const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
+const { Command } = require('discord.js-commando');
 
 module.exports = class SkipCommand extends Command {
   constructor(client) {
@@ -22,21 +22,21 @@ module.exports = class SkipCommand extends Command {
     const channel = msg.member.voice;
     const embed = new MessageEmbed().setColor('#ff0000').setDescription('⏩ Skipped');
 
-    if (!channel) msg.say('Nyoin a voice chyannel!');
+    if (!channel) return msg.say('Nyoin a voice chyannel!');
     if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      msg.say('Be with me!');
+      return msg.say('Be with me!');
     }
 
     const serverQueue = this.client.queue.get(msg.guild.id);
-    if (!serverQueue) msg.say('Nyothing is playing!');
+    if (!serverQueue) return msg.say('Nyothing is playing!');
 
     try {
       serverQueue.connection.dispatcher.end();
-      msg.embed(embed);
+      return msg.embed(embed);
     } catch {
       serverQueue.connection.dispatcher.end();
       await channel.leave();
-      msg.say('Try again!');
+      return msg.say('Try again!');
     }
   }
 }

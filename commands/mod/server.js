@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 
 module.exports = class ServerCommand extends Command {
@@ -19,7 +19,7 @@ module.exports = class ServerCommand extends Command {
 
   run(msg) {
     const { name, memberCount, owner, region, createdAt} = msg.guild;
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setTitle(`${name} Server Info`)
       .setDescription(`The following contains neccesary information about the server \`${name}\`.`)
       .setThumbnail(msg.guild.iconURL())
