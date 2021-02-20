@@ -51,7 +51,7 @@ client.once('ready', () => console.log('Ready!'));
 client.on('error', console.error);
 
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general' || ch.name === 'announcements');
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome' || ch.name === 'announcements');
   if (!channel) return console.log('Channel not found');
 
   if (member.id === process.env.ownerId) {
@@ -62,7 +62,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general' || ch.name === 'announcements');
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome' || ch.name === 'announcements');
   if (!channel) return console.log('Channel not found');
 
   if (member.id === process.env.ownerId) {
