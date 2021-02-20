@@ -15,24 +15,31 @@ module.exports = class AttackCommand extends Command {
       throttling: {
         usages: 3,
         duration: 5,
-      }
+      },
+      args: [
+        {
+          key: 'target',
+          prompt: '',
+          type: 'member',
+          default: ''
+        }
+      ]
     });
   }
 
-   run(msg) {
+   run(msg, { target }) {
     const embed = new MessageEmbed().setColor('#ff0000');
-		const tagged = msg.mentions.users.first();
 		
-    if (tagged.id === msg.client.user.id ) return msg.reply('Why would I attack nyaself, baka-nya!');
+    if (target.id === msg.client.user.id ) return msg.reply('Why would I attack nyaself, baka-nya!');
 
-    if (!tagged) {
+    if (!target) {
       embed.setDescription('. . .');
       return msg.embed(embed);
     }
 
-    if (tagged) {
+    if (target) {
       const i = Math.floor(Math.random() * attack.length);
-      embed.setDescription(`**${msg.author.username}** attacks **${tagged.username}**`).setImage(attack[i]);
+      embed.setDescription(`**${msg.author.username}** attacks **${target.nickname || target.user.username}**`).setImage(attack[i]);
 	    msg.embed(embed);
     }
   }

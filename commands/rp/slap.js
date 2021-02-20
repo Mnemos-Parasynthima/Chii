@@ -20,7 +20,7 @@ module.exports = class SlapCommand extends Command {
         {
           key: 'target',
           prompt: 'Who to slap?',
-          type: 'user'
+          type: 'member'
         }
       ]
     });
@@ -32,7 +32,7 @@ module.exports = class SlapCommand extends Command {
     if (target.id === msg.client.user.id ) return msg.reply('Why would I slap nyaself, baka-nya!');
 
     const embed = new MessageEmbed()
-      .setTitle(`Slapping ${target.username}-nya!`)
+      .setTitle(`Slapping ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

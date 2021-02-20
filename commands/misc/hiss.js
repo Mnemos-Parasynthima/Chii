@@ -22,15 +22,13 @@ module.exports = class HissCommand extends Command {
 
     if (taggedUser.id === msg.client.user.id ) return msg.reply('. . .');
 
-    if (!taggedUser) {
-      msg.say('Huh?');
-    }
+    if (!taggedUser) return msg.say('Huh?');
 
     if (taggedUser) {
-      const user = msg.guild.member(taggedUser);
-      if (user) {
-        msg.say(`${user}, HIISSSSS!!!`);
-      }
+      //const user = msg.guild.member(taggedUser);
+      //if (user) {
+        msg.say(`${taggedUser}, HIISSSSS!!!`);
+      //}
     }
   }
 };

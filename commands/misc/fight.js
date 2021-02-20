@@ -24,22 +24,29 @@ module.exports = class FightCommand extends Command {
       throttling: {
         usages: 3,
         duration: 5,
-      }
+      },
+      args: [
+        {
+          key: 'target',
+          prompt: '',
+          type: 'member',
+          default: ''
+        }
+      ]
     });
   }
 
-  run(msg) {
-    const taggedUser = msg.mentions.users.first();
+  run(msg, { target }) {
     const owner = process.env.ownerId;
 
-    if(!taggedUser) {
+    if(!target) {
       //console.log('Entered if no taggedUser statement');
       return msg.say("Who will I fight-nya?");
     }
 
-    if (taggedUser.id === msg.client.user.id) return msg.reply('Why will I fight nyaself?');
+    if (target.id === msg.client.user.id) return msg.reply('Why will I fight nyaself?');
 
-    if(taggedUser && taggedUser.id !== owner) {
+    if(target && target.id !== owner) {
       //console.log('Entered if taggedUser and if taggedUser is strictly not me');
       const attacks = [
         'Budo Cat', 'Budo 2: Claws Out', 'Budo 3: Prey Sighted', 'Budo 5: Cat by Night',
@@ -54,7 +61,7 @@ module.exports = class FightCommand extends Command {
       const embed = new MessageEmbed()
         .setTitle(`Fight with SoulWorker Chii!`)
         .setColor('#ff0000')
-        .setDescription(`SoulWorker Chii uses \`${attacks[i]}\` on ${taggedUser}. Instant one-hit K.O.!\n
+        .setDescription(`SoulWorker Chii uses \`${attacks[i]}\` on ${target.nickname || target.user.username}. Instant one-hit K.O.!\n
           Chii: ${reactions[j]}`
         )
         .setImage(msg.client.user.displayAvatarURL());
@@ -95,7 +102,7 @@ module.exports = class FightCommand extends Command {
       }
       //msg.embed(embed);
       //console.log(embed);
-    } else if (taggedUser && taggedUser.id === owner) {
+    } else if (target && target.id === owner) {
       //console.log('Entered if taggedUser is strictly me');
       return msg.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
     }

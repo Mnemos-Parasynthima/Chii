@@ -20,7 +20,7 @@ module.exports = class BakaCommand extends Command {
         {
           key: 'target',
           prompt: 'Who?',
-          type: 'user'
+          type: 'member'
         }
       ]
     });
@@ -32,7 +32,7 @@ module.exports = class BakaCommand extends Command {
     if (target.id === msg.client.user.id ) return msg.reply('I\'m nyo baka, you are!');
 
     const embed = new MessageEmbed()
-      .setTitle(`Baka ${target.username}-nya!`)
+      .setTitle(`Baka ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

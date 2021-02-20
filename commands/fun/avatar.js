@@ -13,25 +13,29 @@ module.exports = class AvatarCommand extends Command {
       throttling: {
         usages: 3,
         duration: 5,
-      }
+      },
+      args: [
+        {
+          key: 'user',
+          prompt: '',
+          type: 'member',
+          default: ''
+        }
+      ]
     });
   }
 
-  run(msg) {
+  run(msg, { user }) {
     const embed = new MessageEmbed()
       .setColor('#ff0000')
       .setFooter(`Request by: ${msg.author.username}`)
-      .setTimestamp()
-      .setThumbnail(msg.client.user.displayAvatarURL());
+      .setTimestamp();
       
-		if (!msg.mentions.users.size) {
+		if (!user) {
       embed.setTitle('Nyar avatar').setImage(msg.author.displayAvatarURL());
-      msg.embed(embed);
+      return msg.embed(embed);
 		} else {
-		  const avatarList = msg.mentions.users.map(user => {
-        embed.setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL());
-        return embed;
-		  });
+      embed.setTitle(`${user.nickname || user.user.username}'s avatar`).setImage(user.user.displayAvatarURL());
 		  msg.embed(embed);
     }
   }

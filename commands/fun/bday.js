@@ -8,19 +8,25 @@ module.exports = class BdayCommand extends Command {
       group:'fun',
       memberName: 'bday',
       description: 'No description necessary',
-      format:'<member>'
+      format:'<member>',
+      args: [
+        {
+          key: 'target',
+          prompt: '',
+          type: 'member',
+          default: ''
+        }
+      ]
     });
   }
 
-  run(msg) {
-    const taggedTarget = msg.mentions.users.first();
-
-    if(!taggedTarget) {
+  run(msg, { target }) {
+    if(!target) {
       msg.say("Who's birthday-nya?");
     }
 
-    if(taggedTarget) {
-      msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII ARUEL, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${taggedTarget}-KUN!`);
+    if(target) {
+      msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII ARUEL, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${target}-KUN!`);
     }
   }
 }

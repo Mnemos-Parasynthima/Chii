@@ -20,7 +20,7 @@ module.exports = class PokeCommand extends Command {
         {
           key: 'target',
           prompt: 'Who to poke?',
-          type: 'user'
+          type: 'member'
         }
       ]
     });
@@ -30,7 +30,7 @@ module.exports = class PokeCommand extends Command {
     const { url } = await fetch("https://nekos.life/api/v2/img/poke").then((res) => res.json());
 
     const embed = new Discord.MessageEmbed()
-      .setTitle(`Poking ${target.username}-nya!`)
+      .setTitle(`Poking ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

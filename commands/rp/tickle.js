@@ -20,7 +20,7 @@ module.exports = class TickleCommand extends Command {
         {
           key: 'target',
           prompt: 'Who to tickle?',
-          type: 'user'
+          type: 'member'
         }
       ]
     });
@@ -32,7 +32,7 @@ module.exports = class TickleCommand extends Command {
     if (target.id === msg.client.user.id ) return msg.reply('I can\'t tickle myself!');
 
     const embed = new MessageEmbed()
-      .setTitle(`Tickling ${taggedUser.username}-nya!`)
+      .setTitle(`Tickling ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

@@ -15,24 +15,27 @@ module.exports = class ShockedCommand extends Command {
       throttling: {
         usages: 3,
         duration: 5,
-      }
+      },
+      args: [
+        {
+          key: 'user',
+          prompt: '',
+          type: 'member',
+          default: ''
+        }
+      ]
     });
   }
 
-  run(msg) {
-    const taggedUser = msg.mentions.users.first();
-
-    if (!taggedUser) {
+  run(msg, { user }) {
+    if (!user) {
       msg.say('Huh?');
     }
 
-    if (taggedUser) {
+    if (user) {
       const i = Math.floor(Math.random() * shocked.length);
       const embed = new MessageEmbed().setDescription('*SHOCKED*').setImage(shocked[i]);
-      const user = msg.guild.member(taggedUser);
-      if (user) {
-        msg.embed(embed);
-      }
+      msg.embed(embed);
     }
   }
 };

@@ -20,7 +20,7 @@ module.exports = class PatCommand extends Command {
         {
           key: 'target',
           prompt: 'Who to pat?',
-          type: 'user'
+          type: 'member'
         }
       ]
     });
@@ -30,7 +30,7 @@ module.exports = class PatCommand extends Command {
     const { url } = await fetch("https://nekos.life/api/v2/img/pat").then((res) => res.json());
 
     const embed = new MessageEmbed()
-      .setTitle(`Patting ${target.username}-nya!`)
+      .setTitle(`Patting ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
