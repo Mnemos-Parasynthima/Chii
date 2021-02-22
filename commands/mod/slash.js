@@ -23,13 +23,13 @@ module.exports = class SlashCommand extends Command {
     });
   }
 
-  run(msg, { num }) {
-		const amount = num++;
-
-    if (amount < 1 || amount > 100) {
+  async run(msg, { num }) {
+    if (num < 1 || num > 100) {
 			return msg.reply('Nya need to input a nyumber between 0 and 100!');
     } else {
-      msg.channel.bulkDelete(amount, true).catch(err => {
+      await msg.delete(); // Should delete initial message
+
+      msg.channel.bulkDelete(num, true).catch(err => {
 			console.error(err);
 			msg.say('there was an error trying to slash messages in this channel!');
 		});
