@@ -20,9 +20,9 @@ module.exports = class HissCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
 
-    if (taggedUser.id === msg.client.user.id ) return msg.reply('. . .');
-
     if (!taggedUser) return msg.say('Huh?');
+
+    if (taggedUser.id === msg.client.user.id ) return msg.reply('. . .');
 
     if (taggedUser) {
       //const user = msg.guild.member(taggedUser);

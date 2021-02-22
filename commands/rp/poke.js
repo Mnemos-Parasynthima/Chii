@@ -29,7 +29,7 @@ module.exports = class PokeCommand extends Command {
   async run(msg, { target }) {
     const { url } = await fetch("https://nekos.life/api/v2/img/poke").then((res) => res.json());
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setTitle(`Poking ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
