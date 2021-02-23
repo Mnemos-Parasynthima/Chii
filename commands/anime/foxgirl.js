@@ -21,7 +21,7 @@ module.exports = class FoxGirlCommand extends Command {
     // Gets image data from api and sends as json
 	  const { url } = await fetch("https://nekos.life/api/v2/img/fox_girl").then((res) => res.json());
     const embed = new MessageEmbed()
-      .setTitle('Fox Girl')
+      .setTitle('Kitsune')
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

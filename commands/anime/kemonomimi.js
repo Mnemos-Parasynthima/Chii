@@ -1,4 +1,4 @@
-const { MesageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
@@ -21,7 +21,7 @@ module.exports = class KemonomimiCommand extends Command {
     // Gets image data from api and sends as json
 	  const { url } = await fetch("https://nekos.life/api/v2/img/kemonomimi").then((res) => res.json());
     const embed = new MessageEmbed()
-      .setTitle('kemonomimi')
+      .setTitle('Kemonomimi')
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))

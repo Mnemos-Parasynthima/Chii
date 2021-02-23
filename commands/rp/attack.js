@@ -9,7 +9,7 @@ module.exports = class AttackCommand extends Command {
       aliases: ['attck', 'ataca'],
       group: 'rp',
       memberName: 'attack',
-	    description: 'Attacks someone (some mild agressiveness).',
+	    description: 'Attack someone (some mild agressiveness).',
       guildOnly: true,
       format: '<member>',
       throttling: {
@@ -30,7 +30,7 @@ module.exports = class AttackCommand extends Command {
    run(msg, { target }) {
     const embed = new MessageEmbed().setColor('#ff0000');
 		
-    if (target.id === msg.client.user.id ) return msg.reply('Why would I attack nyaself, baka-nya!');
+    if (target.id === msg.client.user.id ) return msg.reply('Why would nya attack me, baka-nya!');
 
     if (!target) {
       embed.setDescription('. . .');

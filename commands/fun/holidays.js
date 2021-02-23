@@ -7,7 +7,7 @@ module.exports = class HolidayCommand extends Command {
       aliases: ['hd', 'festividades', 'horide', 'kyujitsu', 'kyuka'],
       group: 'fun',
       memberName: 'holiday',
-      description: `Use \`t\` for Thanksgiving, \`valentines\` for Saint Valentine's,  \`x\` for Christmas, and \`n\` for New Year's. No arguments give in a Happy Holidays.`,
+      description: `Use \`thxg\` or \`acdg\` for Thanksgiving, \`stvltn\` or \`valentin\` for Saint Valentine's,  \`xmas\` or \`nvd\` for Christmas, and \`newyear\` or \`an\` for New Year's. No arguments give in a Happy Holidays.`,
       guildOnly: true,
       format: '[holiday]',
       throttling: {

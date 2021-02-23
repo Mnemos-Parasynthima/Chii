@@ -82,9 +82,18 @@ module.exports = class HelpCommand extends Command {
      return msg.reply('Nyat\'s not a valid command-nya!');
     }
 
+    //console.log(command);
+    const { duration, usages } = command.throttling;
+    const rate = duration / usages;
+    const cooldown = Math.round(10 * rate) / 10; 
+    /**
+     * Rounding solution, because I'm too lazy to look back at my other code, tehe
+     * https://stackoverflow.com/questions/51357334/how-would-i-round-a-number-eg-2-12-to-the-nearest-tenth-2-1-in-js
+     */
+
     embed.setTitle(`Chii's \`${command.name}\` command help`)
-      .setDescription(`**Parameters:** \`<> - required; [] - optional\` \n\n${command.description}\n **Aliases:** ${command.aliases.join(', ')}\n **Usage:** \`${prefix} ${command.name} ${command.format || ''}\`\n`);
-      /***Cooldown:** ${command.throttling || 3} second(s)`);*/ // Fix throttling
+      .setDescription(`**Parameters:** \`<> - required; [] - optional\` \n\n${command.description}\n **Aliases:** ${command.aliases.join(', ')}\n **Usage:** \`${prefix} ${command.name} ${command.format || ''}\`\n **Cooldown:** ${cooldown} second(s)`);
+      
     msg.embed(embed);
   }
 };
