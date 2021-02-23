@@ -80,7 +80,7 @@ module.exports = class HolidayCommand extends Command {
             break;
           case 'happy':
             const chiihappy = this.client.emojis.cache.find(emoji => emoji.name === "chiihappy");
-            msg.say(`<:${chihappyt.name}:${chiihappy.id}>`);
+            msg.say(`<:${chihappy.name}:${chiihappy.id}>`);
             break;
           case 'chii':
             const chii = this.client.emojis.cache.find(emoji => emoji.name === "chii");
@@ -88,11 +88,11 @@ module.exports = class HolidayCommand extends Command {
             break;
           case 'emilia': // TODO: add more emilias
             const emilia = this.client.emojis.cache.find(emoji => emoji.name === "drunkemilia");
-            msg.say(`<:${drunkemilia.name}:${drunkemilia.id}>`);
+            msg.say(`<:${emilia.name}:${emilia.id}>`);
             break;
           case 'puck':
             const puck = this.client.emojis.cache.find(emoji => emoji.name === "emoji_1");
-            msg.say(`<:${emoji_1.name}:${emoji_1.id}>`);
+            msg.say(`<:${puck.name}:${puck.id}>`);
             break;
           default:
             msg.reply('That\'s nyot a reaction!');
