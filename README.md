@@ -2,7 +2,7 @@
 Features to add:
   - remind command: User inputs reminder and sets time, when time, it sends a reminder while @ing whoever set the reminder
 
-  - animegifs, attack, isekai, sleepy, weather_info, ascii art?? (use json file??), classical_piece_of_the_day, welcome message
+  - animegifs, weather_info, ascii art?? (use json file??), classical_piece_of_the_day
 
   - embed: Make an embed template!
 
