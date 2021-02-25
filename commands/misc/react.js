@@ -7,7 +7,7 @@ module.exports = class HolidayCommand extends Command {
       aliases: ['rct', 'reaccionar', 'hanno'],
       group: 'misc',
       memberName: 'react',
-      description: `React! using \`wut\`, \`happy\`, \`chii\`, \`emilia\`, or \`puck\`. \n If nya want to add a reaction to the previous nyassage, use \`true\`. If nya want to send a reaction, use \`false\`.`,
+      description: `React! using \`worried\`, \`angry\`, \`mad3\`, \`furious\`, \`scared\`, \`wut\`, or \`smile\`. \n If nya want to add a reaction to the previous nyassage, use \`true\`. If nya want to send a reaction, use \`false\`.`,
       guildOnly: true,
       format: '<true | false> <reaction>',
       throttling: {
@@ -37,25 +37,33 @@ module.exports = class HolidayCommand extends Command {
 
       const addReaction = (msg, args) => {
         switch (args) {
+          case 'worried':
+            const chiiworried = this.client.emojis.cache.find(emoji => emoji.name === "chiiworried");
+            msg.react(chiiworried);
+            break;
+          case 'angry':
+            const chiiangry = this.client.emojis.cache.find(emoji => emoji.name === "chiiangry");
+            msg.react(chiiangry);
+            break;
+          case 'mad3':
+            const chiimad3 = this.client.emojis.cache.find(emoji => emoji.name === "chiimad3");
+            msg.react(chiimad3);
+            break;
+          case 'furious':
+            const chiifurious = this.client.emojis.cache.find(emoji => emoji.name === "chiifurious");
+            msg.react(chiifurious);
+            break;
+          case 'scared':
+            const chiiscared = this.client.emojis.cache.find(emoji => emoji.name === "chiiscared");
+            msg.react(chiiscared);
+            break;
           case 'wut':
             const chiiwut = this.client.emojis.cache.find(emoji => emoji.name === "chiiwut");
             msg.react(chiiwut);
             break;
-          case 'happy':
-            const chiihappy = this.client.emojis.cache.find(emoji => emoji.name === "chiihappy");
-            msg.react(chiihappy);
-            break;
-          case 'chii':
-            const chii = this.client.emojis.cache.find(emoji => emoji.name === "chii");
-            msg.react(chii);
-            break;
-          case 'emilia': // TODO: add more emilias
-            const emilia = this.client.emojis.cache.find(emoji => emoji.name === "drunkemilia");
-            msg.react(emilia);
-            break;
-          case 'puck':
-            const puck = this.client.emojis.cache.find(emoji => emoji.name === "emoji_1");
-            msg.react(puck);
+          case 'smile':
+            const chiismile = this.client.emojis.cache.find(emoji => emoji.name === "chiismile");
+            msg.react(chiismile);
             break;
           default:
             msg.reply('That\'s nyot a reaction! Type \`chii help react\` to knyow the reactions!');
@@ -65,7 +73,7 @@ module.exports = class HolidayCommand extends Command {
 
       await msg.delete();
 
-      const fetched = await msg.channel.messages.fetch({ limit: 1});
+      const fetched = await msg.channel.messages.fetch({ limit: 1 });
       if (fetched && fetched.first()) {
         addReaction(fetched.first(), args);
       }
@@ -74,28 +82,36 @@ module.exports = class HolidayCommand extends Command {
 
       const sendReaction = (msg, args) => {
         switch (args) {
+          case 'worried':
+            const chiiworried = this.client.emojis.cache.find(emoji => emoji.name === "chiiworried");
+            msg.say(`<:${chiiworried.name}:${chiiworried.id}>`);
+            break;
+          case 'angry':
+            const chiiangry = this.client.emojis.cache.find(emoji => emoji.name === "chiiangry");
+            msg.say(`<:${chiiangry.name}:${chiiangry.id}>`);
+            break;
+          case 'mad3':
+            const chiimad3 = this.client.emojis.cache.find(emoji => emoji.name === "chiimad3");
+            msg.say(`<:${chiimad3.name}:${chiimad3.id}>`);
+            break;
+          case 'furious':
+            const chiifurious = this.client.emojis.cache.find(emoji => emoji.name === "chiifurious");
+            msg.say(`<:${chiifurious.name}:${chiifurious.id}>`);
+            break;
+          case 'scared':
+            const chiiscared = this.client.emojis.cache.find(emoji => emoji.name === "chiiscared");
+            msg.say(`<:${chiiscared.name}:${chiiscared.id}>`);
+            break;
           case 'wut':
             const chiiwut = this.client.emojis.cache.find(emoji => emoji.name === "chiiwut");
             msg.say(`<:${chiiwut.name}:${chiiwut.id}>`);
             break;
-          case 'happy':
-            const chiihappy = this.client.emojis.cache.find(emoji => emoji.name === "chiihappy");
-            msg.say(`<:${chihappy.name}:${chiihappy.id}>`);
-            break;
-          case 'chii':
-            const chii = this.client.emojis.cache.find(emoji => emoji.name === "chii");
-            msg.say(`<:${chii.name}:${chii.id}>`);
-            break;
-          case 'emilia': // TODO: add more emilias
-            const emilia = this.client.emojis.cache.find(emoji => emoji.name === "drunkemilia");
-            msg.say(`<:${emilia.name}:${emilia.id}>`);
-            break;
-          case 'puck':
-            const puck = this.client.emojis.cache.find(emoji => emoji.name === "emoji_1");
-            msg.say(`<:${puck.name}:${puck.id}>`);
+          case 'smile':
+            const chiismile = this.client.emojis.cache.find(emoji => emoji.name === "chiismile");
+            msg.say(`<:${chiismile.name}:${chiismile.id}>`);
             break;
           default:
-            msg.reply('That\'s nyot a reaction!');
+            msg.reply('That\'s nyot a reaction! Type \`chii help react\` to knyow the reactions!');
             break;
         }
       }

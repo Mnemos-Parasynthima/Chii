@@ -14,7 +14,7 @@
     "reddit-image-fetcher": "^2.0.6",
     "request": "^2.88.2",
     "yt-search": "^2.5.2",
-    "ytdl-core": "^4.4.5",
+    "ytdl-core": "^4.5.0",
     "ytdl-core-discord": "^1.2.5"
   },
   "devDependencies": {},
