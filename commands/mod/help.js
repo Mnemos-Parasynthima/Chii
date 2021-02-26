@@ -60,7 +60,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Roleplaying',
-            value: `\`baka\`, \`hug\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
+            value: `\`baka\`, \`hug\`, \`isekai\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
           },
 
         )
