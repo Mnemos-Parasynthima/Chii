@@ -2,7 +2,7 @@
 Features to add:
   - remind command: User inputs reminder and sets time, when time, it sends a reminder while @ing whoever set the reminder
 
-  - animegifs, weather_info, ascii art?? (use json file??), classical_piece_of_the_day
+  - animegifs, weather_info, ascii art?? (use json file??), classical_piece_of_the_day, giphy search (gihpy api), temperature converter, urban, translate?
 
   - embed: Make an embed template!
 

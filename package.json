@@ -11,7 +11,6 @@
     "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
     "ffmpeg-static": "^4.2.7",
     "node-fetch": "^2.6.1",
-    "reddit-image-fetcher": "^2.0.6",
     "request": "^2.88.2",
     "yt-search": "^2.5.2",
     "ytdl-core": "^4.5.0",
