@@ -93,7 +93,7 @@ module.exports = class PlayCommand extends Command {
       }
 
       const dispatcher = queue.connection
-        .play(await ytdl(music.url), { type: 'opus', highWaterMark: 50 })
+        .play(await ytdl(music.url), { type: 'opus', highWaterMark: 60 }) //Init of 50
         .on('finish', () => {
           queue.musics.shift();
           play(queue.musics[0]);
