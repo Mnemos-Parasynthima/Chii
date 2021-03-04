@@ -11,8 +11,12 @@ module.exports = class EmulateCommand extends Command {
       guildOnly: true
     });
   }
-  
+
   run(msg) {
-		this.client.emit('guildMemberAdd', msg.member);
+    if (msg.member.roles.cache.some(role => role.name === 'Developer')) {
+      this.client.emit('guildMemberAdd', msg.member);
+    } else {
+      msg.reply('Nya are not allowed to run that command, only for Developers!');
+    }
   }
 };
