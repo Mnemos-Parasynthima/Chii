@@ -44,7 +44,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`` // Add youtube!
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`temperature\`` // Add youtube!
           },
           {
             name: 'Miscelleanous',
@@ -60,7 +60,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Roleplaying',
-            value: `\`baka\`, \`hug\`, \`isekai\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`tickle\``
+            value: `\`baka\`, \`hug\`, \`isekai\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`stare\`, \`tickle\``
           },
 
         )
