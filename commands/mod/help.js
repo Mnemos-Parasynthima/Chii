@@ -43,6 +43,10 @@ module.exports = class HelpCommand extends Command {
             value: `\`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
           },
           {
+            name: 'Developer',
+            value: `\`emulate\``
+          },
+          {
             name: 'Fun',
             value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`temperature\`` // Add youtube!
           },
