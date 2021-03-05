@@ -3,7 +3,6 @@
 Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with the **[Discord.JS](https://discord.js.org/#/)** Library and the **Commando** framework.
 
 ## Table of Contents:
-- [Permissions](permissions)
 - [Setup](#setup)
 - [Commands](#commands)
   - [Anime](#anime)
