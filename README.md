@@ -14,7 +14,7 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
   - [NSFW](#nsfw)
   - [Roleplay](#roleplay)
 - [Modification](#modification)
-- [Bugs or ideas](#bugsorideas)
+- [Contribution](#contribution)
 - [Other](#other)
 
 ## Setup:
@@ -113,7 +113,7 @@ NSFW commands won't be listed here for various reasons. To know what commands Ch
 ## Modification:
 You can modify Chii's code but make sure to leave credit on the README file or somewhere visible.
 
-## Bugs or Ideas:
+## Contribution:
 Chii doesn't have an official support server for now, only a small development place used to test out features from Chii and others.
 If any bugs or error pop up, feel free to open up an issue and give any important information.
 If you have an idea, great! If you know how to program, feel free to add anything and open a pull request and I will see it. However, if you do not know, it's all fine! Open up an issue with the title of "New Idea" and describe the ideas, and I will look into it.
