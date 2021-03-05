@@ -6,7 +6,7 @@ module.exports = class StareCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'stare',
-      aliases: ['ji'],
+      aliases: ['jii'],
       group: 'rp',
       memberName: 'stare',
 	    description: 'Staring...',
@@ -21,7 +21,7 @@ module.exports = class StareCommand extends Command {
     const i = Math.floor(Math.random() * stare.length);
     const embed = new MessageEmbed()
       .setColor('#ff0000')
-      .setDescription("*Jjjiiiiiiiiiiiiiiii*")
+      .setDescription("*じーーーーーーーーーーーーーーっ*")
       .setImage(stare[i]);
 	  msg.embed(embed);
   }
