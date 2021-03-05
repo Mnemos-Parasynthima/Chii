@@ -13,7 +13,9 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
   - [Music](#music)
   - [NSFW](#nsfw)
   - [Roleplay](#roleplay)
-- [Other info](#other)
+- [Modification](#modification)
+- [Bugs or ideas](#bugsorideas)
+- [Other](#other)
 
 ## Setup:
 1. Install [Node.js](https://nodejs.org/en/) 10 or higher if not already done so.
@@ -119,7 +121,7 @@ If you have an idea, great! If you know how to program, feel free to add anythin
 
 Currently, I am not looking for collaborators as I'm too lazy. However, I might consider it should I want to take Chii further.  Make sure to keep up to date. :)
 
-## Other info:
+## Other:
 
 These are my personal things to keep here, so don't pay them much mind.
 Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215656&permissions=1077341254&scope=bot).
