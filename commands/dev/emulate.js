@@ -13,7 +13,7 @@ module.exports = class EmulateCommand extends Command {
   }
 
   run(msg) {
-    if (msg.member.roles.cache.some(role => role.name === 'Developer')) {
+    if (msg.author.id === process.env.ownerId) {
       this.client.emit('guildMemberAdd', msg.member);
     } else {
       msg.reply('Nya are not allowed to run that command, only for Developers!');
