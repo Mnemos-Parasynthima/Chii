@@ -1,4 +1,4 @@
-# Meet SoulWorker Chii [Aruel]! Version 2.2.2
+# Meet SoulWorker Chii [Aruel]! Version 2.3
 
 Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with the **[Discord.JS](https://discord.js.org/#/)** Library and the **Commando** framework.
 
@@ -17,7 +17,7 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 - [Other](#other)
 
 ## Setup:
-1. Install [Node.js](https://nodejs.org/en/) 10 or higher if not already done so.
+1. Install [Node.js](https://nodejs.org/en/) 12 or higher if not already done so.
 2. Clone or download the repository.
 3. Install build tools (for use of Canvas) with terminal.
     - `npm install --global windows-build-tools`
