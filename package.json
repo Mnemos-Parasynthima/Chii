@@ -1,6 +1,6 @@
 {
   "name": "SoulWorker-Chii-Bot",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "SoulWorker Chii at your service-nya!",
   "main": "chii.js",
   "dependencies": {
