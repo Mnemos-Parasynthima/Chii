@@ -1,5 +1,5 @@
 {
-  "name": "Chii",
+  "name": "chii",
   "version": "2.3.0",
   "description": "SoulWorker Chii at your service-nya!",
   "main": "chii.js",
@@ -23,13 +23,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot.git"
+    "url": "git+https://github.com/Mnemos-Parasynthima/Chii.git"
   },
   "keywords": [],
   "author": "Mnemos-Parasynthima",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot/issues"
+    "url": "https://github.com/Mnemos-Parasynthima/Chii/issues"
   },
-  "homepage": "https://github.com/Mnemos-Parasynthima/SoulWorker-Chii-Bot#readme"
+  "homepage": "https://github.com/Mnemos-Parasynthima/Chii#readme"
 }
