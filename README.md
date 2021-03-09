@@ -134,7 +134,10 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Giphy search
 - [ ] Urban dictionary
 - [ ] Translate
+- [ ] Move user info to 'rank' card (mongodb)??
+- [ ] Bot info
 
 ### To Do
 
 - [ ] Style music commands
+- [ ] Add roles for users (u-i command)
