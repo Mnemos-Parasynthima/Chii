@@ -139,5 +139,5 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 ### To Do
 
-- [ ] Style music commands
+- [ ] Style and fix music commands
 - [ ] Add roles for users (u-i command)
