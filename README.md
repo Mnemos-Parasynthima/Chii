@@ -34,17 +34,17 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 Using `<>` is required whereas `[]` is optional.
 
 ### Anime
-| Command    | Arguments | Description                                                |
-|------------|-----------|------------------------------------------------------------|
-| `foxgirl`    | None      | Sends an image of a foxgirl from the Nekos.life API.       |
-| `kemonomimi` | None      | Sends an image of any kemonomimi from the Nekos.life API.  |
-| `nekosgif`   | None      | Sends a GIF of a neko or nekos from the Nekos.life API.    |
-| `nekos`      | None      | Sends an image of a neko or nekos from the Nekos.life API. |
+| Command     | Arguments | Description                                                |
+|-------------|-----------|------------------------------------------------------------|
+| `foxgirl`   |   None    | Sends an image of a foxgirl from the Nekos.life API.       |
+| `kemonomimi`|   None    | Sends an image of any kemonomimi from the Nekos.life API.  |
+| `nekosgif`  |   None    | Sends a GIF of a neko or nekos from the Nekos.life API.    |
+| `nekos`     |   None    | Sends an image of a neko or nekos from the Nekos.life API. |
 
 ### Developer
-| Command | Arguments | Description                              |
-|---------|-----------|------------------------------------------|
-| `emulate` | None      | Emulates an event. (For developers only) |
+| Command  | Arguments | Description                              |
+|----------|-----------|------------------------------------------|
+| `emulate`|   None    | Emulates an event. (For developers only) |
 
 ### Fun
 | Command    | Arguments         | Description                                                            |
@@ -59,18 +59,18 @@ Using `<>` is required whereas `[]` is optional.
 | `praise`   | `[member]`        | Praises whoever is tagged, if not, it defaults to Chii.                |
 | `randnum`  | `<min><max>`      | Returns a random number between the specified limits.                  |
 | `rate`     | `<member>`        | Rates someone's usefulness or uselessness.                             |
-| `say`      | None            | Makes Chii say something on her own.                                   |
+| `say`      | None              | Makes Chii say something on her own.                                   |
 | `shocked`  | `<member>`        | Sends a GIF of a shocked anime face.                                   |
 | `tempconv` | `<base><to><num>` | Converts a given temperature to either Celsius, Fahrenheit, or Kelvin. |
 
 ### Miscellaneous
-| Command  | Arguments                   | Description                                                                       |
-|----------|-----------------------------|-----------------------------------------------------------------------------------|
-| `fight`  | `<member>`                  | Makes Chii fight someone.                                                         |
-| `hiss`   | `<member>`                  | Intimidates someone, hiisss!!                                                     |
-| `master` | None                        | Provides information about Chii's owner.                                          |
-| `puppet` | `<line>`                    | Makes Chii say what is provided in capitalized and quoted.                        |
-| `react`  | `<true \| false><reaction>`  | Reacts to something. Use `true` to add a reaction and `false` to send a reaction. |
+| Command  | Arguments                   | Description                                                       |
+|----------|-----------------------------|-------------------------------------------------------------------|
+| `fight`  | `<member>`                  | Makes Chii fight someone.                                         |
+| `hiss`   | `<member>`                  | Intimidates someone, hiisss!!                                     |
+| `master` | None                        | Provides information about Chii's owner.                          |
+| `puppet` | `<line>`                    | Makes Chii say what is provided in capitalized and quoted.        |
+| `react`  | `<true \| false><reaction>` | Reacts to something. Use `true` to add a reaction and `false` to send a reaction. |
 
 ### Moderation
 | Command     | Arguments        | Description                                                                               |
