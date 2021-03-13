@@ -39,6 +39,8 @@ module.exports = class PlayCommand extends Command {
     let searched = await yts.search(query);
     if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
 
+
+    // If supplied with a link
     let musicInfo = searched.videos[0];
 
     const music = {
