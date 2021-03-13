@@ -1,52 +1,57 @@
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Chii, SoulWorker, Aruel, discord, bot">
-    <meta name="description" content="Chii is a Discord bot made by Mnemos-Parasynthima, its goal is wacky things for a Discord server. This bot has been named after Chii Aruel from SoulWorker.">
-    <title>Chii Aruel</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/icons/chii.ico">
 
-{% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <!--[if lt IE 9]>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="Chii, SoulWorker, Aruel, discord, bot">
+	<meta name="description" content="Chii is a Discord bot made by Mnemos-Parasynthima, its goal is wacky things for a Discord server. This bot has been named after Chii Aruel from SoulWorker.">
+	<title>Chii Aruel</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/icons/chii.ico"> {% seo %}
+	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	 crossorigin="anonymous">
+	</script>
+	<script src="{{ '/assets/js/respond.js' | relative_url }}">
+	</script>
+	<!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <!--[if lt IE 8]>
+	<!--[if lt IE 8]>
     <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
-          {% if site.show_downloads %}
-            <li class="downloads"><a href="{{ github.zip_url }}">ZIP</a></li>
-            <li class="title">DOWNLOADS</li>
-          {% endif %}
-        </nav>
-      </div><!-- end header -->
+</head>
 
-    <div class="wrapper">
+<body>
+	<div id="header">
+		<nav class="nav">
+			<ul>
+				<li class="home"><a href="/">Home</a></li>
+				<li class="right"><a href="./commands">Commands</a></li>
+			</ul>
+		</nav>
+	</div><!-- end header -->
 
-      <section>
-        <div id="title">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-          <p>{{ site.description | default: site.github.project_tagline }}</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+	<div class="wrapper">
+
+		<section>
+			<div id="title">
+				<h1>{{ site.title | default: site.github.repository_name }}</h1>
+				<p>{{ site.description | default: site.github.project_tagline }}</p>
+			</div>
+
+			{{ content }}
+      
+			<div id="footer">
+				<hr>
+				<span class="credits left">Site by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span><br>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
-        </div>
-
-        {{ content }}
-
+          <span class="credits left">Chii's art credit: Lion Games and kyjsogom</span>
+          <span class="credits right">View code on <a href="https://github.com/Mnemos-Parasynthima/Chii/tree/gh-pages" target="_blank">GitHub</a></span>
       </section>
 
     </div>
