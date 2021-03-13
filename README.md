@@ -100,14 +100,16 @@ NSFW commands won't be listed here for various reasons. To know what commands Ch
 ### Roleplay
 | Command  | Arguments  | Description                                             |
 |----------|------------|---------------------------------------------------------|
-| `pause`  | None       | Pauses the ongoing video.                               |
-| `play`   | `<name>`   | Plays a video from YouTube from the given name.         |
-| `queue`  | None       | Lists the queue of videos.                              |
-| `remove` | `<number>` | Removes a video from the queue with a specified number. |
-| `resume` | None       | Resumes the paused video.                               |
-| `skip`   | None       | Skips the current video.                                |
-| `stop`   | None       | Stops what is playing and disconnects.                  |
-| `volume` | `<number>` | Lowers the volume at the specified number. Max is 5.    |
+| `attack` | `<member>` | Makes Chii attack someone (poor them!).                 |
+| `baka`   | `<name>`   | Baaaaaaaaka.                                            |
+| `hug`    | `<member>` | Hug someone.....because they deserve it.                |
+| `isekai` | `[member]` | Get sent to another world...or another person.          |
+| `pat`    | `<member>` | Pat someone on their head.                              |
+| `poke`   | `<member>` | Poke someone.                                           |
+| `slap`   | `<member>` | Slap someone because they annoying...or they deserve it.|
+| `smug`   | None       | What a quite smug face.                                 |
+| `stare`  | None       | Stare at someone....*jiiiiiiiiiiiii*                    |
+| `tickle` | `<member>` | Tickle someone to make them laugh.                      |
 
 ## Modification:
 You can modify Chii's code but make sure to leave credit on the README file or somewhere visible.
