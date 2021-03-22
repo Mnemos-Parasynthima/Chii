@@ -134,7 +134,7 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Weather command
 - [ ] Random classical piece
 - [ ] Giphy search
-- [ ] Urban dictionary
+- [X] Urban dictionary
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
 - [ ] Bot info
