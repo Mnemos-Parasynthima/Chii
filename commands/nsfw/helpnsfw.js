@@ -48,7 +48,7 @@ module.exports = class NHelpCommand extends Command {
           if (msg.channel.type === 'text') return;
         })
         .catch(error => {
-          console.error(`Could not send help to ${message.author.tag}.\n`, error);
+          console.error(`Could not send help to ${msg.author.tag}.\n`, error);
           msg.reply('It seems like I can\'t send!');
         });
     }
