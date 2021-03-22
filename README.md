@@ -62,6 +62,7 @@ Using `<>` is required whereas `[]` is optional.
 | `say`      | None              | Makes Chii say something on her own.                                   |
 | `shocked`  | `<member>`        | Sends a GIF of a shocked anime face.                                   |
 | `tempconv` | `<base><to><num>` | Converts a given temperature to either Celsius, Fahrenheit, or Kelvin. |
+| `urban`    | `<query>`         | Sends an Urban dictionary definition for the provided query.           |
 
 ### Miscellaneous
 | Command  | Arguments                   | Description                                                       |
