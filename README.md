@@ -132,14 +132,14 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 ### Features to add:
 
 - [ ] Remind command
-- [ ] Weather command
-- [ ] Random classical piece
+- [ ] Weather command (need api)
+- [ ] Random classical piece (need api)
 - [X] Urban dictionary
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
-- [ ] Bot info
+- [X] Bot info
 
 ### To Do
 
 - [ ] Style and fix music commands
-- [ ] Add roles for users (u-i command)
+- [ ] Add roles for users (u-i command, after mongodb)
