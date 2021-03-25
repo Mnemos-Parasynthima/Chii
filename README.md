@@ -134,7 +134,6 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Remind command
 - [ ] Weather command
 - [ ] Random classical piece
-- [ ] Giphy search
 - [X] Urban dictionary
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
