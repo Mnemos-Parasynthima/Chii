@@ -22,13 +22,13 @@ module.exports = class ChiiInfoCommand extends Command {
     const site = "mnemos-parasynthima.github.io/chii/";
 
     const embed = new MessageEmbed()
-      .setThumbnail(this.client.displayAvatarURL())
-      .setTitle('About Chii:')
-      .setAuthor(this.client.user.username, this.client.user.displayAvatarURL(), site)
+      .setThumbnail(this.client.displayAvatarURL)
+      .setTitle('About Chii')
+      .setAuthor(this.client.user.username, this.client.user.displayAvatarURL, site)
       .setDescription('')
       .setColor('#ff0000')
       .setTimestamp()
-      .setFooter(this.client.user.username, this.client.user.displayAvatarURL())
+      .setFooter(this.client.user.username, this.client.user.displayAvatarURL)
       .addFields(
         {
           name: 'Version',
@@ -55,7 +55,7 @@ module.exports = class ChiiInfoCommand extends Command {
           value: site
         },
         {
-          name: 'Server using Chii',
+          name: 'Servers using Chii',
           value: this.client.guilds.size
         }
       )
