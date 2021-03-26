@@ -19,16 +19,17 @@ module.exports = class ChiiInfoCommand extends Command {
   }
 
   run(msg) {
-    const site = "mnemos-parasynthima.github.io/chii/";
-
+    const site = "https://mnemos-parasynthima.github.io/chii/";
+    const avatar = this.client.user.displayAvatarURL();
+    //console.log(guildMember);
     const embed = new MessageEmbed()
-      .setThumbnail(this.client.displayAvatarURL)
+      .setThumbnail(avatar)
       .setTitle('About Chii')
-      .setAuthor(this.client.user.username, this.client.user.displayAvatarURL, site)
+      .setAuthor(this.client.user.username, avatar, site)
       .setDescription('')
       .setColor('#ff0000')
       .setTimestamp()
-      .setFooter(this.client.user.username, this.client.user.displayAvatarURL)
+      .setFooter(this.client.user.username, avatar)
       .addFields(
         {
           name: 'Version',
@@ -42,10 +43,10 @@ module.exports = class ChiiInfoCommand extends Command {
           name: 'Created on',
           value: this.client.user.createdAt
         },
-        {
+        /*{
           name: 'On the server since',
-          value: this.client.user.joinedAt
-        },
+          value: this.client.member.joinedAt
+        },*/
         {
           name: 'Github',
           value: 'https://github.com/Mnemos-Parasynthima/Chii'
@@ -56,7 +57,7 @@ module.exports = class ChiiInfoCommand extends Command {
         },
         {
           name: 'Servers using Chii',
-          value: this.client.guilds.size
+          value: this.client.guilds.cache.size
         }
       )
 
