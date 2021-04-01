@@ -56,7 +56,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Moderation',
-            value: `\`ban\`, \`help\`, \`kick\`,  \`server\`, \`slash\`, \`user-info\``
+            value: `\`ban\`, \`botinfo\`, \`help\`, \`kick\`,  \`server\`, \`slash\`, \`user-info\``
           },
           {
             name: 'Music',
