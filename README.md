@@ -138,6 +138,7 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
 - [X] Bot info
+- [ ] Snipe command
 
 ### To Do
 
