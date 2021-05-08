@@ -18,6 +18,9 @@ const client = new CommandoClient({
 // Collection for music
 client.queue = new Map();
 
+// Collection for snipes
+client.snipes = new Map();
+
 //Allowing bot to be 24/7
 const http = require('http');
 
@@ -30,7 +33,7 @@ http.createServer((req, res) => {
 client.on('ready', () => {
   console.log('SoulWorker Chii is now online.')
 
-  client.user.setActivity('chii', { type: 'LISTENING' });
+  client.user.setActivity('for new LG SoulWorker', { type: 'WATCHING' });
 });
 
 client.registry
@@ -54,6 +57,17 @@ client.registry
 
 client.once('ready', () => console.log('Ready!'));
 client.on('error', console.error);
+
+client.on('messageDelete', async msg => {
+  if (msg.author.bot) return;
+
+  client.snipes.set(msg.channel.id, {
+    content: msg.content,
+    author: msg.author.tag,
+    member: msg.member,
+    image: msg.attachments.first() ? msg.attachments.first().proxyURL : null
+  })
+})
 
 client.on('guildMemberAdd', async member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'announcements');
