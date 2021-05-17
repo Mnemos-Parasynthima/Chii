@@ -71,7 +71,7 @@ Using `<>` is required whereas `[]` is optional.
 | `hiss`   | `<member>`                  | Intimidates someone, hiisss!!                                     |
 | `master` | None                        | Provides information about Chii's owner.                          |
 | `puppet` | `<line>`                    | Makes Chii say what is provided in capitalized and quoted.        |
-| `react`  | `<true | false><reaction>`  | Reacts to something. Use `true` to add a reaction and `false` to send a reaction. |
+| `react`  | `<reaction>`                | Sends an image as a reaction. |
 
 ### Moderation
 | Command     | Arguments        | Description                                                                               |
