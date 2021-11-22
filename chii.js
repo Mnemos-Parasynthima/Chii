@@ -25,7 +25,7 @@ client.snipes = new Map();
 const http = require('http');
 
 http.createServer((req, res) => {
-  res.write("I'm alive");
+  res.write("I am the best SoulWorker.");
   res.end();
 }).listen(8080);
 //End code to allow 24/7 bot
@@ -33,7 +33,7 @@ http.createServer((req, res) => {
 client.on('ready', () => {
   console.log('SoulWorker Chii is now online.')
 
-  client.user.setActivity('for new LG SoulWorker', { type: 'WATCHING' });
+  client.user.setActivity('SoulWorker', { type: 'PLAYING' });
 });
 
 client.registry

@@ -7,7 +7,7 @@ module.exports = class ReactCommand extends Command {
       aliases: ['rct', 'reaccionar', 'hanno'],
       group: 'misc',
       memberName: 'react',
-      description: `React! using \`worried\`, \`angry\`, \`mad3\`, \`furious\`, \`scared\`, \`wut\`, or \`smile\`.`,
+      description: `React! using \`shrug\`, \`arua\`, \`ephnel\`, \`yorka\`, \`sip\`, or \`think\`.`,
       guildOnly: true,
       format: '<reaction>',
       throttling: {
@@ -27,34 +27,51 @@ module.exports = class ReactCommand extends Command {
   async run(msg, { args }) {
     try {
       const sendReaction = (msg, args) => {
+        //cons happys = 
         switch (args) {
-          case 'worried':
-            const chiiworried = this.client.emojis.cache.find(emoji => emoji.name === "chiiworried");
-            msg.say(`<:${chiiworried.name}:${chiiworried.id}>`);
+          case 'shrug':
+            const shrug = this.client.emojis.cache.find(emoji => emoji.name === "shrug");
+            msg.say(`<:${shrug.name}:${shrug.id}>`);
             break;
-          case 'angry':
-            const chiiangry = this.client.emojis.cache.find(emoji => emoji.name === "chiiangry");
-            msg.say(`<:${chiiangry.name}:${chiiangry.id}>`);
+          case 'arua':
+            const arua = this.client.emojis.cache.find(emoji => emoji.name === "arua");
+            msg.say(`<:${arua.name}:${arua.id}>`);
             break;
-          case 'mad3':
-            const chiimad3 = this.client.emojis.cache.find(emoji => emoji.name === "chiimad3");
-            msg.say(`<:${chiimad3.name}:${chiimad3.id}>`);
+          case 'ephnel':
+            const ephnel = this.client.emojis.cache.find(emoji => emoji.name === "ephnel");
+            msg.say(`<:${ephnel.name}:${ephnel.id}>`);
             break;
-          case 'furious':
-            const chiifurious = this.client.emojis.cache.find(emoji => emoji.name === "chiifurious");
-            msg.say(`<:${chiifurious.name}:${chiifurious.id}>`);
+          case 'yorka':
+            const yorka = this.client.emojis.cache.find(emoji => emoji.name === "yorka");
+            msg.say(`<:${yorka.name}:${yorka.id}>`);
             break;
-          case 'scared':
-            const chiiscared = this.client.emojis.cache.find(emoji => emoji.name === "chiiscared");
-            msg.say(`<:${chiiscared.name}:${chiiscared.id}>`);
+          case 'sip':
+            const sip = this.client.emojis.cache.find(emoji => emoji.name === "sip");
+            msg.say(`<:${sip.name}:${sip.id}>`);
             break;
-          case 'wut':
-            const chiiwut = this.client.emojis.cache.find(emoji => emoji.name === "chiiwut");
-            msg.say(`<:${chiiwut.name}:${chiiwut.id}>`);
+          case 'think':
+            const think = this.client.emojis.cache.find(emoji => emoji.name === "think");
+            msg.say(`<:${think.name}:${think.id}>`);
             break;
-          case 'smile':
-            const chiismile = this.client.emojis.cache.find(emoji => emoji.name === "chiismile");
-            msg.say(`<:${chiismile.name}:${chiismile.id}>`);
+          // case 'happy':
+          //   const happy = this.client.emojis.cache.find(emoji => emoji.name === happys);
+          //   msg.say(`<:${happy.name}:${happy.id}>`);
+          //   break;
+          case 'serious':
+            const serious = this.client.emojis.cache.find(emoji => emoji.name === "serious");
+            msg.say(`<:${serious.name}:${serious.id}>`);
+            break;
+          case 'satisproud':
+            const satisproud = this.client.emojis.cache.find(emoji => emoji.name === "satisproud");
+            msg.say(`<:${satisproud.name}:${satisproud.id}>`);
+            break;
+          case 'sad':
+            const sad = this.client.emojis.cache.find(emoji => emoji.name === "sad");
+            msg.say(`<:${sad.name}:${sad.id}>`);
+            break;
+          case 'annoyger':
+            const annoyger = this.client.emojis.cache.find(emoji => emoji.name === "annoyger");
+            msg.say(`<:${annoyger.name}:${annoyger.id}>`);
             break;
           default:
             msg.reply('That\'s nyot a reaction! Type \`chii help react\` to knyow the reactions!');
