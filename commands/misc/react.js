@@ -7,7 +7,7 @@ module.exports = class ReactCommand extends Command {
       aliases: ['rct', 'reaccionar', 'hanno'],
       group: 'misc',
       memberName: 'react',
-      description: `React! using \`shrug\`, \`arua\`, \`ephnel\`, \`yorka\`, \`sip\`, or \`think\`.`,
+      description: `React! using \`shrug\`, \`arua\`, \`ephnel\`, \`yorka\`, \`sip\`, or \`think\`, \`happy1\`, \`happy2\`, \`serious\`, \`satisproud\`, \`sad\`, \`annoyger\`, \`wut\`, \`no\``,
       guildOnly: true,
       format: '<reaction>',
       throttling: {
@@ -53,10 +53,14 @@ module.exports = class ReactCommand extends Command {
             const think = this.client.emojis.cache.find(emoji => emoji.name === "think");
             msg.say(`<:${think.name}:${think.id}>`);
             break;
-          // case 'happy':
-          //   const happy = this.client.emojis.cache.find(emoji => emoji.name === happys);
-          //   msg.say(`<:${happy.name}:${happy.id}>`);
-          //   break;
+          case 'happy1':
+            const happy1 = this.client.emojis.cache.find(emoji => emoji.name === "happy1");
+            msg.say(`<:${happy1.name}:${happy1.id}>`);
+            break;
+          case 'happy2':
+            const happy2 = this.client.emojis.cache.find(emoji => emoji.name === "happy2");
+            msg.say(`<:${happy2.name}:${happy2.id}>`);
+            break;
           case 'serious':
             const serious = this.client.emojis.cache.find(emoji => emoji.name === "serious");
             msg.say(`<:${serious.name}:${serious.id}>`);
@@ -72,6 +76,13 @@ module.exports = class ReactCommand extends Command {
           case 'annoyger':
             const annoyger = this.client.emojis.cache.find(emoji => emoji.name === "annoyger");
             msg.say(`<:${annoyger.name}:${annoyger.id}>`);
+          case 'wut':
+            const wut = this.client.emojis.cache.find(emoji => emoji.name === "wut");
+            msg.say(`<:${wut.name}:${wut.id}>`);
+            break;
+          case 'denied':
+            const denied = this.client.emojis.cache.find(emoji => emoji.name === "denied");
+            msg.say(`<:${denied.name}:${denied.id}>`);
             break;
           default:
             msg.reply('That\'s nyot a reaction! Type \`chii help react\` to knyow the reactions!');
