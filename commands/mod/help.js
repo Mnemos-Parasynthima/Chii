@@ -52,7 +52,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Miscelleanous',
-            value: `\`fight\`, \`hiss\`, \`master\`, \`react\`, \`useless\``
+            value: `\`fight\`, \`hiss\`, \`react\`, \`useless\``
           },
           {
             name: 'Moderation',

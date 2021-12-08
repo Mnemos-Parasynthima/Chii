@@ -69,7 +69,6 @@ Using `<>` is required whereas `[]` is optional.
 |----------|-----------------------------|-------------------------------------------------------------------|
 | `fight`  | `<member>`                  | Makes Chii fight someone.                                         |
 | `hiss`   | `<member>`                  | Intimidates someone, hiisss!!                                     |
-| `master` | None                        | Provides information about Chii's owner.                          |
 | `puppet` | `<line>`                    | Makes Chii say what is provided in capitalized and quoted.        |
 | `react`  | `<reaction>`                | Sends an image as a reaction. |
 
