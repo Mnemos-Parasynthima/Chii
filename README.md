@@ -10,7 +10,6 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
   - [Fun](#fun)
   - [Miscellaneous](#miscellaneous)
   - [Music](#music)
-  - [NSFW](#nsfw)
   - [Roleplay](#roleplay)
 - [Modification](#modification)
 - [Contribution](#contribution)
@@ -93,9 +92,6 @@ Using `<>` is required whereas `[]` is optional.
 | `skip`   | None       | Skips the current video.                                |
 | `stop`   | None       | Stops what is playing and disconnects.                  |
 | `volume` | `<number>` | Lowers the volume at the specified number. Max is 5.    |
-
-### NSFW
-NSFW commands won't be listed here for various reasons. To know what commands Chii has, visit `commands/nsfw`.
 
 ### Roleplay
 | Command  | Arguments  | Description                                             |
