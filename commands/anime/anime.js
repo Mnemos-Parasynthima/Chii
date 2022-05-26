@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 
+
 module.exports = class AnimeCommand extends Command {
   constructor(client) {
     super(client, {

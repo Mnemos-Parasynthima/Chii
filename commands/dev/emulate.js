@@ -1,4 +1,6 @@
 const { Command } = require('discord.js-commando');
+// import pkg2 from 'discord.js-commando';
+// const { Command } = pkg2;
 
 module.exports = class EmulateCommand extends Command {
   constructor(client) {

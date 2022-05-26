@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+/*const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
@@ -30,4 +30,4 @@ module.exports = class SmugCommand extends Command {
 		
 		msg.embed(embed);
   }
-};
+};*/

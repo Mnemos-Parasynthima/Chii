@@ -5,7 +5,6 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 ## Table of Contents:
 - [Setup](#setup)
 - [Commands](#commands)
-  - [Anime](#anime)
   - [Developer](#developer)
   - [Fun](#fun)
   - [Miscellaneous](#miscellaneous)
@@ -31,14 +30,6 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 (Note: Many of the commands made were for my own purpose so feel free to change them or delete them. Some commands are not listed and such are those that were for my own purpose)
 
 Using `<>` is required whereas `[]` is optional.
-
-### Anime
-| Command     | Arguments | Description                                                |
-|-------------|-----------|------------------------------------------------------------|
-| `foxgirl`   |   None    | Sends an image of a foxgirl from the Nekos.life API.       |
-| `kemonomimi`|   None    | Sends an image of any kemonomimi from the Nekos.life API.  |
-| `nekosgif`  |   None    | Sends a GIF of a neko or nekos from the Nekos.life API.    |
-| `nekos`     |   None    | Sends an image of a neko or nekos from the Nekos.life API. |
 
 ### Developer
 | Command  | Arguments | Description                              |
@@ -97,15 +88,8 @@ Using `<>` is required whereas `[]` is optional.
 | Command  | Arguments  | Description                                             |
 |----------|------------|---------------------------------------------------------|
 | `attack` | `<member>` | Makes Chii attack someone (poor them!).                 |
-| `baka`   | `<name>`   | Baaaaaaaaka.                                            |
-| `hug`    | `<member>` | Hug someone.....because they deserve it.                |
 | `isekai` | `[member]` | Get sent to another world...or another person.          |
-| `pat`    | `<member>` | Pat someone on their head.                              |
-| `poke`   | `<member>` | Poke someone.                                           |
-| `slap`   | `<member>` | Slap someone because they annoying...or they deserve it.|
-| `smug`   | None       | What a quite smug face.                                 |
 | `stare`  | None       | Stare at someone....*jiiiiiiiiiiiii*                    |
-| `tickle` | `<member>` | Tickle someone to make them laugh.                      |
 
 ## Modification:
 You can modify Chii's code but make sure to leave credit on the README file or somewhere visible.
@@ -132,10 +116,10 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [X] Urban dictionary
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
-- [X] Bot info
 - [ ] Snipe command
 
 ### To Do
 
 - [ ] Style and fix music commands
 - [ ] Add roles for users (u-i command, after mongodb)
+- [ ] Rip access to nekos.life via replit; use regular gifs (own api?) to replace nekos.life gifs

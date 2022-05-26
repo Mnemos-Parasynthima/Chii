@@ -31,17 +31,17 @@ module.exports = class HelpCommand extends Command {
       .setColor('#ff0000')
       .setThumbnail(msg.client.user.displayAvatarURL())
       .setTimestamp()
-    const commands = msg.client.registry.commands; // TODO: Destructure
+    const commands = msg.client.registry.commands; // TODO: Destructure??
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
         .setDescription('I am SoulWorker Chii Aruel, one of the best SoulWorkers from West Cloudreamnya. Nya only Master is Umbre0n-sama, but I suppose I\'ll accept your commands-nya. UwU')
         .setFooter(`Send \`${prefix} help [command name]\` for more info onya a command-nya!`)
         .addFields(
-          {
+          /*{
             name: 'Anime',
             value: `\`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
-          },
+          },*/
           {
             name: 'Developer',
             value: `\`emulate\``
@@ -64,7 +64,8 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Roleplaying',
-            value: `\`baka\`, \`hug\`, \`isekai\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`stare\`, \`tickle\``
+            value: `\`isekai\`,\`tickle\``
+            //baka, hug, pat, poke, slap, smug, tickle
           },
 
         )

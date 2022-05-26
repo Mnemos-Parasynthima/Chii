@@ -1,3 +1,4 @@
+//const applyText = (canvas, text) => {
 module.exports = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 
@@ -13,3 +14,5 @@ module.exports = (canvas, text) => {
 	// Return the result to use in the actual canvas
 	return ctx.font;
 };
+
+//export default applyText;
