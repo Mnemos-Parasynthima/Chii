@@ -1,4 +1,4 @@
-# Meet SoulWorker Chii [Aruel]! Version 2.3
+# Meet SoulWorker Chii [Aruel]! Version 2.4
 
 Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with the **[Discord.JS](https://discord.js.org/#/)** Library and the **Commando** framework.
 

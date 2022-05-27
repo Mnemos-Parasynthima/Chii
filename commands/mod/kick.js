@@ -19,24 +19,21 @@ module.exports = class KickCommand extends Command {
   }
 
   run(msg) {
-		if (!msg.mentions.users.size) {
-			return msg.reply('Nya need to tag a user in order to kick them-nya!');
-		}
+		if (!msg.mentions.users.size) return msg.reply('Nya need to tag a user in order to kick them-nya!');
 
-    // this returns the user mentioned in the message
 		const taggedUser = msg.mentions.users.first();
 
-    if (taggedUser) {
-      // this gets the member from the user
-      const user = msg.guild.member(taggedUser);
-      if (user) {
-        user.kick()
-          .then(() => { msg.reply('Successfully kicked 🦵🏼!')})
-          .catch(err => { 
-            console.error(err);
-			      msg.say(`there was an error trying to kick ${user} in this channel!`);
-          });
-      }
-    }
+    if (!taggedUser) return;
+
+    const user = msg.guild.member(taggedUser);
+
+    if (!user) return;
+
+    user.kick()
+      .then(() => { msg.reply('Successfully kicked 🦵🏼!')})
+      .catch(err => { 
+        console.error(err);
+        msg.say(`there was an error trying to kick ${user} in this channel!`);
+      });    
   }
 };

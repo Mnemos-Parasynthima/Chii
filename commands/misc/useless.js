@@ -31,12 +31,13 @@ module.exports = class UselessCommand extends Command {
 
     if (taggedUser.id === msg.client.user.id ) return msg.reply('I\'m nyever useless, you are!');
 
-    if (taggedUser.id !== owner) { // If tag and tag is not owner
+    if (taggedUser.id !== owner) { // If tag is not owner
       const i = Math.floor(Math.random() * uselessAqua.length);
       embed.setDescription(`Useless ${taggedUser}-nya! Just like Aqua`).setImage(uselessAqua[i]);
 	    return msg.embed(embed);
-    } else if (taggedUser && taggedUser.id === owner) { // If tag and tag is owner
-      return msg.reply('No u!');
-    //}
+    }
+    
+    return msg.reply('No u!'); // If tag and tag is owner
+
   }
 };

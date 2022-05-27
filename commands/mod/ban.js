@@ -18,22 +18,21 @@ module.exports = class BanCommand extends Command {
     });
   }
   run(msg) {
-		if (!msg.mentions.users.size) {
-			return msg.reply('Nya need to tag a user in order to ban them-nya!');
-		}
+		if (!msg.mentions.users.size) return msg.reply('Nya need to tag a user in order to ban them-nya!');
 
 		const taggedUser = msg.mentions.users.first();
 
     if (taggedUser) {
       const user = msg.guild.member(taggedUser);
-      if (user) {
-        user.ban()
-          .then(() => { msg.reply('Successfully banned. 🔨')})
-          .catch(err => { 
-            console.error(err);
-			      msg.say(`There was an error trying to ban ${user} in this channel!`);
-          });
-      }
+
+      if (!user) return
+      
+      user.ban()
+        .then(() => { msg.reply('Successfully banned. 🔨')})
+        .catch(err => { 
+          console.error(err);
+          msg.say(`There was an error trying to ban ${user} in this channel!`);
+        });
     }
   }
 };

@@ -38,10 +38,10 @@ module.exports = class HelpCommand extends Command {
         .setDescription('I am SoulWorker Chii Aruel, one of the best SoulWorkers from West Cloudreamnya. Nya only Master is Umbre0n-sama, but I suppose I\'ll accept your commands-nya. UwU')
         .setFooter(`Send \`${prefix} help [command name]\` for more info onya a command-nya!`)
         .addFields(
-          /*{
+          {
             name: 'Anime',
-            value: `\`foxgirl\`, \`kemonomimi\`, \`nekosgif\`, \`nekos\``
-          },*/
+            value: `\`foxgirl\`, \`nekos\``
+          },
           {
             name: 'Developer',
             value: `\`emulate\``
@@ -83,9 +83,7 @@ module.exports = class HelpCommand extends Command {
     const name = args.toLowerCase();
     const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
-    if (!command) {
-     return msg.reply('Nyat\'s not a valid command-nya!');
-    }
+    if (!command) return msg.reply('Nyat\'s not a valid command-nya!');
 
     //console.log(command);
     const { duration, usages } = command.throttling;

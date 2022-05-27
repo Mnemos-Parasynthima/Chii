@@ -37,10 +37,8 @@ module.exports = class AttackCommand extends Command {
       return msg.embed(embed);
     }
 
-    if (target) {
       const i = Math.floor(Math.random() * attack.length);
       embed.setDescription(`**${msg.author.username}** attacks **${target.nickname || target.user.username}**`).setImage(attack[i]);
 	    msg.embed(embed);
-    }
   }
 };
