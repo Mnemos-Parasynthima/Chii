@@ -5,6 +5,7 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 ## Table of Contents:
 - [Setup](#setup)
 - [Commands](#commands)
+  - [Anime](#anime) 
   - [Developer](#developer)
   - [Fun](#fun)
   - [Miscellaneous](#miscellaneous)
@@ -30,6 +31,12 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 (Note: Many of the commands made were for my own purpose so feel free to change them or delete them. Some commands are not listed and such are those that were for my own purpose)
 
 Using `<>` is required whereas `[]` is optional.
+
+### Anime
+| Command  | Arguments | Description                              |
+|----------|-----------|------------------------------------------|
+| `foxgirl`|   None    | Sends a picture of a foxgirl.            |
+| `nekos`  |   None    | Sends a picture of a neko.               |
 
 ### Developer
 | Command  | Arguments | Description                              |
@@ -113,7 +120,6 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Remind command
 - [ ] Weather command (need api)
 - [ ] Random classical piece (need api)
-- [X] Urban dictionary
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
 - [ ] Snipe command
@@ -122,4 +128,3 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 - [ ] Style and fix music commands
 - [ ] Add roles for users (u-i command, after mongodb)
-- [ ] Rip access to nekos.life via replit; use regular gifs (own api?) to replace nekos.life gifs
