@@ -39,14 +39,11 @@ module.exports = class FightCommand extends Command {
   run(msg, { target }) {
     const owner = process.env.ownerId;
 
-    if(!target) {
-      //console.log('Entered if no taggedUser statement');
-      return msg.say("Who will I fight-nya?");
-    }
+    if(!target) return msg.say("Who will I fight-nya?");
 
     if (target.id === msg.client.user.id) return msg.reply('Why will I fight nyaself?');
 
-    if(target && target.id !== owner) {
+    if (target && target.id !== owner) {
       //console.log('Entered if taggedUser and if taggedUser is strictly not me');
       const attacks = [
         'Budo Cat', 'Budo 2: Claws Out', 'Budo 3: Prey Sighted', 'Budo 5: Cat by Night',
@@ -102,7 +99,7 @@ module.exports = class FightCommand extends Command {
       }
       //msg.embed(embed);
       //console.log(embed);
-    } else if (target && target.id === owner) {
+    } else {
       //console.log('Entered if taggedUser is strictly me');
       return msg.reply('I can\'t fight mnya love and Master-nya! How about nya fight you!');
     }

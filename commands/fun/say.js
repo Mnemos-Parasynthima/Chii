@@ -16,7 +16,7 @@ module.exports = class SayCommand extends Command {
   }
 
   run(msg) {
-    let replies = ['Nya', 'I hope you are doing well', 'I am the best SoulWorker', 'My Master is the best programmer', 
+    const replies = ['Nya', 'I hope you are doing well', 'I am the best SoulWorker', 'My Master is the best programmer', 
       'I love you, nya', 'I wuv my Master	(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)', 'I\'m proud', '♡＾▽＾♡', '┐( ˘_˘ )┌'
     ];
     const i = Math.floor(Math.random() * replies.length);

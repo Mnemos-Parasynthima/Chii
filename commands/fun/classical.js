@@ -23,5 +23,6 @@ module.exports = class ClassicalCommand extends Command {
 	  //const { title } = await fetch("https://api.openopus.org/dyn/work/random", { method: 'POST', headers: { recommendedwork:1, genre: "Orchestral" } }).then((res) => res.json());
 
     //console.log(title);
+    msg.say("Command currently unavailable");
   }
 };

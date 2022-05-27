@@ -21,12 +21,8 @@ module.exports = class BdayCommand extends Command {
   }
 
   run(msg, { target }) {
-    if(!target) {
-      msg.say("Who's birthday-nya?");
-    }
-
-    if(target) {
-      msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII ARUEL, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${target}-KUN!`);
-    }
+    if(!target) return msg.say("Who's birthday-nya?");
+    
+    msg.say(`BY THE POWER VESTED IN ME, SOULWORKER CHII ARUEL, AND MY MASTER, WE WISH YOU HAPPY BIRTHDAY, ${target}-KUN!`);
   }
 }

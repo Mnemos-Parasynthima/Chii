@@ -18,12 +18,11 @@ module.exports = class ProtectCommand extends Command {
 
   run(msg) {
     const owner = process.env.ownerId;
-    if (msg.author.id !== owner) {
-      msg.reply('You\'re not my love and my Master-nya!');
-    } else if (msg.author.id === owner) {
-      msg.say('Stop bullying my master-nya! I\'ll fight you!');
-    } else {
-      return;
-    }
+    if (msg.author.id !== owner) return msg.reply('You\'re not my love and my Master-nya!');
+    //} else if (msg.author.id === owner) {
+    msg.say('Stop bullying my master-nya! I\'ll fight you!');
+    // } else {
+    //   return;
+    // }
   }
 };

@@ -45,13 +45,14 @@ module.exports = class TemperatureCommand extends Command {
     
     if (base === to) return msg.reply(`*Demo*.....how can I convert ${base} to ${to} if they're the same scale!?`);
 
-    if (base != "F" || base != "C" || base != "K") {
-      return msg.reply('Nyo! You must give me something in C, F, or K!');
-    }
+    //TODO: FIX
+    // if (base != "F" || base != "C" || base != "K") {
+    //   return msg.reply('Nyo! You must give me something in C, F, or K!');
+    // }
 
-    if (to !== "F" || to !== "C" || to !== "K") {
-      return msg.reply(`Nyo! I can\'t convert ${num} to such nyonsense!`);
-    }
+    // if (to !== "F" || to !== "C" || to !== "K") {
+    //   return msg.reply(`Nyo! I can\'t convert ${num} to such nyonsense!`);
+    // }
 
     if (base === "F" && to === "C") {
       result = (num - 32) * (9/5);

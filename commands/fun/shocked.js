@@ -28,14 +28,10 @@ module.exports = class ShockedCommand extends Command {
   }
 
   run(msg, { user }) {
-    if (!user) {
-      msg.say('Huh?');
-    }
+    if (!user) return msg.say('Huh?');
 
-    if (user) {
-      const i = Math.floor(Math.random() * shocked.length);
-      const embed = new MessageEmbed().setDescription('*SHOCKED*').setImage(shocked[i]);
-      msg.embed(embed);
-    }
+    const i = Math.floor(Math.random() * shocked.length);
+    const embed = new MessageEmbed().setDescription('*SHOCKED*').setImage(shocked[i]);
+    msg.embed(embed);
   }
 };

@@ -19,15 +19,9 @@ module.exports = class PraiseCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
 
-    if (!taggedUser) {
-      msg.say('Yay! I love getting praised, nya!');
-    }
+    if (!taggedUser) return msg.say('Yay! I love getting praised, nya!');
 
-    if (taggedUser) {
-      const user = msg.guild.member(taggedUser);
-      if (user) {
-        msg.say(`You deserved being praised, ${user}, nya!`);
-      }
-    }
+    const user = msg.guild.member(taggedUser);
+    if (user) msg.say(`You deserved being praised, ${user}, nya!`);
   }
 };

@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 
-
 const Canvas = require('canvas');
 const { registerFont } = require('canvas');
 registerFont('./assets/fonts/OpenSans-Regular.ttf', { family: 'sans-serif' });
@@ -41,13 +40,13 @@ client.on('ready', () => {
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-    /*['anime', 'Anime!!'],*/
+    ['anime', 'Anime!!'],
     ['dev', 'Developer stuff'],
     ['fun', 'Fun stuff'],
     ['misc', 'Misc!!'],
     ['mod', 'Moderation'],
     ['music', 'Music'],
-    /*['nsfw', 'NSFW!!'],*/
+    ['nsfw', 'NSFW!!'],
     ['rp', 'Roleplaying']
   ])
   .registerDefaultGroups()
