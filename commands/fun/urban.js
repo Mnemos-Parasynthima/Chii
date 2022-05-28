@@ -1,7 +1,7 @@
 const { MessageEmbed} = require('discord.js');
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
-const querystring = require('querystring');
+const { URLSearchParams } = require('url');
 
 module.exports = class UrbanCommand extends Command {
   constructor(client) {
@@ -27,7 +27,7 @@ module.exports = class UrbanCommand extends Command {
   }
 
   async run(msg, { query }) {
-    const term = querystring.stringify({ term: query });
+    const term = new URLSearchParams({term: query});
 
     const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${term}`).then(res => res.json());
 
