@@ -1,4 +1,4 @@
-# Meet SoulWorker Chii [Aruel]! Version 2.4
+# Meet SoulWorker Chii [Aruel]! Version 2.3
 
 Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with the **[Discord.JS](https://discord.js.org/#/)** Library and the **Commando** framework.
 
@@ -62,12 +62,12 @@ Using `<>` is required whereas `[]` is optional.
 | `urban`    | `<query>`         | Sends an Urban dictionary definition for the provided query.           |
 
 ### Miscellaneous
-| Command  | Arguments                   | Description                                                       |
-|----------|-----------------------------|-------------------------------------------------------------------|
-| `fight`  | `<member>`                  | Makes Chii fight someone.                                         |
-| `hiss`   | `<member>`                  | Intimidates someone, hiisss!!                                     |
-| `puppet` | `<line>`                    | Makes Chii say what is provided in capitalized and quoted.        |
-| `react`  | `<reaction>`                | Sends an image as a reaction. |
+| Command    | Arguments         | Description                                                       |
+|------------|-------------------|-------------------------------------------------------------------|
+| `fight`    | `<member>`        | Makes Chii fight someone.                                         |
+| `hiss`     | `<member>`        | Intimidates someone, hiisss!!                                     |
+| `puppet`   | `<line>`          | Makes Chii say what is provided in capitalized and quoted.        |
+| `react`    | `<reaction>`      | Sends an image as a reaction.                                     |
 
 ### Moderation
 | Command     | Arguments        | Description                                                                               |
@@ -82,21 +82,28 @@ Using `<>` is required whereas `[]` is optional.
 ### Music
 | Command  | Arguments  | Description                                             |
 |----------|------------|---------------------------------------------------------|
-| `pause`  | None       | Pauses the ongoing video.                               |
-| `play`   | `<name>`   | Plays a video from YouTube from the given name.         |
-| `queue`  | None       | Lists the queue of videos.                              |
-| `remove` | `<number>` | Removes a video from the queue with a specified number. |
-| `resume` | None       | Resumes the paused video.                               |
-| `skip`   | None       | Skips the current video.                                |
-| `stop`   | None       | Stops what is playing and disconnects.                  |
-| `volume` | `<number>` | Lowers the volume at the specified number. Max is 5.    |
+| `pause`  | None       | Pauses the ongoing video                                |
+| `play`   | `<name>`   | Plays a video from YouTube from the given name          |
+| `queue`  | None       | Lists the queue of videos                               |
+| `remove` | `<number>` | Removes a video from the queue with a specified number  |
+| `resume` | None       | Resumes the paused video                                |
+| `skip`   | None       | Skips the current video                                 |
+| `stop`   | None       | Stops what is playing and disconnects                   |
+| `volume` | `<number>` | Lowers the volume at the specified number. Max is 5     |
 
 ### Roleplay
 | Command  | Arguments  | Description                                             |
 |----------|------------|---------------------------------------------------------|
-| `attack` | `<member>` | Makes Chii attack someone (poor them!).                 |
-| `isekai` | `[member]` | Get sent to another world...or another person.          |
+| `attack` | `<member>` | Makes Chii attack someone (poor them!)                  |
+| `baka`   | `<member>` | Baaaaaaaaaka                                            |
+| `hug`    | `<member>` | Hug someone....because they deserve it                  |
+| `isekai` | `[member]` | Get sent to another world...or another person           |
+| `pat`    | `<member>` | Pat someone on their head                               |
+| `poke`   | `<member>` | Poke someone                                            |
+| `slap`   | `<member>` | Slap someone because they're annoying or they deserve it|
+| `smug`   | None       | What a quite smug face.                                 |
 | `stare`  | None       | Stare at someone....*jiiiiiiiiiiiii*                    |
+| `tickle` | `<member>` | Tickle someone to make them laugh                       |
 
 ## Modification:
 You can modify Chii's code but make sure to leave credit on the README file or somewhere visible.
