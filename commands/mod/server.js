@@ -18,7 +18,8 @@ module.exports = class ServerCommand extends Command {
   }
 
   run(msg) {
-    const { name, memberCount, owner, region, createdAt} = msg.guild;
+    const { name, memberCount, owner, createdAt } = msg.guild;
+
     const embed = new MessageEmbed()
       .setTitle(`${name} Server Info`)
       .setDescription(`The following contains neccesary information about the server \`${name}\`.`)
@@ -33,10 +34,6 @@ module.exports = class ServerCommand extends Command {
         {
           name: 'Server Owner: ',
           value: owner
-        },
-        {
-          name: 'Server Region: ',
-          value: region
         },
         {
           name: 'Time created: ',
