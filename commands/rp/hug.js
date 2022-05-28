@@ -35,7 +35,7 @@ module.exports = class HugCommand extends Command {
       .setTitle(`Hugging ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(json.results[0].url)
-      .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
+      .setFooter(`Request by: ${msg.author.username} | Powered by nekos.best`, msg.author.displayAvatarURL({ size: 32 }))
       .setTimestamp();
 		
 		msg.embed(embed);

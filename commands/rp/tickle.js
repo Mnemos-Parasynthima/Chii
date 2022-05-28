@@ -1,4 +1,4 @@
-/*const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
@@ -27,17 +27,19 @@ module.exports = class TickleCommand extends Command {
   }
 
   async run(msg, { target }) {
-    const { url } = await fetch("https://nekos.life/api/v2/img/tickle").then((res) => res.json());
-  
+    //const { url } = await fetch("https://nekos.life/api/v2/img/tickle").then((res) => res.json());
+    const response = await fetch('https://nekos.best/api/v2/tickle');
+    const json = await response.json();
+    
     if (target.id === msg.client.user.id ) return msg.reply('I can\'t tickle myself!');
 
     const embed = new MessageEmbed()
       .setTitle(`Tickling ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
-      .setImage(url)
-      .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
+      .setImage(json.results[0].url)
+      .setFooter(`Request by: ${msg.author.username} | Powered by nekos.best`, msg.author.displayAvatarURL({ size: 32 }))
       .setTimestamp();
 		
 		msg.embed(embed);
   }
-};*/
+};

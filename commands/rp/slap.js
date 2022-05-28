@@ -1,4 +1,4 @@
-/*const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
 const fetch = require('node-fetch');
 
@@ -27,7 +27,7 @@ module.exports = class SlapCommand extends Command {
   }
 
   async run(msg, { target }) {
-    const { url } = await fetch("https://nekos.life/api/v2/img/slap").then((res) => res.json());
+    const { url } = await fetch("https://api.waifu.pics/sfw/slap").then((res) => res.json());
 
     if (target.id === msg.client.user.id ) return msg.reply('Why would I slap nyaself, baka-nya!');
 
@@ -35,9 +35,9 @@ module.exports = class SlapCommand extends Command {
       .setTitle(`Slapping ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')
       .setImage(url)
-      .setFooter(`Request by: ${msg.author.username} | Powered by nekos.life`, msg.author.displayAvatarURL({ size: 32 }))
+      .setFooter(`Request by: ${msg.author.username} | Powered by waifu.pics`, msg.author.displayAvatarURL({ size: 32 }))
       .setTimestamp();
 		
 		msg.embed(embed);
   }
-};*/
+};

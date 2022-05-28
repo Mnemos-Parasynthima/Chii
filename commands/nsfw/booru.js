@@ -42,11 +42,7 @@ module.exports = class BooruCommand extends Command {
           msg.embed(embed);
         }
       }).catch(err => {
-        if (err.name === 'booruError') {
-            return msg.say(`Nyo results found for **${query}**!`);
-        } else {
-            return msg.say(`Nyo results found for **${query}**!`);
-        }
+        if (err.name === 'booruError') return msg.say(`Nyo results found for **${query}**!`);
       });
   }
 };
