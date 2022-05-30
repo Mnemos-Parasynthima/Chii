@@ -135,3 +135,4 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 - [ ] Style and fix music commands
 - [ ] Add roles for users (u-i command, after mongodb)
+- [ ] Work on DiscordJS v13 and Sapphire (seperate branch)
