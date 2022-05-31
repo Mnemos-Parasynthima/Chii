@@ -77,6 +77,7 @@ Using `<>` is required whereas `[]` is optional.
 | `kick`      | `<member>`       | Kicks a member.                                                                           |
 | `server`    | None             | Sends information about the server.                                                       |
 | `slash`     | `<number>`       | Deletes up to 100 messages.                                                               |
+| `snipe`     | `None`           | Retrieves recently deleted message.                                                       |
 | `user-info` | None             | Sends information about oneself.                                                          |
 
 ### Music
@@ -128,7 +129,6 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 - [ ] Random classical piece (need api)
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
-- [ ] Snipe command
 
 ### To Do
 
