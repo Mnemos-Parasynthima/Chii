@@ -124,7 +124,6 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 ### Features to add:
 
-- [ ] Remind command
 - [ ] Weather command (need api)
 - [ ] Random classical piece (need api)
 - [ ] Translate
@@ -135,4 +134,5 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 - [ ] Style and fix music commands
 - [ ] Add roles for users (u-i command, after mongodb)
-- [ ] Work on DiscordJS v13 and Sapphire (seperate branch)
+- [ ] Work on DiscordJS v13 and Sapphire (seperate dev branch)
+- [ ] MongoDB (v4) after DJS13/Sapphire (v3)
