@@ -48,6 +48,7 @@ Using `<>` is required whereas `[]` is optional.
 |------------|-------------------|------------------------------------------------------------------------|
 | `avatar`   | `[member]`        | Returns the avatar of a member, if not, then yourself.                 |
 | `bday`     | `<member>`        | Wishes happy birthday to someone.                                      |
+| `classical`| None              | Sends a random classical piece.                                        |
 | `fate`     | None              | Returns a fate based on a question.                                    |
 | `holiday`  | `[holiday]`       | Sends a happy [holiday], if no arguments, sends 'Happy Holidays!'      |
 | `kaomoji`  | None              | Sends a japanese emoji from a collection of emojis. (=^-ω-^=)          |
@@ -126,7 +127,6 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 ### Features to add:
 
 - [ ] Weather command (need api)
-- [ ] Random classical piece (need api)
 - [ ] Translate
 - [ ] Move user info to 'rank' card (mongodb)??
 
