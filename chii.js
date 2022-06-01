@@ -103,9 +103,4 @@ client.on('guildMemberAdd', async member => {
   channel.send(`Welcome to the server, ${member}-kun!`, attachment);
 });
 
-client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome' || ch.name === 'announcements');
-  if (!channel) return console.log('Channel not found');
-});
-
 client.login(process.env.token);
