@@ -126,13 +126,12 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 
 ### Features to add:
 
-- [ ] Weather command (need api)
 - [ ] Translate
-- [ ] Move user info to 'rank' card (mongodb)??
+- [ ] Move user info to 'rank' card (mongodb)
+- [ ] Add roles for users (u-i command, after mongodb)
 
 ### To Do
 
 - [ ] Style and fix music commands
-- [ ] Add roles for users (u-i command, after mongodb)
 - [ ] Work on DiscordJS v13 and Sapphire (seperate dev branch)
 - [ ] MongoDB (v4) after DJS13/Sapphire (v3)
