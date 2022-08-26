@@ -81,7 +81,7 @@ module.exports = class ReactCommand extends Command {
             msg.say(`<:${lazy.name}:${lazy.id}>`);
             break;
           case 'baka':
-            const bakathink = this.client.emojis.cache.find(emoji => emoji.name === "baka");
+            const baka = this.client.emojis.cache.find(emoji => emoji.name === "baka");
             msg.say(`<:${baka.name}:${baka.id}>`);
             break;
           case 'angry':
@@ -97,6 +97,7 @@ module.exports = class ReactCommand extends Command {
             break;
         }
       }
+      msg.delete();
       sendReaction(msg, args);
     } catch (error) {
       console.error(error);

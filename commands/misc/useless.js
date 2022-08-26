@@ -36,8 +36,5 @@ module.exports = class UselessCommand extends Command {
       embed.setDescription(`Useless ${taggedUser}-nya! Just like Aqua`).setImage(uselessAqua[i]);
 	    return msg.embed(embed);
     }
-    
-    return msg.reply('No u!'); // If tag and tag is owner
-
   }
 };

@@ -39,7 +39,7 @@ module.exports = class FightCommand extends Command {
   run(msg, { target }) {
     const owner = process.env.ownerId;
 
-    if(!target) return msg.say("Who will I fight-nya?");
+    if (!target) return msg.say("Who will I fight-nya?");
 
     if (target.id === msg.client.user.id) return msg.reply('Why will I fight nyaself?');
 
