@@ -64,7 +64,7 @@ module.exports = class ReactCommand extends Command {
             const happy = this.client.emojis.cache.find(emoji => emoji.name === "happy");
             msg.say(`<:${happy.name}:${happy.id}>`);
             break;
-          case 'denied':
+          case 'denied' || 'no':
             const denied = this.client.emojis.cache.find(emoji => emoji.name === "denied");
             msg.say(`<:${denied.name}:${denied.id}>`);
             break;

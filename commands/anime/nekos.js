@@ -18,10 +18,9 @@ module.exports = class NekosCommand extends Command {
   }
 
   async run(msg) {
-    // Gets image data from api and sends as json
 	  const { url } = await fetch("https://api.waifu.pics/sfw/neko").then((res) => res.json());
     const embed = new MessageEmbed()
-      .setTitle('Nekos')
+      .setTitle('Nekos!')
       .setColor('#ff0000')
       .setImage(url)
       .setFooter(`Request by: ${msg.author.username} | Powered by waifu.pics`, msg.author.displayAvatarURL({ size: 32 }))

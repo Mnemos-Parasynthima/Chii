@@ -34,7 +34,8 @@ module.exports = class IsekaiCommand extends Command {
     const harem = Math.floor(Math.random() * 200) + 0;
 
     if (!target) {
-      embed.setAuthor(`${msg.author.username}'s isekai report`, msg.author.avatarURL())
+      embed
+        .setAuthor(`${msg.author.username}'s isekai report`, msg.author.avatarURL())
         .setDescription(`**${msg.author.username}** ${death[i]} with a harem of **${harem}** as **${title[j]}**`);
       return msg.embed(embed);
     }

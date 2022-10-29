@@ -29,19 +29,16 @@ module.exports = class LoopCommand extends Command {
   // FIX
   async run(msg, { status }) {
     const { channel } = msg.member.voice;
+    const serverQueue = this.client.queue.get(msg.guild.id);
     const embed = new MessageEmbed();
 
     if (!channel) {
       msg.say('Nya need to be in a chyannel');
     }
 
-    const serverQueue = this.client.queue.get(msg.guild.id);
     try {
       if (!serverQueue) return msg.say('Nyothing playing!');
-
-      if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-        return msg.say('Be with me!');
-      }
+      if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
       if (!serverQueue.loop && status === 'enable') {
         serverQueue.loop = true;

@@ -39,8 +39,7 @@ module.exports = class NHelpCommand extends Command {
         .addFields(
           {
             name: 'NSFW',
-            value: `\`bj\`, \`booru\`, \`hentai\`, \`nhelp\`, \`nsfwn\``
-            //
+            value: `\`bj\`, \`hentai\`, \`nhelp\`, \`nsfwn\``
           }
         );
 

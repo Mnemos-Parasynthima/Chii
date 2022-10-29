@@ -1,6 +1,4 @@
 const { Command } = require('discord.js-commando');
-// import pkg2 from 'discord.js-commando';
-// const { Command } = pkg2;
 
 module.exports = class EmulateCommand extends Command {
   constructor(client) {
@@ -15,10 +13,8 @@ module.exports = class EmulateCommand extends Command {
   }
 
   run(msg) {
-    if (msg.author.id === process.env.ownerId) {
-      this.client.emit('guildMemberAdd', msg.member);
-    } else {
-      msg.reply('Nya are not allowed to run that command, only for Developers!');
-    }
+    if (msg.author.id !== process.env.ownerId) return msg.reply('Nya are not allowed to run that command, only for Developers!');
+    
+    this.client.emit('guildMemberAdd', msg.member);
   }
 };

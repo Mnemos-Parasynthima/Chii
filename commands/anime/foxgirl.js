@@ -18,7 +18,6 @@ module.exports = class FoxGirlCommand extends Command {
   }
 
   async run(msg) {
-   	//const { url } = await fetch("https://nekos.life/api/v2/img/fox_girl").then((res) => res.json());
     const response = await fetch('https://nekos.best/api/v2/kitsune');
     const json = await response.json();
     const embed = new MessageEmbed()

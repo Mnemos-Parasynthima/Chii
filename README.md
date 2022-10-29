@@ -33,10 +33,11 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 Using `<>` is required whereas `[]` is optional.
 
 ### Anime
-| Command  | Arguments | Description                              |
-|----------|-----------|------------------------------------------|
-| `foxgirl`|   None    | Sends a picture of a foxgirl.            |
-| `nekos`  |   None    | Sends a picture of a neko.               |
+| Command  | Arguments | Description                  |
+|----------|-----------|------------------------------|
+| `anime`  |   None    | Sends an anime picture.      |
+| `foxgirl`|   None    | Sends a picture of a foxgirl.|
+| `nekos`  |   None    | Sends a picture of a neko.   |
 
 ### Developer
 | Command  | Arguments | Description                              |
@@ -44,31 +45,31 @@ Using `<>` is required whereas `[]` is optional.
 | `emulate`|   None    | Emulates an event. (For developers only) |
 
 ### Fun
-| Command    | Arguments         | Description                                                            |
-|------------|-------------------|------------------------------------------------------------------------|
-| `avatar`   | `[member]`        | Returns the avatar of a member, if not, then yourself.                 |
-| `bday`     | `<member>`        | Wishes happy birthday to someone.                                      |
-| `classical`| None              | Sends a random classical piece.                                        |
-| `fate`     | None              | Returns a fate based on a question.                                    |
-| `holiday`  | `[holiday]`       | Sends a happy [holiday], if no arguments, sends 'Happy Holidays!'      |
-| `kaomoji`  | None              | Sends a japanese emoji from a collection of emojis. (=^-ω-^=)          |
-| `lewd`     | None              | Sends a GIF of Oh how lewd!                                            |
-| `poll`     | None              | Makes a thumbs up or thumbs down poll based on the previous message.   |
-| `praise`   | `[member]`        | Praises whoever is tagged, if not, it defaults to Chii.                |
-| `randnum`  | `<min><max>`      | Returns a random number between the specified limits.                  |
-| `rate`     | `<member>`        | Rates someone's usefulness or uselessness.                             |
-| `say`      | None              | Makes Chii say something on her own.                                   |
-| `shocked`  | `<member>`        | Sends a GIF of a shocked anime face.                                   |
-| `tempconv` | `<base><to><num>` | Converts a given temperature to either Celsius, Fahrenheit, or Kelvin. |
-| `urban`    | `<query>`         | Sends an Urban dictionary definition for the provided query.           |
+| Command    | Arguments         | Description                                                           |
+|------------|-------------------|-----------------------------------------------------------------------|
+| `avatar`   | `[member]`        | Returns the avatar of a member, if not, then yourself.                |
+| `bday`     | `<member>`        | Wishes happy birthday to someone.                                     |
+| `classical`| None              | Sends a random classical piece.                                       |
+| `fate`     | None              | Returns a fate based on a question.                                   |
+| `holiday`  | `[holiday]`       | Sends a happy [holiday], if no arguments, sends 'Happy Holidays!'     |
+| `kaomoji`  | None              | Sends a japanese emoji from a collection of emojis. (=^-ω-^=)         |
+| `lewd`     | None              | Sends a GIF of Oh how lewd!                                           |
+| `poll`     | None              | Makes a thumbs up or thumbs down poll based on the previous message.  |
+| `praise`   | `[member]`        | Praises whoever is tagged, if not, it defaults to Chii.               |
+| `randnum`  | `<min><max>`      | Returns a random number between the specified limits.                 |
+| `rate`     | `<member>`        | Rates someone's usefulness or uselessness.                            |
+| `say`      | None              | Makes Chii say something on her own.                                  |
+| `shocked`  | `<member>`        | Sends a GIF of a shocked anime face.                                  |
+| `tempconv` | `<base><to><num>` | Converts a given temperature to either Celsius, Fahrenheit, or Kelvin.|
+| `urban`    | `<query>`         | Sends an Urban dictionary definition for the provided query.          |
 
 ### Miscellaneous
-| Command    | Arguments         | Description                                                       |
-|------------|-------------------|-------------------------------------------------------------------|
-| `fight`    | `<member>`        | Makes Chii fight someone.                                         |
-| `hiss`     | `<member>`        | Intimidates someone, hiisss!!                                     |
-| `puppet`   | `<line>`          | Makes Chii say what is provided in capitalized and quoted.        |
-| `react`    | `<reaction>`      | Sends an image as a reaction.                                     |
+| Command    | Arguments         | Description                                               |
+|------------|-------------------|-----------------------------------------------------------|
+| `fight`    | `<member>`        | Makes Chii fight someone.                                 |
+| `hiss`     | `<member>`        | Intimidates someone, hiisss!!                             |
+| `puppet`   | `<line>`          | Makes Chii say what is provided in capitalized and quoted.|
+| `react`    | `<reaction>`      | Sends an image as a reaction.                             |
 
 ### Moderation
 | Command     | Arguments        | Description                                                                               |
@@ -82,30 +83,30 @@ Using `<>` is required whereas `[]` is optional.
 | `user-info` | None             | Sends information about oneself.                                                          |
 
 ### Music
-| Command  | Arguments  | Description                                             |
-|----------|------------|---------------------------------------------------------|
-| `pause`  | None       | Pauses the ongoing video                                |
-| `play`   | `<name>`   | Plays a video from YouTube from the given name          |
-| `queue`  | None       | Lists the queue of videos                               |
-| `remove` | `<number>` | Removes a video from the queue with a specified number  |
-| `resume` | None       | Resumes the paused video                                |
-| `skip`   | None       | Skips the current video                                 |
-| `stop`   | None       | Stops what is playing and disconnects                   |
-| `volume` | `<number>` | Lowers the volume at the specified number. Max is 5     |
+| Command  | Arguments  | Description                                            |
+|----------|------------|--------------------------------------------------------|
+| `pause`  | None       | Pauses the ongoing video.                              |
+| `play`   | `<name>`   | Plays a video from YouTube from the given name.        |
+| `queue`  | None       | Lists the queue of videos.                             |
+| `remove` | `<number>` | Removes a video from the queue with a specified number.|
+| `resume` | None       | Resumes the paused video.                              |
+| `skip`   | None       | Skips the current video.                               |
+| `stop`   | None       | Stops what is playing and disconnects.                 |
+| `volume` | `<number>` | Lowers the volume at the specified number. Max is 5.   |
 
 ### Roleplay
-| Command  | Arguments  | Description                                             |
-|----------|------------|---------------------------------------------------------|
-| `attack` | `<member>` | Makes Chii attack someone (poor them!)                  |
-| `baka`   | `<member>` | Baaaaaaaaaka                                            |
-| `hug`    | `<member>` | Hug someone....because they deserve it                  |
-| `isekai` | `[member]` | Get sent to another world...or another person           |
-| `pat`    | `<member>` | Pat someone on their head                               |
-| `poke`   | `<member>` | Poke someone                                            |
-| `slap`   | `<member>` | Slap someone because they're annoying or they deserve it|
-| `smug`   | None       | What a quite smug face.                                 |
-| `stare`  | None       | Stare at someone....*jiiiiiiiiiiiii*                    |
-| `tickle` | `<member>` | Tickle someone to make them laugh                       |
+| Command  | Arguments  | Description                                              |
+|----------|------------|----------------------------------------------------------|
+| `attack` | `<member>` | Makes Chii attack someone. (poor them!)                  |
+| `baka`   | `<member>` | Baaaaaaaaaka                                             |
+| `hug`    | `<member>` | Hug someone....because they deserve it                   |
+| `isekai` | `[member]` | Get sent to another world...or another person            |
+| `pat`    | `<member>` | Pat someone on their head.                               |
+| `poke`   | `<member>` | Poke someone.                                            |
+| `slap`   | `<member>` | Slap someone because they're annoying or they deserve it.|
+| `smug`   | None       | What a quite smug face.                                  |
+| `stare`  | None       | Stare at someone....*jiiiiiiiiiiiii*                     |
+| `tickle` | `<member>` | Tickle someone to make them laugh.                       |
 
 ## Modification:
 You can modify Chii's code but make sure to leave credit on the README file or somewhere visible.
@@ -127,11 +128,12 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 ### Features to add:
 
 - [ ] Translate
-- [ ] Move user info to 'rank' card (mongodb)
-- [ ] Add roles for users (u-i command, after mongodb)
+- [ ] YouTube
 
 ### To Do
 
 - [ ] Style and fix music commands
-- [ ] Work on DiscordJS v13 and Sapphire (seperate dev branch)
+- [ ] Work on DiscordJS v13 and Sapphire (seperate dev branch) IMPORTANT
 - [ ] MongoDB (v4) after DJS13/Sapphire (v3)
+- [ ] Move user info to 'rank' card (mongodb)
+- [ ] Add roles to users (u-i command, after mongodb)

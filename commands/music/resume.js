@@ -5,7 +5,7 @@ module.exports = class ResumeCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'resume',
-      aliases: ['res', 'continue', 'rsm', 'seguir'],
+      aliases: ['res', 'continue', 'rsm'],
       group: 'music',
       memberName: 'resume',
       description: 'Resumes paused music/video.',
@@ -19,16 +19,13 @@ module.exports = class ResumeCommand extends Command {
 
   run(msg) {
     const { channel } = msg.member.voice;
+    const serverQueue = this.client.queue.get(msg.guild.id);
     const embed = new MessageEmbed()
       .setColor('#00ff00')
       .setDescription('▶ **Resumed**');
 
-    if (!channel) return msg.say('Nyoin a voice chyannel!')
-
-    const serverQueue = this.client.queue.get(msg.guild.id);
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      return msg.say('Be with me!');
-    }
+    if (!channel) return msg.say('Nyoin a voice chyannel!');
+    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
     try {
       if (serverQueue && !serverQueue.playing) {

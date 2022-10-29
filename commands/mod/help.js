@@ -6,7 +6,7 @@ module.exports = class HelpCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'help',
-      aliases: ['commands', 'hlp', 'cmd', 'ayuda', 'yakudachi'],
+      aliases: ['commands', 'hlp', 'cmd'],
       group: 'mod',
       memberName: 'help',
       description: 'Lists all of my commands or nynfo about a specific command-nya.',
@@ -40,7 +40,7 @@ module.exports = class HelpCommand extends Command {
         .addFields(
           {
             name: 'Anime',
-            value: `\`foxgirl\`, \`nekos\``
+            value: `\`anime\`, \`foxgirl\`, \`nekos\``
           },
           {
             name: 'Developer',
@@ -48,7 +48,7 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Fun',
-            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`temperature\`, \`urban\`` // Add youtube!
+            value: `\`avatar\`, \`bday\`, \`fate\`, \`holiday\`, \`kaomoji\`, \`thatslewd\`, \`poll\`, \`praise\`, \`random\`, \`rate\`, \`say\`, \`shocked\`, \`temperature\`, \`urban\``
           },
           {
             name: 'Miscelleanous',
@@ -56,18 +56,16 @@ module.exports = class HelpCommand extends Command {
           },
           {
             name: 'Moderation',
-            value: `\`ban\`, \`botinfo\`, \`help\`, \`kick\`,  \`server\`, \`slash\`, \`snipe\`, \`user-info\``
+            value: `\`ban\`, \`info\`, \`help\`, \`kick\`,  \`server\`, \`slash\`, \`snipe\`, \`user-info\``
           },
           {
             name: 'Music',
-            value: `\`pause\`, \`play\`, \`queue\`, \`remove\`, \`resume\`, \`skip\`, \`stop\`, \`volume\`` // Add loop
+            value: `\`pause\`, \`play\`, \`queue\`, \`remove\`, \`resume\`, \`skip\`, \`stop\`, \`volume\``
           },
           {
             name: 'Roleplaying',
-            value: `\`isekai\`,\`tickle\``
-            //baka, hug, pat, poke, slap, smug, tickle
-          },
-
+            value: `\`baka\`, \`hug\`, \`isekai\`, \`pat\`, \`poke\`, \`slap\`, \`smug\`, \`stare\`, \`tickle\``
+          }
         )
 
       return msg.embed(embed)
@@ -89,10 +87,6 @@ module.exports = class HelpCommand extends Command {
     const { duration, usages } = command.throttling;
     const rate = duration / usages;
     const cooldown = Math.round(10 * rate) / 10; 
-    /**
-     * Rounding solution, because I'm too lazy to look back at my other code, tehe
-     * https://stackoverflow.com/questions/51357334/how-would-i-round-a-number-eg-2-12-to-the-nearest-tenth-2-1-in-js
-     */
 
     embed.setTitle(`Chii's \`${command.name}\` command help`)
       .setDescription(`**Parameters:** \`<> - required; [] - optional\` \n\n${command.description}\n **Aliases:** ${command.aliases.join(', ')}\n **Usage:** \`${prefix} ${command.name} ${command.format || ''}\`\n **Cooldown:** ${cooldown} second(s)`);

@@ -5,7 +5,7 @@ module.exports = class RemoveCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'remove',
-      aliases: ['rmvid', 'delvid', 'borra'],
+      aliases: ['rmvid', 'dlt'],
       group: 'music',
       memberName: 'remove',
       description: 'Removes anything in the queue',
@@ -27,20 +27,17 @@ module.exports = class RemoveCommand extends Command {
 
   run(msg, { index }) {
     const { channel } = msg.member.voice;
+    const serverQueue = this.client.queue.get(msg.guild.id);
     const embed = new MessageEmbed().setColor('#ff0000');
 
     if (!channel) return msg.say('Nya need to be in a voice chyannel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      return msg.say('Be with me!');
-    }
+    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
-    const serverQueue = this.client.queue.get(msg.guild.id);
     if (!serverQueue) return msg.say('Nyothing\'s playing!');
 
     try {
-      if (index < 1 && index >= serverQueue.musics.length) {
-        return msg.say('Please enter a valid nyumber!');
-      }
+      if (index < 0 || index >= serverQueue.musics.length) return msg.say('Please enter a valid nyumber!');
+      
       const removed = serverQueue.musics.splice(index, 1);
       embed.setDescription(`❌ | Removed **${removed[0].title}**: \`${index}\` from queue!`);
 

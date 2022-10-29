@@ -6,7 +6,7 @@ module.exports = class TickleCommand extends Command {
   constructor(client) {
     super(client, {
 	    name: 'tickle',
-      aliases: ['tckl', 'cosquillas'],
+      aliases: ['tckl'],
       group: 'rp',
       memberName: 'tickle',
 	    description: 'Tickles someone.',

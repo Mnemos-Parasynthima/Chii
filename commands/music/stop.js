@@ -5,7 +5,7 @@ module.exports = class StopCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'stop',
-      aliases: ['stp', 'exit', 'ext', 'detener'],
+      aliases: ['stp', 'exit', 'ext', 'leave'],
       group: 'music',
       memberName: 'stop',
       description: 'Disconnects Chii.',
@@ -18,17 +18,13 @@ module.exports = class StopCommand extends Command {
   }
 
   async run(msg) {
-    const channel = msg.member.voice;
-
+    const { channel } = msg.member.voice;
+    const serverQueue = this.client.queue.get(msg.guild.id);
     const embed = new MessageEmbed().setDescription('↪ Disconnected');
 
     if (!channel) return msg.say('Nyoin a voice chyannel!');
+    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say("Be with me!");
 
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      return msg.say("Be with me!");
-    }
-
-    const serverQueue = msg.client.queue.get(msg.guild.id);
     try {
       if (serverQueue) {
         serverQueue.musics = [];
@@ -43,10 +39,10 @@ module.exports = class StopCommand extends Command {
       * Weird stuff here, need to fix, but it at least works
       */
       //console.log(`Catch block sQ: ${serverQueue}`);
-      /*serverQueue.connection.dispatcher.end();
+      //serverQueue.connection.dispatcher.end();
       console.log(serverQueue);
-      channel.leave();*/
-      return msg.say('Try Again-nya!');
+      channel.leave();
+      //return msg.say('Try Again-nya!');
     }
 
   }

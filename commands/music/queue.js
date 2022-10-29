@@ -5,7 +5,7 @@ module.exports = class QueueCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'queue',
-      aliases: ['q', 'list', 'songs', 'fila'],
+      aliases: ['q', 'list'],
       group: 'music',
       memberName: 'queue',
       description: 'Shows the array of requested music.',
@@ -19,13 +19,8 @@ module.exports = class QueueCommand extends Command {
 
   // StYliNG
   run(msg) {
-    const { channel } = msg.member.voice;
-
-    if (!channel) return msg.say('Nya need to be in a voice channel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-      return msg.say('Be with me!');
-    }
     const serverQueue = this.client.queue.get(msg.guild.id);
+    
     if (!serverQueue) return msg.say('Nyothing playing!');
 
     let description = "";

@@ -4,7 +4,7 @@ module.exports = class BdayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'bday',
-      aliases: ['bd', 'cumple', 'tanjo-bi'],
+      aliases: ['bd'],
       group:'fun',
       memberName: 'bday',
       description: 'No description necessary',

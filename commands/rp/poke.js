@@ -29,6 +29,8 @@ module.exports = class PokeCommand extends Command {
   async run(msg, { target }) {
     const { url } = await fetch("https://api.waifu.pics/sfw/poke").then((res) => res.json());
 
+    if (target.id === msg.client.user.id ) return msg.reply('Nyoooooo'); //TODO: make an embed
+    
     const embed = new MessageEmbed()
       .setTitle(`Poking ${target.nickname || target.user.username}-nya!`)
       .setColor('#ff0000')

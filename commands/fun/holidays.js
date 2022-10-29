@@ -4,10 +4,10 @@ module.exports = class HolidayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'holiday',
-      aliases: ['hd', 'festividades', 'horide', 'kyujitsu', 'kyuka'],
+      aliases: ['hd'],
       group: 'fun',
       memberName: 'holiday',
-      description: `Use \`thxg\` or \`acdg\` for Thanksgiving, \`stvltn\` or \`valentin\` for Saint Valentine's,  \`xmas\` or \`nvd\` for Christmas, and \`newyear\` or \`an\` for New Year's. No arguments give in a Happy Holidays.`,
+      description: `Use \`thxg\` for Thanksgiving, \`stvltn\` for Saint Valentine's,  \`xmas\` for Christmas, and \`newyear\` for New Year's. No arguments give in a Happy Holidays.`,
       guildOnly: true,
       format: '[holiday]',
       throttling: {
@@ -28,16 +28,16 @@ module.exports = class HolidayCommand extends Command {
   run(msg, { args }) {
     //console.log(args[0]);
     switch (args) {
-      case 'thxg' || 'acdg': //thxg
+      case 'thxg':
         msg.say('@everyone Happy Thanksgiving-nya!');
         break;
-      case 'xmas' || 'nvd': //xmas
+      case 'xmas':
         msg.say('@everyone Merry Christmas-nya!');
         break;
-      case 'newyear' || 'an': //newyear
+      case 'newyear':
         msg.say('@everyone Happy New Year-nya!');
         break;
-      case 'stvltn' || 'valentin':
+      case 'stvltn':
         msg.say('@everyone Happy Saint Valentine\'s! Actually, happy love and friendship day-nya!');
         break;
       default:

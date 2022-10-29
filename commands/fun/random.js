@@ -4,7 +4,7 @@ module.exports = class RandomCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'randnum',
-      aliases: ['random', 'number'],
+      aliases: ['random'],
       group: 'fun',
       memberName: 'random',
       description: 'Sends a random number between specified numbers',

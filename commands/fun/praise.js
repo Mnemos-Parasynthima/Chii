@@ -4,7 +4,7 @@ module.exports = class PraiseCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'praise',
-      aliases: ['prs', 'felicitar', 'shosan'],
+      aliases: ['prs'],
       group: 'fun',
       memberName: 'praise',
       description: 'Praises whoever is mentioned, if not, Chii.',

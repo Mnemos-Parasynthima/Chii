@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { Command } = require('discord.js-commando');
-//const booru = require('booru');
+//const booru = require('booru'); Error in booru package
 
 module.exports = class BooruCommand extends Command {
   constructor(client) {
@@ -26,23 +26,23 @@ module.exports = class BooruCommand extends Command {
     });
   }
 
-  //TODO: Fix something, not returning empty
   async run(msg, { query }) {
+    return msg.say("Nyot Working!");
 
-    const sites = ["danbooru", "yandere", "gelbooru", "rule34", "paheal", "realbooru", "e621.net", "hypnohub"];
-    const i = Math.floor(Math.random() * sites.length);
+    // const sites = ["danbooru", "yandere", "gelbooru", "rule34", "paheal", "realbooru", "e621.net", "hypnohub"];
+    // const i = Math.floor(Math.random() * sites.length);
     
-    await booru.search(sites[i], [query], {limit: 5, random: true})
-      .then(posts => {
-        for (let post of posts) {
-          const embed = new MessageEmbed()
-            .setColor('#ff0000')
-            .setImage(post.fileUrl)
+    // await booru.search(sites[i], [query], {limit: 5, random: true})
+    //   .then(posts => {
+    //     for (let post of posts) {
+    //       const embed = new MessageEmbed()
+    //         .setColor('#ff0000')
+    //         .setImage(post.fileUrl)
 
-          msg.embed(embed);
-        }
-      }).catch(err => {
-        if (err.name === 'booruError') return msg.say(`Nyo results found for **${query}**!`);
-      });
+    //       msg.embed(embed);
+    //     }
+    //   }).catch(err => {
+    //     if (err.name === 'booruError') return msg.say(`Nyo results found for **${query}**!`);
+    //   });
   }
 };

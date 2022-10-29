@@ -7,7 +7,7 @@ module.exports = class PlayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'play',
-      aliases: ['p', 'ply', 'music', 'msc', 'musica', 'toca'],
+      aliases: ['p', 'ply'],
       group: 'music',
       memberName: 'play',
       description: 'Search and play music-nya!',
@@ -28,17 +28,16 @@ module.exports = class PlayCommand extends Command {
     });
   }
 
-  // TODO: Add ability to give link
   async run(msg, { query }) {
     const channel = msg.member.voice.channel;
 
-    if (!channel) return msg.channel.send('Nyoin a voice chyanneel!');
+    if (!channel) return msg.channel.send('Nyoin a voice chyannel!');
+    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
     let serverQueue = msg.client.queue.get(msg.guild.id);
-
     let searched = await yts.search(query);
-    if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
 
+    if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
 
     // If supplied with a link
     let musicInfo = searched.videos[0];
@@ -90,9 +89,7 @@ module.exports = class PlayCommand extends Command {
 
     const play = async music => {
       const queue = msg.client.queue.get(msg.guild.id);
-      if (!music) {
-        return msg.client.queue.delete(msg.guild.id);
-      }
+      if (!music) return msg.client.queue.delete(msg.guild.id);
 
       const dispatcher = queue.connection
         .play(await ytdl(music.url), { type: 'opus', highWaterMark: 60 }) //Init of 50

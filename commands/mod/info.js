@@ -5,10 +5,10 @@ const pjson = require('../../package.json');
 module.exports = class ChiiInfoCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'botinfo',
-      aliases: ['chiiinfo', 'info', 'self-info'],
+      name: 'info',
+      aliases: ['chiiinfo', 'self-info'],
       group: 'mod',
-      memberName: 'botinfo',
+      memberName: 'info',
       description: 'Returns information of Chii.',
       guildOnly: true,
       throttling: {
@@ -47,10 +47,6 @@ module.exports = class ChiiInfoCommand extends Command {
           name: 'On the server since',
           value: this.client.member.joinedAt
         },*/
-        {
-          name: 'Github',
-          value: 'https://github.com/Mnemos-Parasynthima/Chii'
-        },
         {
           name: 'Site',
           value: site

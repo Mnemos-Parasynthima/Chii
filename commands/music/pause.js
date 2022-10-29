@@ -5,7 +5,7 @@ module.exports = class PauseCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'pause',
-      aliases: ['ps', 'pausa'],
+      aliases: ['ps'],
       group: 'music',
       memberName: 'pause',
       description: 'Pauses the current music/video.',
@@ -26,10 +26,7 @@ module.exports = class PauseCommand extends Command {
 
     try {
       if (!channel) return msg.say('Nyoin a voice chyannel!');
-
-      if (msg.guild.me.voice.channel !== msg.member.voice.channel) {
-        return msg.say('Be with me!');
-      }
+      if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
       if (serverQueue && serverQueue.playing) {
         serverQueue.playing = false;

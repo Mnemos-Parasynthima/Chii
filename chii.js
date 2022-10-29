@@ -6,6 +6,7 @@ const Canvas = require('canvas');
 const { registerFont } = require('canvas');
 registerFont('./assets/fonts/OpenSans-Regular.ttf', { family: 'sans-serif' });
 const applyText = require('./structures/applyText');
+
 /**
  * Code for outside of replit
  * const { token, prefix, ownerId } = require('./config.json');
@@ -17,7 +18,6 @@ const client = new CommandoClient({
 });
 
 client.queue = new Map();
-
 client.snipes = new Map();
 
 //Allowing bot to be 24/7

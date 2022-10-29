@@ -34,25 +34,17 @@ module.exports = class TemperatureCommand extends Command {
   }
 
   run(msg, { base, to, num }) {
-
     let result;
-    // console.log(base, to);
-    // console.log(typeof base, typeof to);
+    const accepted = ['C', 'F', 'K'];
+
     base = base.toUpperCase();
     to = to.toUpperCase();
-    // console.log(base, to);
-    // console.log(typeof base, typeof to);
-    
-    if (base === to) return msg.reply(`*Demo*.....how can I convert ${base} to ${to} if they're the same scale!?`);
 
-    //TODO: FIX
-    // if (base != "F" || base != "C" || base != "K") {
-    //   return msg.reply('Nyo! You must give me something in C, F, or K!');
-    // }
+    if (!accepted.includes(base)) return msg.reply('Nyo! You must give me something in C, F, or K!');
 
-    // if (to !== "F" || to !== "C" || to !== "K") {
-    //   return msg.reply(`Nyo! I can\'t convert ${num} to such nyonsense!`);
-    // }
+    if (!accepted.includes(to)) return msg.reply(`Nyo! I can\'t convert ${num} to such nyonsense!`);
+
+    if (base === to) return msg.reply(`But...how can I convert ${base} to ${to} if they're the same scale!?`);
 
     if (base === "F" && to === "C") {
       result = (num - 32) * (9/5);
@@ -61,16 +53,17 @@ module.exports = class TemperatureCommand extends Command {
       result = (9/5 * num) + 32;
       msg.say(`${num} C is ${result} F`);
     } else if (base === "C" && to === "K") {
-      result = num + 273;
+      result = num + 273.15;
       msg.say(`${num} C is ${result} Kelvin`);
     } else if (base === "K" && to === "C") {
-      result = num - 273;
+      result = num - 273.15;
       msg.say(`${num} Kelvin is ${result} C`);
     } else if (base === "F" && to === "K") {
-      msg.reply('Nya need to convert to Celsius first to convert F to Kelvin!');
+      result = (num + 459.67) * (5/9);
+      msg.say(`${num} F is ${result} Kelvin`);
     } else if (base === "K" && to === "F") {
-      msg.reply('Nya need to convert to Celsius first to conver Kelving to F!');
+      result = (num * (9/5)) - 459.67;
+      msg.say(`${num} Kelvin is ${result} F`);
     }
-
   }
 }
