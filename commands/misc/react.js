@@ -4,7 +4,7 @@ module.exports = class ReactCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'react',
-      aliases: ['rct', 'reaccionar', 'hanno'],
+      aliases: ['rct'],
       group: 'misc',
       memberName: 'react',
       description: `React! using \`think\`, \`sip\`, \`yorka\`, \`ephnel\`, \`arua\`, \`shrug\`, \`sad\`, \`proud\`, \`happy\`, \`denied\`, \`wut\`, \`yes\`, \`lazy\`, \`baka\`, \`angry\`, \`mad\``,
@@ -24,7 +24,7 @@ module.exports = class ReactCommand extends Command {
     });
   }
 
-  async run(msg, { args }) {
+  run(msg, { args }) {
     try {
       const sendReaction = (msg, args) => {
         switch (args) {
@@ -64,7 +64,8 @@ module.exports = class ReactCommand extends Command {
             const happy = this.client.emojis.cache.find(emoji => emoji.name === "happy");
             msg.say(`<:${happy.name}:${happy.id}>`);
             break;
-          case 'denied' || 'no':
+          case 'no':
+          case 'denied':
             const denied = this.client.emojis.cache.find(emoji => emoji.name === "denied");
             msg.say(`<:${denied.name}:${denied.id}>`);
             break;

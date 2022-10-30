@@ -5,8 +5,7 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 ## Table of Contents:
 - [Setup](#setup)
 - [Commands](#commands)
-  - [Anime](#anime) 
-  - [Developer](#developer)
+  - [Anime](#anime)
   - [Fun](#fun)
   - [Miscellaneous](#miscellaneous)
   - [Music](#music)
@@ -38,11 +37,6 @@ Using `<>` is required whereas `[]` is optional.
 | `anime`  |   None    | Sends an anime picture.      |
 | `foxgirl`|   None    | Sends a picture of a foxgirl.|
 | `nekos`  |   None    | Sends a picture of a neko.   |
-
-### Developer
-| Command  | Arguments | Description                              |
-|----------|-----------|------------------------------------------|
-| `emulate`|   None    | Emulates an event. (For developers only) |
 
 ### Fun
 | Command    | Arguments         | Description                                                           |
