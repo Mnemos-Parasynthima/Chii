@@ -8,6 +8,7 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
   - [Anime](#anime)
   - [Fun](#fun)
   - [Miscellaneous](#miscellaneous)
+  - [Moderation](#moderation)
   - [Music](#music)
   - [Roleplay](#roleplay)
 - [Modification](#modification)
@@ -17,13 +18,11 @@ Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with th
 ## Setup:
 1. Install [Node.js](https://nodejs.org/en/) 12 or higher if not already done so.
 2. Clone or download the repository.
-3. Install build tools (for use of Canvas) with terminal.
-    - `npm install --global windows-build-tools`
-4. Install dependencies with `npm install` with terminal.
-5. Create a discord bot application with [Discord Developer Portal](https://discordapp.com/developers/applications/).
-6. Fill out the config.json file with `token`, `ownerId` (must have developer tools enabled in Discord to access it), and `prefix`. The default prefix is `chii` in order not to confuse with common prefixes such as !, -, or $. Using a mention also works as part of the Commando framework.
-7. Using the link from the developer portal, invite to your server.
-8. To run locally, use `npm start`. To host 24/7, I recommend using [replit](https://repl.it/) and [uptimerobot](https://uptimerobot.com/).
+3. Install dependencies with `npm install` with terminal.
+4. Create a discord bot application with [Discord Developer Portal](https://discordapp.com/developers/applications/).
+5. Fill out the config.json file with `token`, `ownerId` (must have developer tools enabled in Discord to access it), and `prefix`. The default prefix is `chii` in order not to confuse with common prefixes such as !, -, or $. Using a mention also works as part of the Commando framework.
+6. Using the link from the developer portal, invite to your server.
+7. To run locally, use `npm start`. To host 24/7, I recommend using [replit](https://repl.it/) and [uptimerobot](https://uptimerobot.com/).
 
 ## Commands:
 
