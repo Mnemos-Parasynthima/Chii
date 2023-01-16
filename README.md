@@ -109,7 +109,6 @@ Chii doesn't have an official support server for now, only a small development p
 If any bugs or error pop up, feel free to open up an issue and give any important information.
 If you have an idea, great! If you know how to program, feel free to add anything and open a pull request and I will see it. However, if you do not know, it's all fine! Open up an issue with the title of "New Idea" and describe the ideas, and I will look into it.
 
-
 Currently, I am not looking for collaborators as I'm too lazy. However, I might consider it should I want to take Chii further.  Make sure to keep up to date. :)
 
 ## Other:
@@ -121,12 +120,11 @@ Invite [Chii](https://discord.com/api/oauth2/authorize?client_id=788284993759215
 ### Features to add:
 
 - [ ] Translate
-- [ ] YouTube
 
 ### To Do
 
 - [ ] Style and fix music commands
-- [ ] Work on DiscordJS v13 and Sapphire (seperate dev branch) IMPORTANT
-- [ ] MongoDB (v4) after DJS13/Sapphire (v3)
+- [ ] Work on DiscordJS v14 and Sapphire (seperate dev branch) IMPORTANT!
+- [ ] MongoDB (v4) after DJS14/Sapphire (v3)
 - [ ] Move user info to 'rank' card (mongodb)
 - [ ] Add roles to users (u-i command, after mongodb)
