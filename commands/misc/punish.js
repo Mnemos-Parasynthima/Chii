@@ -19,7 +19,7 @@ module.exports = class PunishCommand extends Command {
   run(msg) {
     const taggedUser = msg.mentions.users.first();
 
-    if (!taggedUser) return msg.say('Nyoooooooooooo');
+    if (!taggedUser) return msg.say('Nyoooooooooooo!!!');
     msg.say(`Get punished ${taggedUser}!`);
   }
 }

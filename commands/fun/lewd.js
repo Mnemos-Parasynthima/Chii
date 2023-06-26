@@ -25,6 +25,5 @@ module.exports = class LewdCommand extends Command {
       .setImage(lewd[i]);
 
     msg.embed(embed);
-    //console.log(lewd[i]);
   }
 };

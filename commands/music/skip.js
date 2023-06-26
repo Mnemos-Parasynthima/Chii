@@ -19,22 +19,23 @@ module.exports = class SkipCommand extends Command {
 
   // Add styling, i.e. reactions
   async run(msg) {
-    const { channel } = msg.member.voice;
-    const serverQueue = this.client.queue.get(msg.guild.id);
-    const embed = new MessageEmbed().setColor('#ff0000').setDescription('⏩ Skipped');
+    msg.say("The `skip` command is currently not functional, nya! It will remain in service until the upcoming major update-nya!")
+    // const { channel } = msg.member.voice;
+    // const serverQueue = this.client.queue.get(msg.guild.id);
+    // const embed = new MessageEmbed().setColor('#ff0000').setDescription('⏩ Skipped');
 
-    if (!channel) return msg.say('Nyoin a voice chyannel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
+    // if (!channel) return msg.say('Nyoin a voice chyannel!');
+    // if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
-    if (!serverQueue) return msg.say('Nyothing is playing!');
+    // if (!serverQueue) return msg.say('Nyothing is playing!');
 
-    try {
-      serverQueue.connection.dispatcher.end();
-      return msg.embed(embed);
-    } catch {
-      serverQueue.connection.dispatcher.end();
-      await channel.leave();
-      return msg.say('Try again!');
-    }
+    // try {
+    //   serverQueue.connection.dispatcher.end();
+    //   return msg.embed(embed);
+    // } catch {
+    //   serverQueue.connection.dispatcher.end();
+    //   await channel.leave();
+    //   return msg.say('Try again!');
+    // }
   }
 }

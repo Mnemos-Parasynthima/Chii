@@ -33,7 +33,7 @@ module.exports = class UselessCommand extends Command {
 
     if (taggedUser.id !== owner) { // If tag is not owner
       const i = Math.floor(Math.random() * uselessAqua.length);
-      embed.setDescription(`Useless ${taggedUser}-nya! Just like Aqua`).setImage(uselessAqua[i]);
+      embed.setDescription(`Useless ${taggedUser}-nya! Just like Aqua-nyaa`).setImage(uselessAqua[i]);
 	    return msg.embed(embed);
     }
   }

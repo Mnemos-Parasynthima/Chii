@@ -70,8 +70,6 @@ client.on('messageDelete', async msg => {
 client.on('guildMemberAdd', async member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'announcements');
   if (!channel) return console.log('Channel not found');
-
-  if (member.id === process.env.ownerId) return channel.send(`Welcome back Master! I missed you-nya!!`);
   
   const canvas = Canvas.createCanvas(700, 250);
   const ctx = canvas.getContext('2d');

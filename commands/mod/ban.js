@@ -31,7 +31,7 @@ module.exports = class BanCommand extends Command {
         .then(() => { msg.reply('Successfully banned. 🔨')})
         .catch(err => { 
           console.error(err);
-          msg.say(`There was an error trying to ban ${user} in this channel!`);
+          msg.say(`There was an error trying to ban ${user} in this channyel!`);
         });
     }
   }

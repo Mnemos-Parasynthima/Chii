@@ -8,7 +8,7 @@ module.exports = class LoopCommand extends Command {
       aliases: ['repeat', 'l'],
       group: 'music',
       memberName: 'loop',
-      description: 'Looping [CURRENTLY NOT WORKING]',
+      description: 'Loops the queue',
       guildOnly: true,
       format: '<enabled | disabled>',
       throttling: {
@@ -26,39 +26,39 @@ module.exports = class LoopCommand extends Command {
     });
   }
 
-  // FIX
   async run(msg, { status }) {
-    const { channel } = msg.member.voice;
-    const serverQueue = this.client.queue.get(msg.guild.id);
-    const embed = new MessageEmbed();
+    msg.say("The `loop` command is currently not functional, nya! It will remain in service until the upcoming major update-nya!")
+    // const { channel } = msg.member.voice;
+    // const serverQueue = this.client.queue.get(msg.guild.id);
+    // const embed = new MessageEmbed();
 
-    if (!channel) {
-      msg.say('Nya need to be in a chyannel');
-    }
+    // if (!channel) {
+    //   msg.say('Nya need to be in a chyannel');
+    // }
 
-    try {
-      if (!serverQueue) return msg.say('Nyothing playing!');
-      if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
+    // try {
+    //   if (!serverQueue) return msg.say('Nyothing playing!');
+    //   if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
-      if (!serverQueue.loop && status === 'enable') {
-        serverQueue.loop = true;
-        console.log(serverQueue);
-        console.log(serverQueue.loop);
-        embed.setColor('#00ff00').setDescription('🔁 Repeat is enyabled!');
-        return msg.embed(embed);
-      } else if (serverQueue.loop && status === 'disable') {
-        console.log(serverQueue);
-        serveQueue.loop = false;
-        console.log(serverQueue.loop);
-        embed.setColor('#ff0000').setDescription('🔁 Repeat is disabled-nya!');
-        return msg.embed(embed);
-      } else {
-        return;
-      }
-    } catch {
-      serverQueue.connection.dispatcher.end();
-      await channel.leave();
-      return msg.say('Something\'s wrong...try again-nya!');
-    }
+    //   if (!serverQueue.loop && status === 'enable') {
+    //     serverQueue.loop = true;
+    //     console.log(serverQueue);
+    //     console.log(serverQueue.loop);
+    //     embed.setColor('#00ff00').setDescription('🔁 Repeat is enyabled!');
+    //     return msg.embed(embed);
+    //   } else if (serverQueue.loop && status === 'disable') {
+    //     console.log(serverQueue);
+    //     serveQueue.loop = false;
+    //     console.log(serverQueue.loop);
+    //     embed.setColor('#ff0000').setDescription('🔁 Repeat is disabled-nya!');
+    //     return msg.embed(embed);
+    //   } else {
+    //     return;
+    //   }
+    // } catch {
+    //   serverQueue.connection.dispatcher.end();
+    //   await channel.leave();
+    //   return msg.say('Something\'s wrong...try again-nya!');
+    // }
   }
 }

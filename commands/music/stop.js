@@ -18,32 +18,32 @@ module.exports = class StopCommand extends Command {
   }
 
   async run(msg) {
-    const { channel } = msg.member.voice;
-    const serverQueue = this.client.queue.get(msg.guild.id);
-    const embed = new MessageEmbed().setDescription('↪ Disconnected');
+    msg.say("The `stop` command is currently not functional, nya! It will remain in service until the upcoming major update-nya!")
+    // const { channel } = msg.member.voice;
+    // const serverQueue = this.client.queue.get(msg.guild.id);
+    // const embed = new MessageEmbed().setDescription('↪ Disconnected');
 
-    if (!channel) return msg.say('Nyoin a voice chyannel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say("Be with me!");
+    // if (!channel) return msg.say('Nyoin a voice chyannel!');
+    // if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say("Be with me!");
 
-    try {
-      if (serverQueue) {
-        serverQueue.musics = [];
-        serverQueue.connection.dispatcher.end();
-        msg.guild.me.voice.channel.leave();
-      } else {
-        msg.guild.me.voice.channel.leave();
-      }
-      return msg.embed(embed);
-    } catch {
-      /*
-      * Weird stuff here, need to fix, but it at least works
-      */
-      //console.log(`Catch block sQ: ${serverQueue}`);
-      //serverQueue.connection.dispatcher.end();
-      console.log(serverQueue);
-      channel.leave();
-      //return msg.say('Try Again-nya!');
-    }
-
+    // try {
+    //   if (serverQueue) {
+    //     serverQueue.musics = [];
+    //     serverQueue.connection.dispatcher.end();
+    //     msg.guild.me.voice.channel.leave();
+    //   } else {
+    //     msg.guild.me.voice.channel.leave();
+    //   }
+    //   return msg.embed(embed);
+    // } catch {
+    //   /*
+    //   * Weird stuff here, need to fix, but it at least works
+    //   */
+    //   //console.log(`Catch block sQ: ${serverQueue}`);
+    //   //serverQueue.connection.dispatcher.end();
+    //   console.log(serverQueue);
+    //   channel.leave();
+    //   //return msg.say('Try Again-nya!');
+    // }
   }
 };

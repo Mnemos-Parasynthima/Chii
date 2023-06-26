@@ -4,7 +4,7 @@ module.exports = class HissCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'hiss',
-      aliases: ['intimidate', 'intmdt'],
+      aliases: ['intimidate'],
       group: 'misc',
       memberName: 'hiss',
       description: 'Hisses',

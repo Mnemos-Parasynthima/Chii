@@ -18,24 +18,25 @@ module.exports = class ResumeCommand extends Command {
   }
 
   run(msg) {
-    const { channel } = msg.member.voice;
-    const serverQueue = this.client.queue.get(msg.guild.id);
-    const embed = new MessageEmbed()
-      .setColor('#00ff00')
-      .setDescription('▶ **Resumed**');
+    msg.say("The `resume` command is currently not functional, nya! It will remain in service until the upcoming major update-nya!")
+    // const { channel } = msg.member.voice;
+    // const serverQueue = this.client.queue.get(msg.guild.id);
+    // const embed = new MessageEmbed()
+    //   .setColor('#00ff00')
+    //   .setDescription('▶ **Resumed**');
 
-    if (!channel) return msg.say('Nyoin a voice chyannel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
+    // if (!channel) return msg.say('Nyoin a voice chyannel!');
+    // if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
-    try {
-      if (serverQueue && !serverQueue.playing) {
-        serverQueue.playing = true;
-        serverQueue.connection.dispatcher.resume();
-        return msg.embed(embed);
-      } else { return msg.say('Nyothing to resume!'); }
-    } catch {
-      serverQueue.connection.dispatcher.end();
-      return msg.say('Try again');
-    }
+    // try {
+    //   if (serverQueue && !serverQueue.playing) {
+    //     serverQueue.playing = true;
+    //     serverQueue.connection.dispatcher.resume();
+    //     return msg.embed(embed);
+    //   } else { return msg.say('Nyothing to resume!'); }
+    // } catch {
+    //   serverQueue.connection.dispatcher.end();
+    //   return msg.say('Try again');
+    // }
   }
 };

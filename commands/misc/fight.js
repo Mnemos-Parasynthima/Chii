@@ -15,7 +15,7 @@ module.exports = class FightCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'fight',
-      aliases: ['duel', 'pelea', 'kenka', 'tatakai'],
+      aliases: ['duel'],
       group: 'misc',
       memberName: 'fight',
       description: "Fights whoever is tagged",

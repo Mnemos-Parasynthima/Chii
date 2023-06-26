@@ -33,7 +33,7 @@ module.exports = class KickCommand extends Command {
       .then(() => { msg.reply('Successfully kicked 🦵🏼!')})
       .catch(err => { 
         console.error(err);
-        msg.say(`there was an error trying to kick ${user} in this channel!`);
+        msg.say(`There was an error trying to kick ${user} in this channyel!`);
       });    
   }
 };

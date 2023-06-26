@@ -9,7 +9,7 @@ module.exports = class AnimeCommand extends Command {
       aliases: ['waifu'],
       group: 'anime',
       memberName: 'anime',
-      description: 'Anime-nya!',
+      description: 'Waifuss-nya!',
       throttling: {
         usages: 3,
         duration: 3,

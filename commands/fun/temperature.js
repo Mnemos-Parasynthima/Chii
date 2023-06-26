@@ -47,23 +47,23 @@ module.exports = class TemperatureCommand extends Command {
     if (base === to) return msg.reply(`But...how can I convert ${base} to ${to} if they're the same scale!?`);
 
     if (base === "F" && to === "C") {
-      result = (num - 32) * (9/5);
-      msg.say(`${num} F is ${result} C`);
+      result = (num - 32) * (5/9);
+      msg.say(`${num} F is ${result.toFixed(2)} C`);
     } else if (base === "C" && to === "F") {
       result = (9/5 * num) + 32;
-      msg.say(`${num} C is ${result} F`);
+      msg.say(`${num} C is ${result.toFixed(2)} F`);
     } else if (base === "C" && to === "K") {
       result = num + 273.15;
-      msg.say(`${num} C is ${result} Kelvin`);
+      msg.say(`${num} C is ${result.toFixed(2)} Kelvin`);
     } else if (base === "K" && to === "C") {
       result = num - 273.15;
-      msg.say(`${num} Kelvin is ${result} C`);
+      msg.say(`${num} Kelvin is ${result.toFixed(2)} C`);
     } else if (base === "F" && to === "K") {
       result = (num + 459.67) * (5/9);
-      msg.say(`${num} F is ${result} Kelvin`);
+      msg.say(`${num} F is ${result.toFixed(2)} Kelvin`);
     } else if (base === "K" && to === "F") {
       result = (num * (9/5)) - 459.67;
-      msg.say(`${num} Kelvin is ${result} F`);
+      msg.say(`${num} Kelvin is ${result.toFixed(2)} F`);
     }
   }
 }

@@ -29,109 +29,109 @@ module.exports = class PlayCommand extends Command {
   }
 
   async run(msg, { query }) {
-    const channel = msg.member.voice.channel;
+    msg.say("The `play` command is currently not functional, nya! It will remain in service until the upcoming major update-nya!")
+    // const channel = msg.member.voice.channel;
 
-    if (!channel) return msg.channel.send('Nyoin a voice chyannel!');
-    if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
+    // if (!channel) return msg.channel.send('Nyoin a voice chyannel!');
+    //if (msg.guild.me.voice.channel !== msg.member.voice.channel) return msg.say('Be with me!');
 
-    let serverQueue = msg.client.queue.get(msg.guild.id);
-    let searched = await yts.search(query);
+    // let serverQueue = msg.client.queue.get(msg.guild.id);
+    // let searched = await yts.search(query);
 
-    if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
+    // if (searched.videos.length === 0) return msg.say('I can\'t find nya music!');
 
     // If supplied with a link
-    let musicInfo = searched.videos[0];
+    // let musicInfo = searched.videos[0];
 
-    const music = {
-      id: musicInfo.videoId,
-      title: Util.escapeMarkdown(musicInfo.title),
-      url: musicInfo.url,
-      duration: musicInfo.duration.toString(),
-      img: musicInfo.image,
-      req: msg.author.username
-    };
+    // const music = {
+    //   id: musicInfo.videoId,
+    //   title: Util.escapeMarkdown(musicInfo.title),
+    //   url: musicInfo.url,
+    //   duration: musicInfo.duration.toString(),
+    //   img: musicInfo.image,
+    //   req: msg.author.username
+    // };
 
-    if (serverQueue) {
-      serverQueue.musics.push(music);
-      let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
-        .setTitle('Music has been nyadded to the queue')
-        .setColor('#ff0000')
-        .setImage(music.img)
-        .setFooter(`Requested by ${music.req}`)
-        .addFields(
-          {
-            name: 'Title',
-            value: music.title
-          },
-          {
-            name: 'Url',
-            value: music.url
-          },
-          {
-            name: 'Duration',
-            value: music.duration
-          }
-        );
+    // if (serverQueue) {
+    //   serverQueue.musics.push(music);
+    //   let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
+    //     .setTitle('Music has been nyadded to the queue')
+    //     .setColor('#ff0000')
+    //     .setImage(music.img)
+    //     .setFooter(`Requested by ${music.req}`)
+    //     .addFields(
+    //       {
+    //         name: 'Title',
+    //         value: music.title
+    //       },
+    //       {
+    //         name: 'Url',
+    //         value: music.url
+    //       },
+    //       {
+    //         name: 'Duration',
+    //         value: music.duration
+    //       }
+    //     );
 
-      return msg.embed(embed);
-    }
+    //   return msg.embed(embed);
+    // }
 
-    const queueConstruct = {
-      textChannel: msg.channel,
-      voiceChannel: channel,
-      connection: null,
-      musics: [],
-      volume: 3.5,
-      playing: true
-    };
-    msg.client.queue.set(msg.guild.id, queueConstruct);
-    queueConstruct.musics.push(music);
+    // const queueConstruct = {
+    //   textChannel: msg.channel,
+    //   voiceChannel: channel,
+    //   connection: null,
+    //   musics: [],
+    //   volume: 3.5,
+    //   playing: true
+    // };
+    // msg.client.queue.set(msg.guild.id, queueConstruct);
+    // queueConstruct.musics.push(music);
 
-    const play = async music => {
-      const queue = msg.client.queue.get(msg.guild.id);
-      if (!music) return msg.client.queue.delete(msg.guild.id);
+    // const play = async music => {
+    //   const queue = msg.client.queue.get(msg.guild.id);
+    //   if (!music) return msg.client.queue.delete(msg.guild.id);
 
-      const dispatcher = queue.connection
-        .play(await ytdl(music.url), { type: 'opus', highWaterMark: 60 }) //Init of 50
-        .on('finish', () => {
-          queue.musics.shift();
-          play(queue.musics[0]);
-        })
-        .on('error', error => console.error(error));
+    //   const dispatcher = queue.connection
+    //     .play(await ytdl(music.url), { type: 'opus', highWaterMark: 60 }) //Init of 50
+    //     .on('finish', () => {
+    //       queue.musics.shift();
+    //       play(queue.musics[0]);
+    //     })
+    //     .on('error', error => console.error(error));
       
-      dispatcher.setVolumeLogarithmic(queue.volume / 5);
-      let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
-        .setTitle('Playing')
-        .setColor('#ff0000')
-        .setImage(music.img)
-        .setFooter(`Request by ${music.req}`)
-        .addFields(
-          {
-            name: 'Title',
-            value: music.title
-          },
-          {
-            name: 'Url',
-            value: music.url
-          },
-          {
-            name: 'Duration',
-            value: music.duration
-          }
-        )
+    //   dispatcher.setVolumeLogarithmic(queue.volume / 5);
+    //   let embed = new MessageEmbed() // TODO: Add video style to embed instead of img
+    //     .setTitle('Playing')
+    //     .setColor('#ff0000')
+    //     .setImage(music.img)
+    //     .setFooter(`Request by ${music.req}`)
+    //     .addFields(
+    //       {
+    //         name: 'Title',
+    //         value: music.title
+    //       },
+    //       {
+    //         name: 'Url',
+    //         value: music.url
+    //       },
+    //       {
+    //         name: 'Duration',
+    //         value: music.duration
+    //       }
+    //     )
 
-      queue.textChannel.send(embed);
-    };
+    //   queue.textChannel.send(embed);
+    // };
 
-    try {
-      const connection = await channel.join();
-      queueConstruct.connection = connection;
-      channel.guild.voice.setSelfDeaf(true);
-      play(queueConstruct.musics[0]);
-    } catch (error) {
-      console.error(`Could not join vc: ${error}`);
-      msg.client.queue.delete(msg.guild.id);
-      return console.log(`Could not join vc: ${error}`, msg.channel);
-    }
+    // try {
+    //   const connection = await channel.join();
+    //   queueConstruct.connection = connection;
+    //   channel.guild.voice.setSelfDeaf(true);
+    //   play(queueConstruct.musics[0]);
+    // } catch (error) {
+    //   msg.client.queue.delete(msg.guild.id);
+    //   return console.log(`Could not join vc: ${error}`, msg.channel);
+    // }
   }
 };

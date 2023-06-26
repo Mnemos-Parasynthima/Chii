@@ -30,7 +30,7 @@ module.exports = class SlashCommand extends Command {
 
     msg.channel.bulkDelete(num, true).catch(err => {
       console.error(err);
-      msg.say('there was an error trying to slash messages in this channel!');
+      msg.say('There was an error trying to slash messages in this channyel!');
 		});
   }
 };

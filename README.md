@@ -1,4 +1,4 @@
-# Meet SoulWorker Chii [Aruel]! Version 2.5
+# Meet SoulWorker Chii [Aruel]! Version 2.6
 
 Meet SoulWorker Chii \[Aruel]! She is simple, yet feature-rich. She runs with the **[Discord.JS](https://discord.js.org/#/)** Library and the **Commando** framework.
 
@@ -76,6 +76,7 @@ Using `<>` is required whereas `[]` is optional.
 | `user-info` | None             | Sends information about oneself.                                                          |
 
 ### Music
+NOTE: Music commands are currently not working until next major update!
 | Command  | Arguments  | Description                                            |
 |----------|------------|--------------------------------------------------------|
 | `pause`  | None       | Pauses the ongoing video.                              |

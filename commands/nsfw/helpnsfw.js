@@ -32,7 +32,7 @@ module.exports = class NHelpCommand extends Command {
       .setThumbnail(msg.client.user.displayAvatarURL())
       .setTimestamp();
 
-    const commands = msg.client.registry.commands; // Destructure?
+    const commands = msg.client.registry.commands;
 
     if (!args) {
       embed.setTitle('SoulWorker Chii\'s Commands')
